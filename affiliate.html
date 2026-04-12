@@ -7,24 +7,25 @@
   <link rel="canonical" href="https://gaijinhome.com/affiliate" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
   <style>
-    :root { --ink:#E8372A; --ink:#0F0E0C; --cream:#FFDAF5; --white:#fff; }
+    :root { --ink:#0F0E0C; --red:#E8372A; --cream:#FFDAF5; --white:#fff; }
     * { box-sizing:border-box; margin:0; padding:0; }
     body { font-family:'DM Sans',sans-serif; background:var(--cream); color:var(--ink); line-height:1.7; }
     nav { background:var(--ink); padding:16px 32px; display:flex; align-items:center; }
     nav a { color:var(--white); text-decoration:none; font-family:'Syne',sans-serif; font-weight:700; font-size:1.2rem; }
-    nav a span { color:#E8372A; }
+    nav a span { color:var(--red); }
     main { max-width:760px; margin:60px auto; padding:0 24px 80px; }
     h1 { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; margin-bottom:24px; }
-    h2 { font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; margin:32px 0 12px; }
+    h2 { font-family:'Syne',sans-serif; font-size:1.2rem; font-weight:700; margin:32px 0 12px; border-bottom: 2px solid var(--red); padding-bottom:8px; }
     p { margin-bottom:16px; }
     .highlight { background:var(--ink); color:var(--white); padding:20px 24px; border-radius:8px; margin:24px 0; }
-
-    /* Affiliate banners section */
-    .ad-section { margin:40px 0; }
-    .ad-section h2 { border-bottom: 2px solid #E8372A; padding-bottom:8px; margin-bottom:20px; }
-    .ad-grid { display:flex; flex-wrap:wrap; gap:20px; align-items:center; }
-    .ad-item { display:flex; flex-direction:column; align-items:center; gap:8px; }
-    .ad-label { font-size:0.8rem; color:#666; }
+    .ad-grid { display:flex; flex-direction:column; gap:16px; margin-top:16px; }
+    .ad-card { background:#fff; border-radius:12px; padding:20px 24px; display:flex; justify-content:space-between; align-items:center; gap:16px; box-shadow: 0 2px 8px rgba(0,0,0,0.07); }
+    .ad-card-info { flex:1; }
+    .ad-card-info h3 { font-family:'Syne',sans-serif; font-size:1rem; font-weight:700; margin-bottom:4px; }
+    .ad-card-info p { font-size:0.9rem; color:#555; margin:0; }
+    .ad-btn { background:var(--red); color:#fff; text-decoration:none; font-family:'Syne',sans-serif; font-weight:700; padding:10px 20px; border-radius:8px; white-space:nowrap; font-size:0.95rem; }
+    .ad-btn:hover { opacity:0.85; }
+    .tracking-pixel { display:none; }
   </style>
 </head>
 <body>
@@ -42,27 +43,69 @@
     <p>Affiliate relationships do not influence our editorial content. The information and guides on our site are written to help you — not to push any particular service.</p>
 
     <h2>FTC Compliance</h2>
-    <p>In accordance with FTC guidelines, all affiliate links on this site are labeled with <code>rel="sponsored"</code> or <code>rel="nofollow"</code>.</p>
+    <p>In accordance with FTC guidelines, all affiliate links on this site are labeled with <code>rel="nofollow"</code>.</p>
 
-    <!-- WiFi Rental Banners -->
-    <div class="ad-section">
-      <h2>📶 Recommended Wi-Fi Rental in Japan</h2>
-      <p>Stay connected from day one in Japan. These services deliver Wi-Fi to your door or hotel.</p>
-      <div class="ad-grid">
-        <div class="ad-item">
-          <a href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DOYXO2+42XQ+614CX" rel="nofollow">
-            <img border="0" width="234" height="60" alt="WiFi Rental Japan" src="https://www27.a8.net/svt/bgt?aid=260412254828&wid=001&eno=01&mid=s00000019043001013000&mc=1">
-          </a>
-          <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1JDQ+DOYXO2+42XQ+614CX" alt="">
-          <span class="ad-label">WiFi Rental – Next Day Delivery</span>
+    <!-- Oakhouse -->
+    <h2>🏠 Share Houses for Foreigners</h2>
+    <p>No guarantor needed. Fully furnished. English support available.</p>
+    <div class="ad-grid">
+      <div class="ad-card">
+        <div class="ad-card-info">
+          <h3>Oakhouse – Japan's Largest Share House Network</h3>
+          <p>500+ properties across Japan. No guarantor required. Move in fast.</p>
         </div>
-        <div class="ad-item">
-          <a href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DOYXO2+42XQ+60H7L" rel="nofollow">
-            <img border="0" width="120" height="60" alt="WiFi Rental Japan" src="https://www21.a8.net/svt/bgt?aid=260412254828&wid=001&eno=01&mid=s00000019043001010000&mc=1">
-          </a>
-          <img border="0" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1JDQ+DOYXO2+42XQ+60H7L" alt="">
-          <span class="ad-label">WiFi Rental – Compact Plan</span>
+        <a class="ad-btn" href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DB9YR6+41A0+5Z6WX" rel="nofollow">View Rooms →</a>
+        <img class="tracking-pixel" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B1JDQ+DB9YR6+41A0+5Z6WX" alt="">
+      </div>
+      <div class="ad-card">
+        <div class="ad-card-info">
+          <h3>Oakhouse – Find Your Perfect Room</h3>
+          <p>Short-term stays welcome. Bills included. Great for new arrivals.</p>
         </div>
+        <a class="ad-btn" href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DB9YR6+41A0+61RIA" rel="nofollow">Search Now →</a>
+        <img class="tracking-pixel" width="1" height="1" src="https://www11.a8.net/0.gif?a8mat=4B1JDQ+DB9YR6+41A0+61RIA" alt="">
+      </div>
+    </div>
+
+    <!-- CrossOneRoom -->
+    <h2>🏢 Apartments for Foreigners in Tokyo</h2>
+    <p>Furnished apartments with zero key money and zero agency fee.</p>
+    <div class="ad-grid">
+      <div class="ad-card">
+        <div class="ad-card-info">
+          <h3>CrossOneRoom – From ¥38,000/month</h3>
+          <p>Fully furnished Tokyo apartments. No guarantor needed. Foreign residents welcome.</p>
+        </div>
+        <a class="ad-btn" href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DCGTYQ+4EZ2+BYLJL" rel="nofollow">See Listings →</a>
+        <img class="tracking-pixel" width="1" height="1" src="https://www14.a8.net/0.gif?a8mat=4B1JDQ+DCGTYQ+4EZ2+BYLJL" alt="">
+      </div>
+    </div>
+
+    <!-- WiFi -->
+    <h2>📶 Wi-Fi Rental in Japan</h2>
+    <p>Stay connected from day one. Delivered to your door or hotel.</p>
+    <div class="ad-grid">
+      <div class="ad-card">
+        <div class="ad-card-info">
+          <h3>WiFi Rental – Next Day Delivery</h3>
+          <p>Unlimited data. Delivered next day. Perfect for new arrivals.</p>
+        </div>
+        <a class="ad-btn" href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DOYXO2+42XQ+614CX" rel="nofollow">Rent Now →</a>
+        <img class="tracking-pixel" width="1" height="1" src="https://www10.a8.net/0.gif?a8mat=4B1JDQ+DOYXO2+42XQ+614CX" alt="">
+      </div>
+    </div>
+
+    <!-- eSIM -->
+    <h2>📱 eSIM for Japan & Global Travel</h2>
+    <p>Works in 190+ countries. No physical SIM needed. Set up in minutes.</p>
+    <div class="ad-grid">
+      <div class="ad-card">
+        <div class="ad-card-info">
+          <h3>JAPAN &amp; GLOBAL eSIM – 190 Countries Covered</h3>
+          <p>Buy before you land. Activate instantly. No contracts.</p>
+        </div>
+        <a class="ad-btn" href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DQ5SVM+5HZI+5YJRM" rel="nofollow">Get eSIM →</a>
+        <img class="tracking-pixel" width="1" height="1" src="https://www17.a8.net/0.gif?a8mat=4B1JDQ+DQ5SVM+5HZI+5YJRM" alt="">
       </div>
     </div>
 
