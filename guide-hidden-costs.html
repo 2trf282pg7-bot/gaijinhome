@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Japan Apartment Costs: What Nobody Tells You Before You Sign | GaijinHome</title>
+  <meta name="description" content="The real cost of renting in Japan — key money, deposits, agency fees, cleaning fees, insurance. Worst-case vs optimized examples on an ¥80,000/month apartment." />
+  <link rel="canonical" href="https://gaijinhome.com/guide-hidden-costs" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <style>
+    :root{--red:#E8372A;--red-dark:#c42d21;--ink:#0F0E0C;--cream:#FDFAF5;--cream2:#F5F0E8;--muted:#7a7570;--border:#e0d9cf;--white:#ffffff;--radius:12px}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
+    h1,h2,h3,h4,.brand{font-family:'Syne',sans-serif}
+    nav{background:var(--ink);padding:0 5vw;display:flex;align-items:center;justify-content:space-between;min-height:60px;gap:16px}
+    .brand{color:var(--white);font-size:1.3rem;font-weight:800;letter-spacing:-0.03em;text-decoration:none}
+    .brand span{color:var(--red)}
+    .nav-links{display:flex;gap:4px;list-style:none;flex-wrap:wrap}
+    .nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;font-size:0.82rem;font-weight:500;padding:6px 10px;border-radius:6px;transition:all 0.2s;white-space:nowrap}
+    .nav-links a:hover{color:var(--white);background:rgba(255,255,255,0.1)}
+    .guide-hero{background:var(--ink);color:var(--white);padding:64px 5vw 80px}
+    .breadcrumb{font-size:0.8rem;color:rgba(255,255,255,0.4);margin-bottom:20px}
+    .breadcrumb a{color:rgba(255,255,255,0.4);text-decoration:none}
+    .guide-label{font-size:0.75rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--red);margin-bottom:12px}
+    .guide-hero h1{font-size:clamp(1.8rem,4vw,3rem);font-weight:800;letter-spacing:-0.03em;line-height:1.15;margin-bottom:16px}
+    .guide-meta{color:rgba(255,255,255,0.5);font-size:0.88rem;display:flex;gap:20px;flex-wrap:wrap}
+    .content{max-width:900px;margin:0 auto;padding:60px 5vw}
+    article h2{font-size:1.55rem;font-weight:800;letter-spacing:-0.03em;margin:52px 0 16px;padding-top:52px;border-top:1px solid var(--border)}
+    article h2:first-of-type{margin-top:0;padding-top:0;border-top:none}
+    article h3{font-size:1.1rem;font-weight:700;margin:24px 0 10px}
+    article p{margin-bottom:14px;color:#3a3835;font-size:0.97rem}
+    article ul{padding-left:22px;margin-bottom:14px;display:flex;flex-direction:column;gap:6px}
+    article li{font-size:0.95rem;color:#3a3835;line-height:1.6}
+    .cost-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.9rem}
+    .cost-table th{background:var(--ink);color:var(--white);font-family:'Syne',sans-serif;font-weight:700;padding:12px 16px;text-align:left;font-size:0.85rem}
+    .cost-table td{padding:12px 16px;border-bottom:1px solid var(--border)}
+    .cost-table tr:nth-child(even) td{background:var(--cream2)}
+    .cost-table tr:last-child td{border-bottom:none;font-weight:700;background:rgba(232,55,42,0.06)}
+    .scenario-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:32px 0}
+    @media(max-width:600px){.scenario-grid{grid-template-columns:1fr}}
+    .scenario-card{border-radius:var(--radius);padding:28px;border:1px solid var(--border)}
+    .scenario-worst{background:rgba(232,55,42,0.05);border-color:rgba(232,55,42,0.3)}
+    .scenario-best{background:rgba(26,158,90,0.05);border-color:rgba(26,158,90,0.3)}
+    .scenario-label{font-family:'Syne',sans-serif;font-size:0.75rem;font-weight:800;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px}
+    .scenario-worst .scenario-label{color:var(--red)}
+    .scenario-best .scenario-label{color:#1a9e5a}
+    .scenario-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:16px}
+    .scenario-line{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:0.88rem}
+    .scenario-line:last-of-type{border-bottom:none}
+    .scenario-item{color:var(--muted)}
+    .scenario-amount{font-weight:600;color:var(--ink)}
+    .scenario-total{margin-top:16px;padding-top:16px;border-top:2px solid;display:flex;justify-content:space-between;align-items:center}
+    .scenario-worst .scenario-total{border-color:rgba(232,55,42,0.4)}
+    .scenario-best .scenario-total{border-color:rgba(26,158,90,0.4)}
+    .scenario-total-label{font-family:'Syne',sans-serif;font-weight:800;font-size:0.9rem}
+    .scenario-total-amount{font-family:'Syne',sans-serif;font-weight:800;font-size:1.3rem}
+    .scenario-worst .scenario-total-amount{color:var(--red)}
+    .scenario-best .scenario-total-amount{color:#1a9e5a}
+    .tip-box{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);padding:24px;margin:20px 0}
+    .tip-box h4{font-family:'Syne',sans-serif;font-weight:700;font-size:0.9rem;margin-bottom:10px}
+    .tip-box p,.tip-box ul{font-size:0.9rem;color:#3a3835;margin-bottom:8px}
+    .tip-box ul{padding-left:18px;display:flex;flex-direction:column;gap:4px}
+    .city-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:0.9rem}
+    .city-table th{background:var(--ink2,#2a2825);color:var(--white);font-family:'Syne',sans-serif;font-weight:700;padding:12px 16px;text-align:left;font-size:0.85rem}
+    .city-table td{padding:12px 16px;border-bottom:1px solid var(--border)}
+    .city-table tr:nth-child(even) td{background:var(--cream2)}
+    footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:40px 5vw;text-align:center;font-size:0.85rem}
+    footer a{color:rgba(255,255,255,0.5);text-decoration:none}
+    .footer-brand-f{color:var(--white);font-family:'Syne',sans-serif;font-weight:800;font-size:1.2rem;display:block;margin-bottom:8px}
+    .footer-brand-f span{color:var(--red)}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="brand">Gaijin<span>Home</span></a>
+  <ul class="nav-links">
+    <li><a href="/">Home</a></li>
+    <li><a href="/guide-complete">Full Guide</a></li>
+    <li><a href="/guide-no-guarantor">No Guarantor</a></li>
+    <li><a href="/guide-rejection">Got Rejected?</a></li>
+    <li><a href="/guide-hidden-costs">Hidden Costs</a></li>
+    <li><a href="/guide-osaka-kansai">Osaka &amp; Kansai</a></li>
+    <li><a href="/guide-visa-breakdown">Visa Guide</a></li>
+  </ul>
+</nav>
+
+<div class="guide-hero">
+  <div class="breadcrumb"><a href="/">GaijinHome</a> › Guide</div>
+  <div class="guide-label">Cost Guide · 2026</div>
+  <h1>Japan Apartment Costs: What Nobody Tells You Before You Sign</h1>
+  <div class="guide-meta">
+    <span>📅 Updated April 2026</span>
+    <span>⏱ 8 min read</span>
+    <span>Real numbers, no fluff</span>
+  </div>
+</div>
+
+<div class="content">
+  <article>
+    <h2>Every Cost, Explained</h2>
+    <p>Moving into an apartment in Japan involves far more than just the first month's rent. The Japanese system has accumulated a unique set of fees over decades, some of which are legally required, others practically required, and a few that are optional but pushed aggressively by agencies. Here's every line item, explained honestly.</p>
+
+    <table class="cost-table">
+      <thead><tr><th>Cost</th><th>Japanese Term</th><th>Typical Amount</th><th>Refundable?</th><th>Notes</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Deposit</strong></td><td>敷金 (Shikikin)</td><td>1–2 months' rent</td><td>Partially</td><td>Returned minus cleaning & repair costs. Negotiate itemized deductions when leaving.</td></tr>
+        <tr><td><strong>Key Money</strong></td><td>礼金 (Reikin)</td><td>0–2 months' rent</td><td>Never</td><td>A gift to the landlord. Historically mandatory, now negotiable or zero in many cases.</td></tr>
+        <tr><td><strong>Agency Fee</strong></td><td>仲介手数料</td><td>1 month + 10% tax</td><td>Never</td><td>Legally capped at 1 month's rent. Some agencies charge less — always check.</td></tr>
+        <tr><td><strong>Guarantor Company Fee</strong></td><td>保証料</td><td>0.5–1 month upfront + ¥10K–20K/year</td><td>Never</td><td>Increasingly mandatory. Fee varies by company and visa type.</td></tr>
+        <tr><td><strong>Fire Insurance</strong></td><td>火災保険</td><td>¥15,000–¥30,000 / 2 years</td><td>Never</td><td>Mandatory but you can choose your own insurer. Don't accept the agency's overpriced plan.</td></tr>
+        <tr><td><strong>Key Replacement</strong></td><td>鍵交換費用</td><td>¥15,000–¥25,000</td><td>Never</td><td>You pay for new locks. Standard practice. Non-negotiable in most cases.</td></tr>
+        <tr><td><strong>Admin/Setup Fee</strong></td><td>事務手数料</td><td>¥10,000–¥30,000</td><td>Never</td><td>Sometimes charged by management company. Negotiable — push back.</td></tr>
+        <tr><td><strong>First Month's Rent</strong></td><td>月額賃料</td><td>1 month (pro-rated)</td><td>N/A</td><td>Pro-rated from your move-in date.</td></tr>
+        <tr><td><strong>Total Range</strong></td><td>—</td><td><strong>3–6× monthly rent</strong></td><td>—</td><td>On an ¥80,000/mo apartment: ¥240,000–¥480,000 upfront.</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Worst Case vs. Optimized — Real Numbers</h2>
+    <p>Using an ¥80,000/month apartment as our example:</p>
+
+    <div class="scenario-grid">
+      <div class="scenario-card scenario-worst">
+        <div class="scenario-label">Worst Case</div>
+        <div class="scenario-title">Standard Tokyo apartment, everything maxed</div>
+        <div class="scenario-line"><span class="scenario-item">Deposit (2 months)</span><span class="scenario-amount">¥160,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Key money (2 months)</span><span class="scenario-amount">¥160,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Agency fee (1 month + tax)</span><span class="scenario-amount">¥88,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Guarantor company fee</span><span class="scenario-amount">¥80,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Fire insurance (agency plan)</span><span class="scenario-amount">¥30,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Key replacement</span><span class="scenario-amount">¥25,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Admin fee</span><span class="scenario-amount">¥30,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">First month rent</span><span class="scenario-amount">¥80,000</span></div>
+        <div class="scenario-total"><span class="scenario-total-label">Total</span><span class="scenario-total-amount">¥653,000</span></div>
+      </div>
+      <div class="scenario-card scenario-best">
+        <div class="scenario-label">Optimized</div>
+        <div class="scenario-title">Zero key money, own insurance, Osaka or suburban Tokyo</div>
+        <div class="scenario-line"><span class="scenario-item">Deposit (1 month)</span><span class="scenario-amount">¥80,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Key money (zero)</span><span class="scenario-amount">¥0</span></div>
+        <div class="scenario-line"><span class="scenario-item">Agency fee (half month)</span><span class="scenario-amount">¥44,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Guarantor company fee</span><span class="scenario-amount">¥40,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Own fire insurance</span><span class="scenario-amount">¥12,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Key replacement</span><span class="scenario-amount">¥18,000</span></div>
+        <div class="scenario-line"><span class="scenario-item">Admin fee (waived)</span><span class="scenario-amount">¥0</span></div>
+        <div class="scenario-line"><span class="scenario-item">First month rent</span><span class="scenario-amount">¥80,000</span></div>
+        <div class="scenario-total"><span class="scenario-total-label">Total</span><span class="scenario-total-amount">¥274,000</span></div>
+      </div>
+    </div>
+
+    <p>The difference: <strong>¥379,000</strong> — nearly 5 months' rent — just by knowing what to look for and negotiate.</p>
+
+    <h2>How to Find Zero Key Money Apartments</h2>
+    <p>礼金ゼロ (rei-kin zero) apartments have become increasingly common, especially in Osaka and suburban Tokyo. Here's how to find them:</p>
+    <ul>
+      <li>Filter explicitly for 礼金0 on SUUMO, HOME'S, or Best-Estate.jp</li>
+      <li>Newer buildings (after 2010) are more likely to have zero key money</li>
+      <li>Osaka and Kansai generally have fewer key money requirements than Tokyo</li>
+      <li>Landlords with high vacancy rates are often willing to waive key money</li>
+      <li>Move in off-peak season (May–August, November–December) for more negotiating power</li>
+    </ul>
+
+    <div class="tip-box">
+      <h4>💡 Fire Insurance: Use Your Own</h4>
+      <p>Agencies will present their affiliated insurance plan as mandatory. It's not. You are legally entitled to choose your own fire insurance, as long as it meets minimum coverage requirements. Cheaper options (Rakuten Insurance, Cheers Insurance) run ¥10,000–¥15,000 for 2 years vs ¥25,000–¥30,000 for agency-pushed plans. Just tell the agency "I'll arrange my own insurance" before signing.</p>
+    </div>
+
+    <h2>Tokyo vs. Osaka: Cost Comparison</h2>
+    <table class="city-table">
+      <thead><tr><th>Cost Factor</th><th>Tokyo (Central)</th><th>Osaka (Central)</th></tr></thead>
+      <tbody>
+        <tr><td>Average 1K rent</td><td>¥85,000–¥115,000</td><td>¥60,000–¥80,000</td></tr>
+        <tr><td>Key money prevalence</td><td>Common (50–70% of listings)</td><td>Less common (20–40%)</td></tr>
+        <tr><td>Deposit</td><td>1–2 months typical</td><td>1 month typical</td></tr>
+        <tr><td>Agency fee</td><td>1 month standard</td><td>1 month standard</td></tr>
+        <tr><td>Total move-in (typical)</td><td>4–6× monthly rent</td><td>3–4× monthly rent</td></tr>
+        <tr><td>Zero key money availability</td><td>Growing (especially suburban)</td><td>Widely available</td></tr>
+      </tbody>
+    </table>
+
+    <h2>What You Pay When You Leave</h2>
+    <p>Move-out costs are a common source of disputes. Japan's guidelines (国土交通省ガイドライン) specify what tenants are and aren't responsible for:</p>
+    <ul>
+      <li><strong>Tenant responsibility:</strong> Damage you caused (holes, stains, burns), excessive dirt beyond normal use</li>
+      <li><strong>Landlord responsibility:</strong> Normal wear and tear, fading from sunlight, scuffs from furniture placement</li>
+      <li>Always photograph every mark and damage when you move IN and share with the agency</li>
+      <li>Request an itemized breakdown of any deposit deductions — don't accept vague "cleaning fee" charges</li>
+      <li>If disputed, you can contact the Japan Housing Finance Agency (住宅金融支援機構) or file a small claims court case</li>
+    </ul>
+  </article>
+</div>
+
+<footer>
+  <a href="/" class="footer-brand-f">Gaijin<span>Home</span></a>
+  <p>Honest housing help for foreigners in Japan · <a href="/">gaijinhome.com</a></p>
+  <p style="margin-top:8px;font-size:0.78rem;">This page contains affiliate links. We only recommend services we'd use ourselves.</p>
+</footer>
+</body>
+</html>
