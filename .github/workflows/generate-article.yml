@@ -1,0 +1,40 @@
+name: Auto Generate Article
+
+on:
+  schedule:
+    - cron: '0 0 * * 1'
+  workflow_dispatch:
+
+jobs:
+  generate-article:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          pip install anthropic
+
+      - name: Generate article
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          python generate_article.py
+
+      - name: Commit and push new article
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GaijinHome Bot"
+          git add articles/ sitemap.xml done_keywords.json
+          git diff --staged --quiet || git commit -m "Auto: Add new SEO article $(date +'%Y-%m-%d')"
+          git push
+          
