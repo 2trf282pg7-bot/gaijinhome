@@ -1,20 +1,15 @@
 name: Update Sitemap + Traffic Check
 
 on:
-  # sitemapはarticle生成後に自動実行
   workflow_run:
     workflows: ["Generate SEO Article"]
     types:
       - completed
-  # 流入チェックは毎日朝9時（JST）に実行
-  schedule:
-    - cron: '0 0 * * *'
   workflow_dispatch:
 
 jobs:
   update-sitemap:
     runs-on: ubuntu-latest
-    if: ${{ github.event_name != 'schedule' }}
     steps:
       - uses: actions/checkout@v3
         with:
@@ -35,24 +30,3 @@ jobs:
           git add sitemap.xml
           git diff --staged --quiet || git commit -m "Auto: Update sitemap.xml $(date +'%Y-%m-%d')"
           git push
-
-  check-traffic:
-    runs-on: ubuntu-latest
-    if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.11'
-
-      - name: Install dependencies
-        run: pip install google-auth google-auth-httplib2 google-api-python-client requests
-
-      - name: Check traffic and notify
-        env:
-          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
-          NOTIFY_EMAIL: ${{ secrets.NOTIFY_EMAIL }}
-          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
-        run: python check_traffic.py
