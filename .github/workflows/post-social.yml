@@ -8,7 +8,7 @@ on:
 jobs:
   post-social:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -37,7 +37,7 @@ jobs:
       - name: Commit updated logs
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GaijinHome Bot"
+          git config --local user.name "RetireAbroadHub Bot"
           git add social_log.json done_social.json
           git diff --staged --quiet || git commit -m "Auto: Social post log $(date +'%Y-%m-%d')"
           git push

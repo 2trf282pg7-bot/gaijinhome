@@ -1,0 +1,46 @@
+{
+  "high_ctr_topics": [
+    "medicare penalty abroad",
+    "D7 visa rejection reasons",
+    "FBAR filing expat",
+    "health insurance denial abroad",
+    "social security reduction WEP GPO",
+    "mexico residente temporal requirements",
+    "portugal NHR tax regime",
+    "FATCA reporting requirements",
+    "insurance claim denied abroad",
+    "portugal property purchase trap"
+  ],
+  "high_conversion_patterns": [
+    "Why Americans Get Rejected for the [Document/Visa]",
+    "The [X] Trap That Costs Retirees $[amount]",
+    "What Happens When Your [Claim/Application] Is [Denied/Rejected] Abroad",
+    "The Hidden Cost of [Action] When Retiring in [Country]",
+    "How to Avoid the [X] Penalty When Retiring Abroad",
+    "What Nobody Tells You About [Topic] in [Portugal/Mexico]"
+  ],
+  "high_epc_affiliates": [
+    "Cigna Global Health Insurance",
+    "IMG International Insurance",
+    "Greenback Expat Tax Services",
+    "Wise International Transfers",
+    "SafetyWing Nomad Insurance",
+    "Charles Schwab International Account"
+  ],
+  "low_performing_topics": [
+    "best country to retire abroad",
+    "top 10 retirement destinations",
+    "cheapest countries for retirement",
+    "retire abroad on social security",
+    "retiring abroad pros and cons general",
+    "living abroad is wonderful",
+    "expat lifestyle tips",
+    "best places to retire in europe"
+  ],
+  "search_intent": {
+    "informational": "structured explanation with background, root causes, and links to official government sources",
+    "commercial": "comparison tables with pros/cons, real cost data, affiliate recommendations with [PR] labels and commission disclosure",
+    "transactional": "numbered step-by-step checklists with exact document names, government form numbers, office addresses, and processing fees",
+    "emotional": "lead with a failure case and dollar consequence, validate the reader's anxiety, then provide a clear recovery path"
+  }
+}

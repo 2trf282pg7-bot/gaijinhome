@@ -1,62 +1,98 @@
 {
-  "category_a_housing": [
-    "apartment application rejected foreigner japan reason",
-    "guarantor refused japan foreigner alternative",
-    "real estate agent refusing foreigner japan",
-    "apartment deposit non-refundable japan dispute",
-    "key money foreigner japan what is it",
-    "share house foreigner rejected japan",
-    "apartment lease renewal foreigner japan problems",
-    "eviction notice japan foreigner rights",
-    "noise complaint japan foreigner how to handle",
-    "subletting rules japan foreigner violation"
+  "category_1_medicare_insurance": [
+    { "keyword": "medicare abroad coverage what happens", "intent": "informational" },
+    { "keyword": "medicare part b penalty abroad how to avoid", "intent": "emotional" },
+    { "keyword": "health insurance gap american retiree portugal", "intent": "emotional" },
+    { "keyword": "emergency room abroad american retiree bill", "intent": "emotional" },
+    { "keyword": "international health insurance pre existing condition retiree", "intent": "commercial" },
+    { "keyword": "cigna global vs img insurance retiree comparison", "intent": "commercial" },
+    { "keyword": "cobra coverage abroad american retiree", "intent": "informational" },
+    { "keyword": "american retiree portugal health insurance denied", "intent": "emotional" },
+    { "keyword": "medicare supplement abroad does it work", "intent": "informational" },
+    { "keyword": "how to avoid medicare penalty retiring abroad", "intent": "transactional" }
   ],
-  "category_b_banking": [
-    "bank account japan foreigner rejected reason",
-    "japan post bank foreigner denied",
-    "credit card rejected japan foreigner no credit history",
-    "rakuten card foreigner japan denied",
-    "bank account frozen japan foreigner what to do",
-    "wise transfer japan foreigner problem",
-    "international wire transfer japan limit foreigner",
-    "paypal japan foreigner verification problem",
-    "shinsei bank foreigner application failed",
-    "cryptocurrency exchange japan foreigner kyc failed"
+  "category_2_tax_fbar": [
+    { "keyword": "FBAR requirement american retiree abroad", "intent": "informational" },
+    { "keyword": "FATCA reporting foreign bank account retiree", "intent": "informational" },
+    { "keyword": "FBAR penalty willful non-filing retiree", "intent": "emotional" },
+    { "keyword": "portugal NHR tax regime american retiree", "intent": "commercial" },
+    { "keyword": "double taxation portugal us tax treaty retiree", "intent": "informational" },
+    { "keyword": "social security taxed abroad american retiree", "intent": "informational" },
+    { "keyword": "foreign earned income exclusion retirement income", "intent": "informational" },
+    { "keyword": "FATCA specialized CPA cost american expat", "intent": "transactional" },
+    { "keyword": "mexico tax resident american retiree consequences", "intent": "emotional" },
+    { "keyword": "how to file FBAR american retiree portugal mexico", "intent": "transactional" }
   ],
-  "category_c_phone": [
-    "phone contract rejected japan foreigner reason",
-    "docomo softbank au foreigner denied",
-    "sim card japan foreigner without residence card",
-    "mynumber card required phone japan foreigner",
-    "mobile payment japan foreigner not working",
-    "rakuten mobile foreigner application failed",
-    "iphone installment plan japan foreigner denied",
-    "wifi router japan foreigner contract problem",
-    "line mobile foreigner japan setup problem",
-    "esim japan foreigner which works tourist"
+  "category_3_visa_residency": [
+    { "keyword": "portugal D7 visa rejected american retiree reason", "intent": "emotional" },
+    { "keyword": "D7 visa income requirement american retiree", "intent": "informational" },
+    { "keyword": "portugal NHR vs regular residency american retiree", "intent": "commercial" },
+    { "keyword": "mexico residente temporal visa american retiree denied", "intent": "emotional" },
+    { "keyword": "portugal golden visa american retiree requirements", "intent": "commercial" },
+    { "keyword": "AIMA appointment wait time portugal retiree", "intent": "informational" },
+    { "keyword": "mexico residente permanente american retiree how to get", "intent": "transactional" },
+    { "keyword": "portugal residency renewal documents american retiree", "intent": "transactional" },
+    { "keyword": "mexico immigration fine overstay american retiree", "intent": "emotional" },
+    { "keyword": "portugal citizenship requirements american retiree path", "intent": "informational" }
   ],
-  "category_d_visa": [
-    "residence card renewal japan wrong documents",
-    "visa extension rejected japan reason",
-    "change visa status japan denied what to do",
-    "working holiday visa japan bank balance rejected",
-    "student visa japan part time work hours exceeded",
-    "dependent visa japan spouse working restriction",
-    "permanent residency application rejected japan",
-    "re-entry permit japan forgot what to do",
-    "certificate of eligibility delay japan",
-    "japan visa overstay accidentally what happens"
+  "category_4_banking_finance": [
+    { "keyword": "open bank account portugal american retiree problems", "intent": "emotional" },
+    { "keyword": "transfer large sum portugal mexico american retiree", "intent": "transactional" },
+    { "keyword": "foreign bank account reporting requirement american retiree", "intent": "informational" },
+    { "keyword": "charles schwab international account retiree review", "intent": "commercial" },
+    { "keyword": "wise vs bank wire transfer mexico retiree comparison", "intent": "commercial" },
+    { "keyword": "portuguese bank account denied american retiree", "intent": "emotional" },
+    { "keyword": "pension direct deposit portugal mexico american retiree", "intent": "transactional" },
+    { "keyword": "currency exchange risk retiree abroad portugal mexico", "intent": "informational" },
+    { "keyword": "mexico bank account foreigner requirements", "intent": "transactional" },
+    { "keyword": "frozen bank account american retiree abroad what to do", "intent": "emotional" }
   ],
-  "category_e_daily": [
-    "national health insurance japan foreigner how to join",
-    "shakai hoken vs kokumin hoken foreigner confusion",
-    "pension refund japan foreigner how to claim",
-    "driving license conversion japan foreigner",
-    "mynumber card foreigner how to get problems",
-    "tax return japan foreigner first time confused",
-    "electricity gas contract japan foreigner denied",
-    "hospital japan foreigner no insurance emergency",
-    "garbage rules japan foreigner violation warning",
-    "driving without japanese license japan foreigner risk"
+  "category_5_real_estate": [
+    { "keyword": "buying property portugal american retiree problems", "intent": "emotional" },
+    { "keyword": "portugal property purchase tax american buyer", "intent": "informational" },
+    { "keyword": "mexico ejido land foreigner trap", "intent": "emotional" },
+    { "keyword": "portugal vs mexico property buying foreigner comparison", "intent": "commercial" },
+    { "keyword": "renting vs buying portugal retiree financial analysis", "intent": "commercial" },
+    { "keyword": "mexico fideicomiso trust american retiree property", "intent": "informational" },
+    { "keyword": "portugal property lawyer american buyer required", "intent": "transactional" },
+    { "keyword": "american retiree portugal real estate agent recommended", "intent": "commercial" },
+    { "keyword": "mexico coastal property restrictions american retiree", "intent": "informational" },
+    { "keyword": "portugal lisbon algarve property budget american retiree", "intent": "commercial" }
+  ],
+  "category_6_social_security": [
+    { "keyword": "social security abroad reduction WEP GPO retiree", "intent": "informational" },
+    { "keyword": "social security direct deposit portugal mexico retiree", "intent": "transactional" },
+    { "keyword": "collect social security from abroad american retiree", "intent": "informational" },
+    { "keyword": "social security WEP penalty foreign pension retiree", "intent": "emotional" },
+    { "keyword": "ss benefits taxable portugal tax treaty retiree", "intent": "informational" },
+    { "keyword": "social security working abroad affect benefits retiree", "intent": "informational" },
+    { "keyword": "totalization agreement portugal mexico social security", "intent": "informational" },
+    { "keyword": "social security suspend restart abroad strategy retiree", "intent": "commercial" },
+    { "keyword": "american retiree ss benefits withheld abroad what to do", "intent": "emotional" },
+    { "keyword": "maximize social security retiring abroad timing strategy", "intent": "commercial" }
+  ],
+  "category_7_healthcare_local": [
+    { "keyword": "portugal SNS healthcare american retiree how to join", "intent": "transactional" },
+    { "keyword": "mexico IMSS voluntary enrollment american retiree cost", "intent": "transactional" },
+    { "keyword": "portugal private vs public healthcare american retiree", "intent": "commercial" },
+    { "keyword": "mexico healthcare quality american retiree honest review", "intent": "commercial" },
+    { "keyword": "pre-existing condition portugal health insurance denied", "intent": "emotional" },
+    { "keyword": "dental costs portugal vs mexico american retiree comparison", "intent": "commercial" },
+    { "keyword": "portugal NHR healthcare coverage american retiree", "intent": "informational" },
+    { "keyword": "mexico emergency medical evacuation insurance retiree", "intent": "commercial" },
+    { "keyword": "portugal hospital english speaking american retiree", "intent": "informational" },
+    { "keyword": "prescription medication supply american retiree portugal mexico", "intent": "informational" }
+  ],
+  "category_8_cost_of_living": [
+    { "keyword": "portugal cost of living american retiree budget realistic", "intent": "informational" },
+    { "keyword": "mexico cost of living retired american honest breakdown", "intent": "informational" },
+    { "keyword": "portugal lisbon rent shock american retiree", "intent": "emotional" },
+    { "keyword": "hidden costs retiring portugal american retiree", "intent": "emotional" },
+    { "keyword": "mexico san miguel allende cost of living american retiree", "intent": "informational" },
+    { "keyword": "portugal algarve american retiree monthly budget", "intent": "informational" },
+    { "keyword": "car ownership portugal american retiree import tax", "intent": "informational" },
+    { "keyword": "mexico utilities cost american retiree house budget", "intent": "informational" },
+    { "keyword": "portugal vs mexico retirement cost comparison american", "intent": "commercial" },
+    { "keyword": "inflation impact american retiree portugal mexico budget", "intent": "informational" }
   ]
 }

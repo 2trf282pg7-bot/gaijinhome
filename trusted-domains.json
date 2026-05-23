@@ -1,0 +1,74 @@
+{
+  "domains": [
+    {
+      "name": "IRS",
+      "url": "https://www.irs.gov",
+      "topics": ["FBAR", "FATCA", "foreign income exclusion", "tax filing abroad", "Form 2555", "Form 8938"]
+    },
+    {
+      "name": "FinCEN (FBAR filing)",
+      "url": "https://www.fincen.gov",
+      "topics": ["FBAR FinCEN 114", "Bank Secrecy Act", "foreign account reporting", "FBAR penalties"]
+    },
+    {
+      "name": "CMS (Medicare)",
+      "url": "https://www.cms.gov",
+      "topics": ["Medicare coverage abroad", "Part B enrollment", "Part D penalties", "IRMAA surcharges"]
+    },
+    {
+      "name": "Medicare.gov",
+      "url": "https://www.medicare.gov",
+      "topics": ["Medicare abroad", "enrollment periods", "late enrollment penalty", "supplement plans"]
+    },
+    {
+      "name": "Social Security Administration",
+      "url": "https://www.ssa.gov",
+      "topics": ["social security abroad", "WEP", "GPO", "benefits direct deposit", "totalization agreements"]
+    },
+    {
+      "name": "US Embassy Portugal",
+      "url": "https://pt.usembassy.gov",
+      "topics": ["Portugal US citizens", "notarial services Lisbon", "American Citizen Services Portugal", "emergency assistance"]
+    },
+    {
+      "name": "US Embassy Mexico",
+      "url": "https://mx.usembassy.gov",
+      "topics": ["Mexico US citizens", "ACSS Mexico", "American Citizen Services Mexico", "warden messages"]
+    },
+    {
+      "name": "AIMA Portugal (formerly SEF)",
+      "url": "https://www.aima.gov.pt",
+      "topics": ["D7 visa Portugal", "residency permit Portugal", "NHR application", "residence renewal"]
+    },
+    {
+      "name": "AT Portugal Tax Authority",
+      "url": "https://www.portaldasfinancas.gov.pt",
+      "topics": ["NHR tax regime Portugal", "Portuguese IRS", "tax registration NIF", "income tax Portugal"]
+    },
+    {
+      "name": "INM Mexico Immigration",
+      "url": "https://www.inm.gob.mx",
+      "topics": ["Mexico visa types", "residente temporal", "residente permanente", "FM3", "immigration fines"]
+    },
+    {
+      "name": "SAT Mexico Tax Authority",
+      "url": "https://www.sat.gob.mx",
+      "topics": ["Mexico taxes foreigners", "RFC number", "tax resident Mexico", "income reporting Mexico"]
+    },
+    {
+      "name": "IMSS Mexico",
+      "url": "https://www.imss.gob.mx",
+      "topics": ["IMSS voluntary enrollment", "Mexico public healthcare", "IMSS cost retirees", "voluntary insurance"]
+    },
+    {
+      "name": "SNS Portugal Health Service",
+      "url": "https://www.sns.gov.pt",
+      "topics": ["SNS registration Portugal", "Portugal public healthcare", "NHS Portugal", "utente number"]
+    },
+    {
+      "name": "US State Department Travel",
+      "url": "https://travel.state.gov",
+      "topics": ["citizen services abroad", "health advisories", "American Citizens Services", "emergency assistance abroad"]
+    }
+  ]
+}
