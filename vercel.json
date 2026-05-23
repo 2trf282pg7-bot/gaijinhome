@@ -35,33 +35,33 @@
       "permanent": true
     },
     {
-      "source": "/guide-medicare.html",
-      "destination": "/guide-medicare",
+      "source": "/guide-complete.html",
+      "destination": "/guide-complete",
       "permanent": true
     },
     {
-      "source": "/guide-taxes-fbar.html",
-      "destination": "/guide-taxes-fbar",
+      "source": "/guide-no-guarantor.html",
+      "destination": "/guide-no-guarantor",
       "permanent": true
     },
     {
-      "source": "/guide-portugal.html",
-      "destination": "/guide-portugal",
+      "source": "/guide-rejection.html",
+      "destination": "/guide-rejection",
       "permanent": true
     },
     {
-      "source": "/guide-mexico.html",
-      "destination": "/guide-mexico",
+      "source": "/guide-hidden-costs.html",
+      "destination": "/guide-hidden-costs",
       "permanent": true
     },
     {
-      "source": "/guide-insurance.html",
-      "destination": "/guide-insurance",
+      "source": "/guide-osaka-kansai.html",
+      "destination": "/guide-osaka-kansai",
       "permanent": true
     },
     {
-      "source": "/guide-banking.html",
-      "destination": "/guide-banking",
+      "source": "/guide-visa-breakdown.html",
+      "destination": "/guide-visa-breakdown",
       "permanent": true
     },
     {

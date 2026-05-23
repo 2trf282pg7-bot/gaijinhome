@@ -1,45 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://retireabroad-hub.com/</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://gaijinhome.com/</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://retireabroad-hub.com/guide-medicare</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://gaijinhome.com/guide-complete</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://retireabroad-hub.com/guide-taxes-fbar</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://gaijinhome.com/guide-no-guarantor</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://retireabroad-hub.com/guide-portugal</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://gaijinhome.com/guide-rejection</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://retireabroad-hub.com/guide-mexico</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://gaijinhome.com/guide-hidden-costs</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://retireabroad-hub.com/guide-insurance</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://gaijinhome.com/guide-osaka-kansai</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://retireabroad-hub.com/guide-banking</loc>
-    <lastmod>2026-05-01</lastmod>
+    <loc>https://gaijinhome.com/guide-visa-breakdown</loc>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-apartment-hunting-japan-student-visa.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-apartment-japan-without-japanese-guarantor.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-cheap-apartments-tokyo-foreigner.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-friendly-apartments-osaka.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-furnished-apartments-tokyo-short-term-foreigner.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-how-to-pass-credit-check-japan-foreigner.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-how-to-rent-apartment-japan-work-visa.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-japan-apartment-deposit-refund-tips.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-monthly-mansion-japan-foreigner.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-no-guarantor-apartments-tokyo.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-osaka-foreigner-apartment-no-guarantor.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-renting-apartment-japan-permanent-resident.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-share-house-tokyo-foreigner-english.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-ur-housing-foreigner-apply.html</loc>
+    <lastmod>2026-05-01</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-renting-japan-self-employed.html</loc>
+    <lastmod>2026-05-02</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-english-speaking-real-estate-agent-tokyo.html</loc>
+    <lastmod>2026-05-16</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-apartment-kyoto-english-speaking-landlord.html</loc>
+    <lastmod>2026-05-17</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-apartment-in-japan-without-bank-account.html</loc>
+    <lastmod>2026-05-18</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-friendly-apartments-tokyo-english-landlord.html</loc>
+    <lastmod>2026-05-19</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-apartment-yokohama-english-speaking.html</loc>
+    <lastmod>2026-05-20</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-apartment-tokyo-bike-parking.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-apartment-nagoya-english-speaking.html</loc>
+    <lastmod>2026-05-22</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/guide-foreigner-apartment-fukuoka-english-speaking.html</loc>
+    <lastmod>2026-05-23</lastmod>
     <priority>0.8</priority>
   </url>
 </urlset>

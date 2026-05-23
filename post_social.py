@@ -15,29 +15,25 @@ twitter = tweepy.Client(
 )
 
 SOCIAL_TOPICS = [
-    {"topic": "the Medicare Part B penalty trap that surprises Americans retiring abroad", "url": "/guide-medicare.html"},
-    {"topic": "why Americans get rejected for the Portugal D7 visa and how to fix it", "url": "/guide-portugal.html"},
-    {"topic": "FBAR filing requirements that most American retirees abroad don't know about", "url": "/guide-taxes-fbar.html"},
-    {"topic": "what actually happens when your international health insurance claim is denied", "url": "/guide-insurance.html"},
-    {"topic": "Social Security WEP reduction that blindsides retirees with government pensions", "url": "/guide-taxes-fbar.html"},
-    {"topic": "the hidden costs of retiring in Portugal that expat blogs don't mention", "url": "/guide-portugal.html"},
-    {"topic": "Mexico residente temporal visa mistakes that American retirees make", "url": "/guide-mexico.html"},
-    {"topic": "how to transfer large sums abroad without triggering US bank holds", "url": "/guide-banking.html"},
-    {"topic": "Portugal NHR tax regime — what it actually does for American retirees", "url": "/guide-taxes-fbar.html"},
-    {"topic": "IMSS voluntary enrollment for American retirees in Mexico — honest cost breakdown", "url": "/guide-mexico.html"},
-    {"topic": "the real cost of buying property in Portugal as an American retiree", "url": "/guide-portugal.html"},
-    {"topic": "why Social Security direct deposit problems hit retirees moving to Portugal or Mexico", "url": "/guide-banking.html"},
+    {"topic": "common mistakes foreigners make when apartment hunting in Japan", "url": "/guide-complete.html"},
+    {"topic": "how to rent without a Japanese guarantor", "url": "/guide-no-guarantor.html"},
+    {"topic": "why foreigners get rejected by Japanese landlords", "url": "/guide-rejection.html"},
+    {"topic": "hidden costs when renting in Japan", "url": "/guide-hidden-costs.html"},
+    {"topic": "renting in Osaka vs Tokyo as a foreigner", "url": "/guide-osaka-kansai.html"},
+    {"topic": "which visa types Japanese landlords actually accept", "url": "/guide-visa-breakdown.html"},
+    {"topic": "share houses vs apartments for foreigners in Japan", "url": "/guide-no-guarantor.html"},
+    {"topic": "how to get your deposit back in Japan", "url": "/guide-hidden-costs.html"},
+    {"topic": "best areas in Tokyo for English-speaking foreigners", "url": "/guide-complete.html"},
+    {"topic": "working holiday visa apartment hunting Japan", "url": "/guide-visa-breakdown.html"},
 ]
 
-TWEET_SYSTEM_PROMPT = """You are a social media manager for RetireAbroadHub (retireabroad-hub.com).
-Write honest, direct tweets for Americans aged 55-70 who are seriously planning to retire in Portugal or Mexico.
-- Tone: candid and practical, not cheerleader-ish — these readers distrust hype
-- Lead with the problem or the surprising dollar consequence, not a lifestyle pitch
-- 2-3 hashtags: #RetireAbroad #PortugalExpat #MexicoExpat #ExpatRetirement
+TWEET_SYSTEM_PROMPT = """You are a social media manager for GaijinHome (gaijinhome.com).
+Write helpful, practical tweets for foreigners renting in Japan.
+- Genuine and human, not promotional
+- 2-3 hashtags: #expatjapan #movingtojapan #japanlife #tokyoliving
 - End with the provided URL
 - Under 270 characters total
 Output ONLY the tweet text."""
-
 
 def get_next_topic():
     done_file = "done_social.json"
@@ -53,24 +49,21 @@ def get_next_topic():
         json.dump(data, f)
     return topic_data
 
-
 def generate_tweet(topic, url):
-    full_url = f"https://retireabroad-hub.com{url}"
+    full_url = f"https://gaijinhome.com{url}"
     message = claude.messages.create(
         model="claude-opus-4-5",
         max_tokens=300,
         system=TWEET_SYSTEM_PROMPT,
-        messages=[{"role": "user", "content": f"Write a tweet about: {topic}\nEnd with: {full_url}"}],
+        messages=[{"role": "user", "content": f"Write a tweet about: {topic}\nEnd with: {full_url}"}]
     )
     return message.content[0].text.strip()
-
 
 def post_tweet(text):
     response = twitter.create_tweet(text=text)
     tweet_id = response.data["id"]
-    print(f"Posted: https://twitter.com/RetireAbroadHub/status/{tweet_id}")
+    print(f"Posted: https://twitter.com/GaijinHome/status/{tweet_id}")
     return tweet_id
-
 
 def log_post(topic, tweet_text, tweet_id):
     log_file = "social_log.json"
@@ -79,15 +72,9 @@ def log_post(topic, tweet_text, tweet_id):
             log = json.load(f)
     else:
         log = []
-    log.append({
-        "date": datetime.now().isoformat(),
-        "topic": topic,
-        "tweet": tweet_text,
-        "tweet_id": str(tweet_id),
-    })
+    log.append({"date": datetime.now().isoformat(), "topic": topic, "tweet": tweet_text, "tweet_id": str(tweet_id)})
     with open(log_file, "w") as f:
         json.dump(log, f, indent=2)
-
 
 def main():
     topic_data = get_next_topic()
@@ -96,7 +83,6 @@ def main():
     tweet_id = post_tweet(tweet_text)
     log_post(topic_data["topic"], tweet_text, tweet_id)
     print("✅ Done!")
-
 
 if __name__ == "__main__":
     main()
