@@ -4,9 +4,16 @@ import os
 import re
 import json
 import glob
+import sys
+import html
 from datetime import datetime
 
-client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
+# In --dry-run mode no API key is required and no API calls are made.
+DRY_RUN = "--dry-run" in sys.argv
+
+client = None
+if not DRY_RUN:
+    client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
 ARTICLE_SYSTEM_PROMPT = """You are writing for foreigners who are CURRENTLY STUCK with a
 specific bureaucratic or practical problem in Japan.
@@ -92,6 +99,91 @@ def get_next_keyword(keywords_data, done_keywords):
     return None, None
 
 
+VALID_CATEGORIES = {
+    "category_a_housing",
+    "category_b_banking",
+    "category_c_phone",
+    "category_d_visa",
+    "category_e_daily",
+}
+
+
+def extract_title(html_content):
+    """Pull the text inside the first <title> tag, if any."""
+    match = re.search(r"<title[^>]*>(.*?)</title>", html_content,
+                      re.IGNORECASE | re.DOTALL)
+    if match:
+        return html.unescape(match.group(1).strip())
+    return None
+
+
+def collect_article_titles():
+    """Scan articles/*.html (excluding index.html) and return their <title> text."""
+    titles = []
+    for filepath in sorted(glob.glob("articles/*.html")):
+        if os.path.basename(filepath) == "index.html":
+            continue
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                title = extract_title(f.read())
+        except OSError:
+            title = None
+        if title:
+            titles.append(title)
+    return titles
+
+
+def generate_new_topic():
+    """Autonomously pick a brand-new topic once keywords.json is exhausted.
+
+    Asks Haiku for a single problem-solving topic that does not overlap with
+    existing articles, and returns (keyword, category).
+    """
+    existing_titles = collect_article_titles()
+    existing_list = "\n".join(f"- {t}" for t in existing_titles) or "(none yet)"
+
+    prompt = (
+        "日本に住む外国人向けの問題解決記事のトピックを1つ生成してください。\n"
+        f"すでに存在するトピック一覧:\n{existing_list}\n"
+        "条件:\n"
+        "- 必ず「rejected / denied / problem / confusion / what to do」のいずれかを含む\n"
+        "- 住宅・銀行・電話/SIM・ビザ・日常生活のいずれかのカテゴリ\n"
+        "- 既存トピックと重複しない\n"
+        "- 英語で返答\n"
+        'JSONで返答: {"keyword": "...", "category": "category_a_housing"}'
+    )
+
+    if DRY_RUN:
+        # No API call in dry-run; return a deterministic placeholder.
+        keyword = "[dry-run autonomous topic placeholder]"
+        category = "category_a_housing"
+        print("[dry-run] generate_new_topic() prompt:")
+        print(prompt)
+        print(f"[dry-run] would use keyword='{keyword}', category='{category}'")
+        return keyword, category
+
+    response = client.messages.create(
+        model="claude-haiku-4-5-20251001",
+        max_tokens=300,
+        messages=[{"role": "user", "content": prompt}],
+    )
+    raw = response.content[0].text.strip()
+
+    # The model may wrap JSON in code fences; extract the JSON object.
+    json_match = re.search(r"\{.*\}", raw, re.DOTALL)
+    if not json_match:
+        raise ValueError(f"generate_new_topic: no JSON in response: {raw!r}")
+    data = json.loads(json_match.group(0))
+
+    keyword = data["keyword"].strip()
+    category = data.get("category", "").strip()
+    if category not in VALID_CATEGORIES:
+        category = "category_e_daily"
+
+    print(f"Autonomous topic: {keyword} (category: {category})")
+    return keyword, category
+
+
 def keyword_to_title(keyword):
     """Transform keyword into a problem-solving title."""
     response = client.messages.create(
@@ -162,50 +254,247 @@ def save_article(filename, content):
 
 
 def update_sitemap(new_filename):
-    sitemap_path = "sitemap.xml"
     url = f"https://gaijinhome.com/articles/{new_filename}"
+    add_sitemap_url(url, priority="0.8")
+
+
+DATE_RE = re.compile(r"(\d{4}-\d{2}-\d{2})")
+
+
+def gather_articles():
+    """Return list of dicts {filename, title, date} for all article pages.
+
+    Date is parsed from the YYYY-MM-DD prefix in the filename when present;
+    otherwise it falls back to the file modification date. Sorted by date desc.
+    """
+    articles = []
+    for filepath in glob.glob("articles/*.html"):
+        filename = os.path.basename(filepath)
+        if filename == "index.html":
+            continue
+        try:
+            with open(filepath, "r", encoding="utf-8") as f:
+                title = extract_title(f.read())
+        except OSError:
+            title = None
+        if not title:
+            title = filename.replace(".html", "").replace("-", " ").title()
+
+        m = DATE_RE.search(filename)
+        if m:
+            date = m.group(1)
+        else:
+            date = datetime.fromtimestamp(
+                os.path.getmtime(filepath)).strftime("%Y-%m-%d")
+
+        articles.append({"filename": filename, "title": title, "date": date})
+
+    articles.sort(key=lambda a: a["date"], reverse=True)
+    return articles
+
+
+def render_article_index(articles):
+    """Build the articles/index.html HTML string."""
+    rows = []
+    for a in articles:
+        title = html.escape(a["title"])
+        rows.append(
+            '      <li class="article-item">\n'
+            f'        <a class="article-link" href="/articles/{html.escape(a["filename"])}">\n'
+            f'          <span class="article-date">{html.escape(a["date"])}</span>\n'
+            f'          <span class="article-title">{title}</span>\n'
+            '          <span class="article-arrow">&rarr;</span>\n'
+            '        </a>\n'
+            '      </li>'
+        )
+    items = "\n".join(rows) if rows else '      <li class="article-item">No articles yet.</li>'
+
+    return f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Articles — GaijinHome</title>
+<meta name="description" content="Every problem-solving guide for foreigners living in Japan — housing, banking, phone, visa and daily life.">
+<link rel="canonical" href="https://gaijinhome.com/articles/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {{ --red: #E8372A; --ink: #0F0E0C; --cream: #FDFAF5; }}
+  * {{ margin: 0; padding: 0; box-sizing: border-box; }}
+  body {{ font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }}
+  .wrap {{ max-width: 820px; margin: 0 auto; padding: 64px 24px 96px; }}
+  .top {{ display: flex; align-items: center; justify-content: space-between; margin-bottom: 48px; }}
+  .logo {{ font-family: 'Syne', sans-serif; font-weight: 800; font-size: 22px; color: var(--ink); text-decoration: none; letter-spacing: -0.5px; }}
+  .logo span {{ color: var(--red); }}
+  .back {{ font-size: 14px; font-weight: 600; color: var(--red); text-decoration: none; }}
+  h1 {{ font-family: 'Syne', sans-serif; font-weight: 800; font-size: clamp(34px, 6vw, 52px); letter-spacing: -1px; margin-bottom: 12px; }}
+  .lead {{ font-size: 17px; color: #5A5752; margin-bottom: 48px; max-width: 600px; }}
+  .count {{ display: inline-block; background: var(--red); color: #fff; font-family: 'Syne', sans-serif; font-weight: 700; font-size: 13px; padding: 4px 12px; border-radius: 999px; margin-bottom: 24px; }}
+  ul {{ list-style: none; }}
+  .article-item {{ border-top: 1px solid #E7E2D8; }}
+  .article-item:last-child {{ border-bottom: 1px solid #E7E2D8; }}
+  .article-link {{ display: flex; align-items: baseline; gap: 18px; padding: 20px 4px; text-decoration: none; color: var(--ink); transition: padding-left .18s ease, background .18s ease; }}
+  .article-link:hover {{ padding-left: 14px; background: rgba(232,55,42,0.04); }}
+  .article-date {{ font-family: 'Syne', sans-serif; font-weight: 600; font-size: 13px; color: var(--red); min-width: 96px; flex-shrink: 0; }}
+  .article-title {{ font-family: 'Syne', sans-serif; font-weight: 600; font-size: 18px; flex: 1; letter-spacing: -0.3px; }}
+  .article-arrow {{ color: var(--red); font-size: 18px; flex-shrink: 0; opacity: 0; transition: opacity .18s ease; }}
+  .article-link:hover .article-arrow {{ opacity: 1; }}
+  .foot {{ margin-top: 64px; font-size: 13px; color: #8A867E; }}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="top">
+      <a class="logo" href="/">Gaijin<span>Home</span></a>
+      <a class="back" href="/">&larr; Home</a>
+    </div>
+    <span class="count">{len(articles)} articles</span>
+    <h1>All Articles</h1>
+    <p class="lead">Every problem-solving guide for foreigners living in Japan — housing, banking, phone &amp; SIM, visa, and daily life.</p>
+    <ul>
+{items}
+    </ul>
+    <p class="foot">© GaijinHome — Updated {datetime.now().strftime('%Y-%m-%d')}</p>
+  </div>
+</body>
+</html>
+"""
+
+
+def update_article_index():
+    """Regenerate articles/index.html listing all articles, newest first."""
+    articles = gather_articles()
+    html_out = render_article_index(articles)
+
+    if DRY_RUN:
+        print(f"[dry-run] would write articles/index.html with {len(articles)} articles:")
+        for a in articles:
+            print(f"  {a['date']}  {a['title']}  ->  /articles/{a['filename']}")
+        return
+
+    os.makedirs("articles", exist_ok=True)
+    with open("articles/index.html", "w", encoding="utf-8") as f:
+        f.write(html_out)
+    print(f"Updated articles/index.html ({len(articles)} articles)")
+
+    # Ensure the articles index itself is in the sitemap (with dedup check).
+    add_sitemap_url("https://gaijinhome.com/articles/", priority="0.7")
+
+
+def add_sitemap_url(url, priority="0.8"):
+    """Append a <url> entry to sitemap.xml if not already present."""
+    sitemap_path = "sitemap.xml"
     today = datetime.now().strftime("%Y-%m-%d")
     new_entry = (
         f"  <url>\n    <loc>{url}</loc>\n"
         f"    <lastmod>{today}</lastmod>\n"
-        f"    <priority>0.8</priority>\n  </url>"
+        f"    <priority>{priority}</priority>\n  </url>"
     )
     if os.path.exists(sitemap_path):
         with open(sitemap_path, "r") as f:
             content = f.read()
-        if url not in content:
+        # Match the full <loc> tag to avoid substring collisions
+        # (e.g. .../articles/ is a substring of .../articles/foo.html).
+        if f"<loc>{url}</loc>" not in content:
             content = content.replace("</urlset>", f"{new_entry}\n</urlset>")
             with open(sitemap_path, "w") as f:
                 f.write(content)
 
 
+def count_articles():
+    """Count article pages in articles/ excluding index.html."""
+    return sum(
+        1 for p in glob.glob("articles/*.html")
+        if os.path.basename(p) != "index.html"
+    )
+
+
+def update_homepage_counter():
+    """Overwrite the published-guides counter on the root index.html.
+
+    Targets the number paired with the "In-depth guides published" label,
+    tolerating either the metric-val/metric-lbl or stat-num/stat-label markup.
+    """
+    index_path = "index.html"
+    if not os.path.exists(index_path):
+        return
+    with open(index_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    n = count_articles()
+
+    # Match the digits inside the value div that precedes the label div.
+    pattern = re.compile(
+        r'(<div class="(?:metric-val|stat-num)">)\s*\d+\s*(</div>\s*'
+        r'<div class="(?:metric-lbl|stat-label)">In-depth guides published</div>)'
+    )
+    new_content, count = pattern.subn(rf"\g<1>{n}\g<2>", content)
+
+    if DRY_RUN:
+        print(f"[dry-run] homepage counter -> {n} (matches found: {count})")
+        return
+
+    if count and new_content != content:
+        with open(index_path, "w", encoding="utf-8") as f:
+            f.write(new_content)
+        print(f"Updated homepage counter to {n}")
+    else:
+        print(f"Homepage counter unchanged ({n}); pattern matches: {count}")
+
+
 def main():
+    if DRY_RUN:
+        print("=== DRY RUN: no API calls, no files written ===")
+
     keywords_data = load_keywords()
     done_keywords = load_done_keywords()
     print(f"Done keywords: {len(done_keywords)}")
 
+    # 1. Prefer an unused static keyword from keywords.json.
     keyword, category = get_next_keyword(keywords_data, done_keywords)
+
+    # 2. Once the static list is exhausted, autonomously generate a topic.
+    autonomous = False
     if not keyword:
-        print("All keywords have been processed.")
-        return
+        print("All static keywords processed — generating a new topic autonomously.")
+        keyword, category = generate_new_topic()
+        autonomous = True
 
     print(f"Next keyword: {keyword} (category: {category})")
 
-    title = keyword_to_title(keyword)
-    print(f"Title: {title}")
-
     filename = topic_to_filename(keyword)
+    print(f"Filename: articles/{filename}")
+
+    if DRY_RUN:
+        # Dry-run: exercise selection, filename, and index logic only.
+        print(f"[dry-run] would generate title via keyword_to_title('{keyword}')")
+        print(f"[dry-run] would generate article and save to articles/{filename}")
+        print(f"[dry-run] would append '{keyword}' to done_keywords.json")
+        update_article_index()
+        update_homepage_counter()
+        print("\n[dry-run] complete.")
+        return
 
     if os.path.exists(f"articles/{filename}"):
         print(f"Article already exists: {filename}, skipping.")
         return
 
+    title = keyword_to_title(keyword)
+    print(f"Title: {title}")
+
     article_html = generate_article(keyword, category, title)
     save_article(filename, article_html)
     update_sitemap(filename)
+    update_article_index()
+    update_homepage_counter()
 
+    # Record the keyword as done (covers both static and autonomous topics).
     done_keywords.append(keyword)
     save_done_keywords(done_keywords)
+
+    if autonomous:
+        print("(autonomous topic recorded in done_keywords.json)")
 
     print(f"\n✅ Done! articles/{filename}")
 
