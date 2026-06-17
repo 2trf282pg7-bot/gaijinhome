@@ -34,7 +34,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GaijinHome Bot"
-          git add articles/ sitemap.xml done_keywords.json
+          git add articles/ sitemap.xml done_topics.json config/
           git diff --staged --quiet || git commit -m "Auto: Add new SEO article $(date +'%Y-%m-%d')"
           git push
           

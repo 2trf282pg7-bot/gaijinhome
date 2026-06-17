@@ -1,0 +1,74 @@
+[
+  {
+    "area": "Fukuoka",
+    "problem_type": "foreigner_friendly",
+    "title": "Foreigner-Friendly Apartments in Fukuoka: Complete Guide",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Kyoto",
+    "problem_type": "foreigner_friendly",
+    "title": "Foreigner-Friendly Apartments in Kyoto: Complete Guide",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Nagoya",
+    "problem_type": "foreigner_friendly",
+    "title": "Foreigner-Friendly Apartments in Nagoya: Complete Guide",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Osaka",
+    "problem_type": "foreigner_friendly",
+    "title": "Foreigner-Friendly Apartments in Osaka: Complete Guide",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Osaka",
+    "problem_type": "no_guarantor",
+    "title": "No Guarantor Apartments in Osaka",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Tokyo",
+    "problem_type": "foreigner_friendly",
+    "title": "Foreigner-Friendly Apartments in Tokyo: Complete Guide",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Tokyo",
+    "problem_type": "no_guarantor",
+    "title": "No Guarantor Apartments in Tokyo",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Tokyo",
+    "problem_type": "share_houses",
+    "title": "Share Houses in Tokyo for Foreigners",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  },
+  {
+    "area": "Yokohama",
+    "problem_type": "foreigner_friendly",
+    "title": "Foreigner-Friendly Apartments in Yokohama: Complete Guide",
+    "filename": "pre-existing",
+    "tier": "tier_a",
+    "date": "pre-existing"
+  }
+]
