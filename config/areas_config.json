@@ -1,0 +1,138 @@
+{
+  "_comment": "Single source of truth for GaijinHome's automated article generation. Add new cities to the tier lists and new angles to problem_types — the generator picks them up automatically. Affiliate output is driven entirely by tier_affiliate_rules + each problem type's contexts, so revenue placement stays consistent as the map grows.",
+
+  "tiers": {
+    "tier_a": ["Tokyo", "Yokohama", "Osaka", "Nagoya", "Kyoto", "Kobe", "Fukuoka"],
+    "tier_b": ["Hiroshima", "Sapporo", "Sendai", "Naha"],
+    "tokyo_wards": ["Shinjuku", "Toshima", "Adachi", "Edogawa", "Nakano", "Suginami", "Shibuya", "Minato", "Koto", "Kita", "Setagaya"]
+  },
+
+  "_tiers_note": {
+    "tier_a": "Full housing affiliates (Oakhouse, + CrossOneRoom for Tokyo). Revenue priority.",
+    "tier_b": "No housing affiliates. eSIM/WiFi only. Written as authority/general guides.",
+    "tokyo_wards": "Sub-areas of Tokyo. Same affiliate treatment as Tokyo (housing + CrossOneRoom). Only deployed after Tier A is exhausted."
+  },
+
+  "selection_order": ["tier_a", "tier_b", "tokyo_wards"],
+
+  "problem_types": [
+    {
+      "id": "no_guarantor",
+      "title": "No Guarantor Apartments in {Area}",
+      "scope": "area",
+      "contexts": ["housing", "sharehouse"],
+      "match_keywords": ["no-guarantor", "without-guarantor", "without-japanese-guarantor"]
+    },
+    {
+      "id": "foreigner_friendly",
+      "title": "Foreigner-Friendly Apartments in {Area}: Complete Guide",
+      "scope": "area",
+      "contexts": ["housing"],
+      "match_keywords": ["foreigner-friendly", "foreigner-apartment", "foreigner-friendly-apartments"]
+    },
+    {
+      "id": "cost_breakdown",
+      "title": "Cost of Renting in {Area}: Full Breakdown for Foreigners",
+      "scope": "area",
+      "contexts": ["budget"],
+      "match_keywords": ["cost-of-renting", "rent-breakdown", "cost-breakdown"]
+    },
+    {
+      "id": "best_neighborhoods",
+      "title": "Best Neighborhoods in {City} for Foreigners",
+      "scope": "city",
+      "contexts": ["housing"],
+      "match_keywords": ["best-neighborhoods", "best-areas-to-live", "where-to-live"]
+    },
+    {
+      "id": "without_japanese",
+      "title": "How to Rent in {Area} Without Speaking Japanese",
+      "scope": "area",
+      "contexts": ["housing", "sharehouse"],
+      "match_keywords": ["without-speaking-japanese", "no-japanese", "english-only-renting"]
+    },
+    {
+      "id": "share_houses",
+      "title": "Share Houses in {Area} for Foreigners",
+      "scope": "area",
+      "contexts": ["sharehouse"],
+      "match_keywords": ["share-house", "share-houses", "sharehouse"]
+    },
+    {
+      "id": "rejected",
+      "title": "Rejected for an Apartment in Japan? What to Do in {Area}",
+      "scope": "area",
+      "contexts": ["housing", "sharehouse"],
+      "match_keywords": ["rejected", "rejection", "denied-apartment"]
+    },
+    {
+      "id": "cheapest_areas",
+      "title": "Cheapest Areas for Foreigners Near {City}",
+      "scope": "city",
+      "contexts": ["budget", "sharehouse"],
+      "match_keywords": ["cheapest-areas", "cheapest-foreigner", "cheap-areas-near"]
+    }
+  ],
+
+  "affiliates": {
+    "oakhouse": {
+      "name": "Oakhouse",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DB9YR6+41A0+5Z6WX",
+      "pixel": "https://www11.a8.net/0.gif?a8mat=4B1JDQ+DB9YR6+41A0+5Z6WX",
+      "desc": "Japan's largest share-house network. No guarantor required, fully furnished, English support.",
+      "cta": "View Rooms"
+    },
+    "crossoneroom": {
+      "name": "CrossOneRoom",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DCGTYQ+4EZ2+BYLJL",
+      "pixel": "https://www14.a8.net/0.gif?a8mat=4B1JDQ+DCGTYQ+4EZ2+BYLJL",
+      "desc": "Furnished Tokyo apartments from ¥38,000/month. No key money, no agency fee, no guarantor.",
+      "cta": "See Tokyo Listings"
+    },
+    "wifi": {
+      "name": "WiFi Rental",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DOYXO2+42XQ+614CX",
+      "pixel": "https://www10.a8.net/0.gif?a8mat=4B1JDQ+DOYXO2+42XQ+614CX",
+      "desc": "Pocket WiFi delivered next-day to your hotel or new address. Unlimited data from day one.",
+      "cta": "Rent WiFi"
+    },
+    "esim": {
+      "name": "JAPAN & GLOBAL eSIM",
+      "url": "https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DQ5SVM+5HZI+5YJRM",
+      "pixel": "https://www17.a8.net/0.gif?a8mat=4B1JDQ+DQ5SVM+5HZI+5YJRM",
+      "desc": "Activate mobile data before you land. No physical SIM, no contract, works in 190+ countries.",
+      "cta": "Get eSIM"
+    }
+  },
+
+  "tier_affiliate_rules": {
+    "tier_a": {
+      "housing_affiliates": ["oakhouse"],
+      "tokyo_only_affiliates": ["crossoneroom"],
+      "connectivity_affiliates": ["wifi", "esim"]
+    },
+    "tier_b": {
+      "housing_affiliates": [],
+      "tokyo_only_affiliates": [],
+      "connectivity_affiliates": ["wifi", "esim"]
+    },
+    "tokyo_wards": {
+      "housing_affiliates": ["oakhouse"],
+      "tokyo_only_affiliates": ["crossoneroom"],
+      "connectivity_affiliates": ["wifi", "esim"]
+    }
+  },
+
+  "_affiliate_logic_note": "housing_affiliates apply when a problem type has a housing/sharehouse/budget context. tokyo_only_affiliates additionally apply when the area is Tokyo itself or one of its wards. connectivity_affiliates (eSIM/WiFi) apply to every article (arrival/relocation context).",
+
+  "affiliate_disclosure": "This article contains affiliate links. If you sign up through them we may earn a small commission at no extra cost to you. We only recommend services we believe are genuinely useful for foreigners settling in Japan. See our full <a href=\"/affiliate\">affiliate disclosure</a>.",
+
+  "internal_link_seeds": [
+    {"title": "The Complete Guide to Renting in Japan as a Foreigner", "url": "/guide-complete"},
+    {"title": "No Japanese Guarantor? Every Option You Have", "url": "/guide-no-guarantor"},
+    {"title": "Rejected for an Apartment? Here's What to Do", "url": "/guide-rejection"},
+    {"title": "The Hidden Costs of Renting in Japan", "url": "/guide-hidden-costs"},
+    {"title": "Renting in Osaka & Kansai: Foreigner's Guide", "url": "/guide-osaka-kansai"},
+    {"title": "Japan Visa Breakdown for Renters", "url": "/guide-visa-breakdown"}
+  ]
+}
