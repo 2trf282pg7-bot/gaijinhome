@@ -124,6 +124,18 @@ def topic_to_filename(keyword):
     return f"{date_prefix}-{slug}.html"
 
 
+def strip_code_fences(text):
+    """Remove Markdown code fences the model sometimes wraps HTML output in.
+
+    Strips a leading ```html or ``` fence and a trailing ``` fence so the
+    saved file is clean HTML rather than a fenced code block.
+    """
+    text = text.strip()
+    text = re.sub(r'^```(?:html)?\s*\n?', '', text)
+    text = re.sub(r'\n?```\s*$', '', text)
+    return text.strip()
+
+
 def generate_article(keyword, category, title):
     affiliates = AFFILIATE_BY_CATEGORY.get(category, ["JAPAN&GLOBAL eSIM (A8.net)"])
     affiliate_note = (
@@ -135,7 +147,7 @@ def generate_article(keyword, category, title):
     print(f"Generating article for: {keyword} (category: {category})")
     message = client.messages.create(
         model="claude-haiku-4-5-20251001",
-        max_tokens=8000,
+        max_tokens=16000,
         system=ARTICLE_SYSTEM_PROMPT,
         messages=[{
             "role": "user",
@@ -149,7 +161,7 @@ def generate_article(keyword, category, title):
             )
         }]
     )
-    return message.content[0].text
+    return strip_code_fences(message.content[0].text)
 
 
 def save_article(filename, content):
