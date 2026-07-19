@@ -2,9 +2,12 @@
 import anthropic
 import os
 import re
+import sys
 import json
 import glob
 from datetime import datetime
+
+import update_links
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
@@ -135,7 +138,7 @@ def generate_article(keyword, category, title):
     print(f"Generating article for: {keyword} (category: {category})")
     message = client.messages.create(
         model="claude-haiku-4-5-20251001",
-        max_tokens=8000,
+        max_tokens=16000,
         system=ARTICLE_SYSTEM_PROMPT,
         messages=[{
             "role": "user",
@@ -150,6 +153,29 @@ def generate_article(keyword, category, title):
         }]
     )
     return message.content[0].text
+
+
+def strip_code_fences(content):
+    """Remove markdown code fences and any preamble text before the doctype."""
+    text = content.strip()
+    idx = text.lower().find("<!doctype html>")
+    if idx > 0:
+        # Drop fences and any prose the model emitted before the document
+        text = text[idx:]
+    elif idx == -1:
+        text = re.sub(r"^```[a-zA-Z]*[ \t]*\n?", "", text)
+    text = re.sub(r"\n?```\s*$", "", text)
+    return text.strip()
+
+
+def validate_article(content):
+    """Return a list of problems (empty list = valid)."""
+    problems = []
+    if not content.rstrip().endswith("</html>"):
+        problems.append("does not end with </html> (likely truncated)")
+    if "a8.net" not in content.lower():
+        problems.append("missing a8.net affiliate link")
+    return problems
 
 
 def save_article(filename, content):
@@ -200,12 +226,29 @@ def main():
         print(f"Article already exists: {filename}, skipping.")
         return
 
-    article_html = generate_article(keyword, category, title)
-    save_article(filename, article_html)
+    article_html = None
+    for attempt in (1, 2):
+        candidate = strip_code_fences(generate_article(keyword, category, title))
+        problems = validate_article(candidate)
+        if not problems:
+            article_html = candidate
+            break
+        print(f"⚠️  Attempt {attempt} failed validation: {'; '.join(problems)}")
+
+    if article_html is None:
+        print("❌ Article failed validation after retry. Not saving.")
+        sys.exit(1)
+
+    filepath = save_article(filename, article_html)
     update_sitemap(filename)
 
     done_keywords.append(keyword)
     save_done_keywords(done_keywords)
+
+    # Internal linking: related links in the new article, then rebuild
+    # articles/index.html and the root Latest Articles section.
+    update_links.insert_related_links(filepath, category=category)
+    update_links.update_all()
 
     print(f"\n✅ Done! articles/{filename}")
 
