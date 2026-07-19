@@ -17,11 +17,14 @@ STATIC_URLS = [
     {"loc": "https://gaijinhome.com/guide-hidden-costs", "lastmod": "2026-04-01", "changefreq": "monthly", "priority": "0.8"},
     {"loc": "https://gaijinhome.com/guide-osaka-kansai", "lastmod": "2026-04-01", "changefreq": "monthly", "priority": "0.8"},
     {"loc": "https://gaijinhome.com/guide-visa-breakdown", "lastmod": "2026-04-01", "changefreq": "monthly", "priority": "0.8"},
+    {"loc": "https://gaijinhome.com/articles/index.html", "lastmod": "2026-07-19", "changefreq": "daily", "priority": "0.9"},
 ]
 
 def get_article_files():
     """Scan articles/ directory and return list of HTML files."""
     articles = glob.glob("articles/*.html")
+    # articles/index.html is listed as a static URL, not an article
+    articles = [a for a in articles if os.path.basename(a) != "index.html"]
     articles.sort()
     return articles
 
