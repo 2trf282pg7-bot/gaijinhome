@@ -97,6 +97,59 @@ def get_next_keyword(keywords_data, done_keywords):
     return None, None
 
 
+# Weighted toward housing to keep topical authority (the site's core cluster)
+TOPIC_CATEGORY_CYCLE = [
+    "category_a_housing", "category_a_housing", "category_a_housing",
+    "category_b_banking", "category_a_housing", "category_c_phone",
+    "category_a_housing", "category_d_visa", "category_a_housing", "category_e_daily",
+]
+TIER_A_CITIES = ["Tokyo", "Osaka", "Yokohama", "Nagoya", "Kyoto", "Kobe", "Fukuoka"]
+
+
+def generate_new_topic(keywords_data, done_keywords):
+    """Ask Haiku for a fresh, non-duplicate problem-type keyword and queue it.
+
+    Used when the fixed keyword list is exhausted so daily generation never
+    silently stops."""
+    category = TOPIC_CATEGORY_CYCLE[len(done_keywords) % len(TOPIC_CATEGORY_CYCLE)]
+    existing = sorted(set(done_keywords) | {
+        re.sub(r"^\d{4}-\d{2}-\d{2}-", "", os.path.basename(f))[:-5].replace("-", " ")
+        for f in glob.glob("articles/*.html") if not f.endswith("index.html")
+    })
+    prompt = f"""You pick the next article topic for GaijinHome, a site for foreigners
+renting housing and settling in Japan. Category for this topic: {category}
+(a=housing/renting, b=banking/money, c=phone/SIM/internet, d=visa/residence card
+as it affects housing and contracts, e=daily-life paperwork).
+
+Rules:
+- A specific problem a foreigner is stuck with RIGHT NOW (rejected, denied,
+  refused, dispute, penalty, confusion, deadline), phrased like a real Google search.
+- 5-9 words, lowercase, English, no punctuation, must mention japan or a city.
+- For housing, you may target one of these cities: {", ".join(TIER_A_CITIES)}.
+- Never generic "best / guide / how to find / tips / overview" topics.
+- Must not overlap in intent with any existing topic below.
+
+Existing topics:
+{chr(10).join("- " + t for t in existing)}
+
+Reply with ONLY the keyword."""
+    for _ in range(3):
+        resp = client.messages.create(
+            model="claude-haiku-4-5-20251001",
+            max_tokens=40,
+            messages=[{"role": "user", "content": prompt}],
+        )
+        kw = re.sub(r"[^a-z0-9 ]", "", resp.content[0].text.strip().lower()).strip()
+        kw = re.sub(r"\s+", " ", kw)
+        if 3 <= len(kw.split()) <= 12 and kw not in existing and kw not in done_keywords:
+            keywords_data.setdefault(category, []).append(kw)
+            with open("keywords.json", "w") as f:
+                json.dump(keywords_data, f, ensure_ascii=False, indent=2)
+            print(f"🆕 Auto-generated topic: {kw} ({category})")
+            return kw, category
+    return None, None
+
+
 def keyword_to_title(keyword):
     """Transform keyword into a problem-solving title."""
     response = client.messages.create(
@@ -196,8 +249,10 @@ def main():
 
     keyword, category = get_next_keyword(keywords_data, done_keywords)
     if not keyword:
-        print("All keywords have been processed.")
-        return
+        keyword, category = generate_new_topic(keywords_data, done_keywords)
+    if not keyword:
+        print("❌ Could not obtain a new topic.")
+        sys.exit(1)
 
     print(f"Next keyword: {keyword} (category: {category})")
 
