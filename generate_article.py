@@ -8,6 +8,8 @@ import glob
 from datetime import datetime
 
 import update_links
+import update_sitemap
+import seo_fix
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
@@ -53,8 +55,8 @@ H1: [Specific problem statement with "rejected" / "denied" /
    (Affiliate links placed naturally with [PR] disclosure)
 
 Use red (#E8372A), dark ink (#0F0E0C), cream (#FDFAF5), Syne font.
-Include internal links to /guide-complete.html, /guide-no-guarantor.html, /guide-rejection.html,
-/guide-hidden-costs.html, /guide-osaka-kansai.html, /guide-visa-breakdown.html.
+Include internal links to /full-guide, /no-guarantor, /rejected,
+/hidden-costs, /osaka, /visa-guide (absolute paths, no .html).
 1500-2500 words. Output ONLY valid HTML."""
 
 AFFILIATE_BY_CATEGORY = {
@@ -187,24 +189,6 @@ def save_article(filename, content):
     return filepath
 
 
-def update_sitemap(new_filename):
-    sitemap_path = "sitemap.xml"
-    url = f"https://gaijinhome.com/articles/{new_filename}"
-    today = datetime.now().strftime("%Y-%m-%d")
-    new_entry = (
-        f"  <url>\n    <loc>{url}</loc>\n"
-        f"    <lastmod>{today}</lastmod>\n"
-        f"    <priority>0.8</priority>\n  </url>"
-    )
-    if os.path.exists(sitemap_path):
-        with open(sitemap_path, "r") as f:
-            content = f.read()
-        if url not in content:
-            content = content.replace("</urlset>", f"{new_entry}\n</urlset>")
-            with open(sitemap_path, "w") as f:
-                f.write(content)
-
-
 def main():
     keywords_data = load_keywords()
     done_keywords = load_done_keywords()
@@ -240,7 +224,6 @@ def main():
         sys.exit(1)
 
     filepath = save_article(filename, article_html)
-    update_sitemap(filename)
 
     done_keywords.append(keyword)
     save_done_keywords(done_keywords)
@@ -249,6 +232,10 @@ def main():
     # articles/index.html and the root Latest Articles section.
     update_links.insert_related_links(filepath, category=category)
     update_links.update_all()
+
+    # Canonical URLs, clean internal links, sitemap
+    seo_fix.run_all()
+    update_sitemap.generate_sitemap()
 
     print(f"\n✅ Done! articles/{filename}")
 

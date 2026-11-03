@@ -30,38 +30,109 @@
   ],
   "redirects": [
     {
-      "source": "/index",
-      "destination": "/",
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.gaijinhome.com"
+        }
+      ],
+      "destination": "https://gaijinhome.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/guide-complete",
+      "destination": "/full-guide",
       "permanent": true
     },
     {
       "source": "/guide-complete.html",
-      "destination": "/guide-complete",
+      "destination": "/full-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guide-no-guarantor",
+      "destination": "/no-guarantor",
       "permanent": true
     },
     {
       "source": "/guide-no-guarantor.html",
-      "destination": "/guide-no-guarantor",
+      "destination": "/no-guarantor",
+      "permanent": true
+    },
+    {
+      "source": "/guide-rejection",
+      "destination": "/rejected",
       "permanent": true
     },
     {
       "source": "/guide-rejection.html",
-      "destination": "/guide-rejection",
+      "destination": "/rejected",
+      "permanent": true
+    },
+    {
+      "source": "/guide-hidden-costs",
+      "destination": "/hidden-costs",
       "permanent": true
     },
     {
       "source": "/guide-hidden-costs.html",
-      "destination": "/guide-hidden-costs",
+      "destination": "/hidden-costs",
+      "permanent": true
+    },
+    {
+      "source": "/guide-osaka-kansai",
+      "destination": "/osaka",
       "permanent": true
     },
     {
       "source": "/guide-osaka-kansai.html",
-      "destination": "/guide-osaka-kansai",
+      "destination": "/osaka",
+      "permanent": true
+    },
+    {
+      "source": "/guide-visa-breakdown",
+      "destination": "/visa-guide",
       "permanent": true
     },
     {
       "source": "/guide-visa-breakdown.html",
-      "destination": "/guide-visa-breakdown",
+      "destination": "/visa-guide",
+      "permanent": true
+    },
+    {
+      "source": "/guide-germany-immigration",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/guide-germany-immigration.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/guides",
+      "destination": "/articles",
+      "permanent": true
+    },
+    {
+      "source": "/guides.html",
+      "destination": "/articles",
+      "permanent": true
+    },
+    {
+      "source": "/listings",
+      "destination": "/articles",
+      "permanent": true
+    },
+    {
+      "source": "/listings.html",
+      "destination": "/articles",
+      "permanent": true
+    },
+    {
+      "source": "/index",
+      "destination": "/",
       "permanent": true
     },
     {

@@ -200,13 +200,13 @@ def build_articles_index(articles):
 <nav>
   <a href="/" class="logo">Gaijin<span>Home</span></a>
   <ul class="nav-links">
-    <li><a href="/full-guide.html">Full Guide</a></li>
-    <li><a href="/no-guarantor.html">No Guarantor</a></li>
-    <li><a href="/rejected.html">Got Rejected?</a></li>
-    <li><a href="/hidden-costs.html">Hidden Costs</a></li>
-    <li><a href="/osaka.html">Osaka &amp; Kansai</a></li>
-    <li><a href="/visa-guide.html">Visa Guide</a></li>
-    <li><a href="/articles/index.html" class="active">All Articles</a></li>
+    <li><a href="/full-guide">Full Guide</a></li>
+    <li><a href="/no-guarantor">No Guarantor</a></li>
+    <li><a href="/rejected">Got Rejected?</a></li>
+    <li><a href="/hidden-costs">Hidden Costs</a></li>
+    <li><a href="/osaka">Osaka &amp; Kansai</a></li>
+    <li><a href="/visa-guide">Visa Guide</a></li>
+    <li><a href="/articles" class="active">All Articles</a></li>
   </ul>
 </nav>
 <div class="section">
@@ -220,7 +220,7 @@ def build_articles_index(articles):
 <footer>
   <div class="footer-inner">
     <span>&copy; 2026 GaijinHome. All rights reserved.</span>
-    <span><a href="/">Home</a><a href="/articles/index.html">All Articles</a><a href="/privacy.html">Privacy Policy</a></span>
+    <span><a href="/">Home</a><a href="/articles">All Articles</a><a href="/privacy">Privacy Policy</a></span>
   </div>
 </footer>
 </body>
