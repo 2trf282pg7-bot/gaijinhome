@@ -10,6 +10,7 @@ from datetime import datetime
 import update_links
 import update_sitemap
 import seo_fix
+import affiliate_fix
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
@@ -61,7 +62,7 @@ Include internal links to /full-guide, /no-guarantor, /rejected,
 
 AFFILIATE_BY_CATEGORY = {
     "category_a_housing": ["Oakhouse (A8.net)", "CrossOneRoom (A8.net)"],
-    "category_b_banking": ["Wise", "Revolut"],
+    "category_b_banking": ["Wise (no link)", "Revolut (no link)", "italki (A8.net)"],
     "category_c_phone": ["JAPAN&GLOBAL eSIM (A8.net)", "WiFiレンタル嬢さん (A8.net)"],
     "category_d_visa": ["JAPAN&GLOBAL eSIM (A8.net)"],
     "category_e_daily": ["JAPAN&GLOBAL eSIM (A8.net)", "WiFiレンタル嬢さん (A8.net)"],
@@ -184,10 +185,15 @@ def topic_to_filename(keyword):
 
 def generate_article(keyword, category, title):
     affiliates = AFFILIATE_BY_CATEGORY.get(category, ["JAPAN&GLOBAL eSIM (A8.net)"])
+    urls = {k: v for k, v in affiliate_fix.LINKS.items()}
     affiliate_note = (
         f"For the Recommended Services section, feature these affiliates naturally with [PR] disclosure: "
         f"{', '.join(affiliates)}. Place one affiliate mention inside the Step-by-step fix section "
-        f"and up to 3 in the Recommended Services section."
+        f"and up to 3 in the Recommended Services section. Use ONLY these exact tracked URLs "
+        f"(never the advertiser's own domain, never invent URLs): Oakhouse {urls['oakhouse']} ; "
+        f"CrossOneRoom {urls['crossoneroom']} ; JAPAN&GLOBAL eSIM {urls['esim']} ; "
+        f"WiFi rental {urls['wifi']} ; italki (Japanese lessons) {urls['italki']}. "
+        f"Wise/Revolut have no tracked link: mention them without a link."
     )
 
     print(f"Generating article for: {keyword} (category: {category})")
@@ -228,8 +234,6 @@ def validate_article(content):
     problems = []
     if not content.rstrip().endswith("</html>"):
         problems.append("does not end with </html> (likely truncated)")
-    if "a8.net" not in content.lower():
-        problems.append("missing a8.net affiliate link")
     return problems
 
 
@@ -240,6 +244,48 @@ def save_article(filename, content):
         f.write(content)
     print(f"Saved: {filepath}")
     return filepath
+
+
+REPAIR_PER_RUN = 3
+
+
+def repair_truncated(limit=REPAIR_PER_RUN):
+    """Regenerate up to `limit` articles listed in repair_queue.json (truncated
+    by an old max_tokens bug). Keeps the same filename/URL."""
+    if not os.path.exists("repair_queue.json"):
+        return []
+    with open("repair_queue.json") as f:
+        queue = json.load(f)
+    cat_map = update_links.load_category_map()
+    repaired = []
+    for name in list(queue)[:limit]:
+        path = f"articles/{name}"
+        if not os.path.exists(path):
+            queue.remove(name)
+            continue
+        slug = re.sub(r"^\d{4}-\d{2}-\d{2}-", "", name[:-5])
+        keyword = re.sub(r"^guide-", "", slug).replace("-", " ")
+        category = cat_map.get(slug, "category_a_housing")
+        with open(path, encoding="utf-8") as f:
+            m = re.search(r"<title>([^<|]+)", f.read())
+        title = m.group(1).strip() if m else keyword_to_title(keyword)
+        html_out = None
+        for _ in (1, 2):
+            cand = strip_code_fences(generate_article(keyword, category, title))
+            if not validate_article(cand):
+                html_out = cand
+                break
+        if html_out is None:
+            print(f"⚠️  Repair failed validation: {name} (kept in queue)")
+            continue
+        save_article(name, html_out)
+        update_links.insert_related_links(path, category=category)
+        queue.remove(name)
+        repaired.append(name)
+        print(f"🔧 Repaired: {name}")
+    with open("repair_queue.json", "w") as f:
+        json.dump(queue, f, indent=2)
+    return repaired
 
 
 def main():
@@ -286,10 +332,12 @@ def main():
     # Internal linking: related links in the new article, then rebuild
     # articles/index.html and the root Latest Articles section.
     update_links.insert_related_links(filepath, category=category)
+    repair_truncated()
     update_links.update_all()
 
     # Canonical URLs, clean internal links, sitemap
     seo_fix.run_all()
+    affiliate_fix.run_all()
     update_sitemap.generate_sitemap()
 
     print(f"\n✅ Done! articles/{filename}")
