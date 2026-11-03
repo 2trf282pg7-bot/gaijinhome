@@ -1,8 +1,8 @@
 name: Auto Generate Article
 
 on:
-  schedule:
-    - cron: '0 0 * * *'
+  # Daily articles are now written by a scheduled Claude task (publish_draft.py).
+  # This API-based generator is kept as a manual fallback only.
   workflow_dispatch:
 
 jobs:
