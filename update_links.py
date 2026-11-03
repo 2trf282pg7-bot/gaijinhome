@@ -303,7 +303,9 @@ def insert_related_links(filepath, category=None, count=RELATED_COUNT):
         "</section>\n"
     )
 
-    idx = content.rfind("</body>")
+    idx = content.rfind("</article>")
+    if idx == -1:
+        idx = content.rfind("</body>")
     if idx == -1:
         content = content + block
     else:

@@ -1,627 +1,190 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Confused about key money (礼金) in Japan? Foreigners get trapped paying 100,000+ yen for nothing. Here's what it really is, why you're losing money, and how to avoid it.">
-    <meta name="keywords" content="key money Japan, 礼金 foreigner, rental deposit Japan, non-refundable fee">
-    <meta name="author" content="Japan Rental Guide">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Why Are Foreigners Confused About Key Money in Japan?">
-    <meta property="og:description" content="Key money (礼金) traps foreigners. Learn what it actually is and how to avoid losing 100,000+ yen.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://gaijinhome.com/articles/2026-06-22-key-money-foreigner-japan-what-is-it">
-    <meta name="publication_date" content="2026-01-15">
-    <meta name="last-modified" content="2026-01-15">
-    <title>Why Are Foreigners Confused About Key Money in Japan? What Is It Really?</title>
-    <style>
-        :root {
-            --primary-red: #E8372A;
-            --dark-ink: #0F0E0C;
-            --cream: #FDFAF5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            color: var(--dark-ink);
-            background-color: var(--cream);
-            line-height: 1.7;
-            font-size: 16px;
-        }
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem;
-        }
-        
-        header {
-            margin-bottom: 3rem;
-            border-bottom: 3px solid var(--primary-red);
-            padding-bottom: 2rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: var(--primary-red);
-            margin-bottom: 1rem;
-            line-height: 1.2;
-            font-weight: 700;
-        }
-        
-        .meta-info {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 1rem;
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            color: var(--dark-ink);
-            margin-top: 2.5rem;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-left: 4px solid var(--primary-red);
-            padding-left: 1rem;
-        }
-        
-        h3 {
-            font-size: 1.3rem;
-            color: var(--dark-ink);
-            margin-top: 1.8rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        p {
-            margin-bottom: 1.2rem;
-            text-align: justify;
-        }
-        
-        strong {
-            color: var(--primary-red);
-            font-weight: 600;
-        }
-        
-        em {
-            font-style: italic;
-            color: #333;
-        }
-        
-        .highlight-box {
-            background: rgba(232, 55, 42, 0.08);
-            border-left: 4px solid var(--primary-red);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-        
-        .highlight-box strong {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        ul, ol {
-            margin: 1.5rem 0 1.5rem 2rem;
-        }
-        
-        li {
-            margin-bottom: 0.8rem;
-            line-height: 1.6;
-        }
-        
-        .mistake-item {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            padding: 1.2rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            border-left: 4px solid var(--primary-red);
-        }
-        
-        .mistake-item strong {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--primary-red);
-        }
-        
-        .checklist {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-        
-        .checklist-item {
-            display: flex;
-            align-items: flex-start;
-            margin-bottom: 1rem;
-        }
-        
-        .checklist-item input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            margin-right: 1rem;
-            margin-top: 0.2rem;
-            accent-color: var(--primary-red);
-            flex-shrink: 0;
-        }
-        
-        .checklist-item label {
-            flex: 1;
-            cursor: pointer;
-        }
-        
-        .step {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-            counter-increment: step-counter;
-        }
-        
-        .step::before {
-            content: "Step " counter(step-counter);
-            display: block;
-            color: var(--primary-red);
-            font-weight: 700;
-            font-size: 0.9rem;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-        }
-        
-        .steps-container {
-            counter-reset: step-counter;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 1.5rem 0;
-            background: #fff;
-        }
-        
-        .comparison-table th {
-            background: var(--primary-red);
-            color: #fff;
-            padding: 1rem;
-            text-align: left;
-            font-weight: 600;
-        }
-        
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e0e0e0;
-        }
-        
-        .comparison-table tr:nth-child(even) {
-            background: #fafafa;
-        }
-        
-        .affiliate-disclosure {
-            background: rgba(232, 55, 42, 0.05);
-            border: 1px solid rgba(232, 55, 42, 0.2);
-            padding: 0.8rem 1rem;
-            margin: 0.8rem 0;
-            border-radius: 4px;
-            font-size: 0.85rem;
-            color: #666;
-        }
-        
-        .affiliate-disclosure strong {
-            color: var(--primary-red);
-        }
-        
-        .recommended-box {
-            background: #fff;
-            border: 2px solid var(--primary-red);
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-        
-        .recommended-box h3 {
-            color: var(--primary-red);
-            margin-top: 0;
-        }
-        
-        .recommended-box a {
-            color: var(--primary-red);
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid var(--primary-red);
-            transition: opacity 0.3s;
-        }
-        
-        .recommended-box a:hover {
-            opacity: 0.8;
-        }
-        
-        .faq-section {
-            margin-top: 3rem;
-        }
-        
-        .faq-item {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-            border-left: 4px solid var(--primary-red);
-        }
-        
-        .faq-item summary {
-            cursor: pointer;
-            font-weight: 600;
-            color: var(--dark-ink);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            user-select: none;
-        }
-        
-        .faq-item summary::after {
-            content: "▼";
-            color: var(--primary-red);
-            transition: transform 0.3s;
-        }
-        
-        .faq-item details[open] summary::after {
-            transform: rotate(180deg);
-        }
-        
-        .faq-item-content {
-            margin-top: 1rem;
-            padding-top: 1rem;
-            border-top: 1px solid #e0e0e0;
-        }
-        
-        .internal-link {
-            color: var(--primary-red);
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 1px solid var(--primary-red);
-        }
-        
-        .internal-link:hover {
-            opacity: 0.8;
-        }
-        
-        .warning {
-            background: rgba(232, 55, 42, 0.12);
-            border-left: 4px solid var(--primary-red);
-            padding: 1rem 1.5rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
-        
-        .warning strong {
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        
-        .city-section {
-            background: #fff;
-            border: 1px solid #e0e0e0;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            border-radius: 4px;
-        }
-        
-        .city-section h4 {
-            color: var(--primary-red);
-            margin-bottom: 0.8rem;
-        }
-        
-        footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid #e0e0e0;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-        }
-        
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .container {
-                padding: 1rem;
-            }
-            
-            .comparison-table {
-                font-size: 0.9rem;
-            }
-            
-            .comparison-table th,
-            .comparison-table td {
-                padding: 0.8rem;
-            }
-        }
-    </style>
-  <link rel="canonical" href="https://gaijinhome.com/articles/2026-06-22-key-money-foreigner-japan-what-is-it">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Why Are Foreigners Confused About Key Money in Japan? What Is It Really? | GaijinHome</title>
+<meta name="description" content="Confused about key money (reikin) in Japan? Learn what it really is, why you never get it back, how it differs from a deposit, and how to cut or avoid it.">
+<link rel="canonical" href="https://gaijinhome.com/articles/2026-06-22-key-money-foreigner-japan-what-is-it">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Why Are Foreigners Confused About Key Money in Japan? What Is It Really?">
+<meta property="og:description" content="Confused about key money (reikin) in Japan? Learn what it really is, why you never get it back, how it differs from a deposit, and how to cut or avoid it.">
+<meta property="og:url" content="https://gaijinhome.com/articles/2026-06-22-key-money-foreigner-japan-what-is-it">
+<meta property="article:published_time" content="2026-06-22">
+<meta property="article:modified_time" content="2026-11-03">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #FAFAF7; }
+  body { font-family: 'DM Sans', sans-serif; background: #FAFAF7; color: #1A1917; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  nav { background: #fff; border-bottom: 1px solid #E4E2DC; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+  .logo { font-weight: 600; font-size: 20px; color: #1A1917; letter-spacing: -0.5px; text-decoration: none; }
+  .logo span { color: #1B4D3E; }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a { text-decoration: none; color: #4A4845; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  article { max-width: 760px; margin: 0 auto; padding: 48px 24px 24px; }
+  .meta { font-size: 13px; color: #8A8783; margin-bottom: 28px; }
+  h1 { font-family: 'Literata', Georgia, serif; font-size: 34px; line-height: 1.25; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.3px; }
+  h2 { font-family: 'Literata', Georgia, serif; font-size: 24px; font-weight: 600; margin: 44px 0 14px; padding-top: 8px; border-top: 1px solid #E4E2DC; }
+  h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px 22px; }
+  li { margin-bottom: 6px; }
+  a { color: #1B4D3E; }
+  strong { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 14.5px; background: #fff; }
+  th, td { border: 1px solid #E4E2DC; padding: 9px 11px; text-align: left; vertical-align: top; }
+  th { background: #EBF3F0; font-weight: 600; }
+  .callout { background: #EBF3F0; border-left: 4px solid #1B4D3E; padding: 14px 18px; margin: 0 0 20px; border-radius: 4px; }
+  .checklist li { list-style: none; margin-left: -22px; padding-left: 26px; position: relative; }
+  .checklist li::before { content: "☐"; position: absolute; left: 0; color: #1B4D3E; }
+  .faq h3 { margin-top: 20px; }
+  footer { background: #fff; border-top: 1px solid #E4E2DC; padding: 32px 24px; margin-top: 48px; }
+  .footer-inner { max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 12.5px; color: #8A8783; }
+  .footer-inner a { color: #4A4845; text-decoration: none; margin-right: 16px; }
+  @media (max-width: 768px) { nav { padding: 0 16px; } .nav-links { display: none; } article { padding: 32px 16px 16px; } h1 { font-size: 27px; } h2 { font-size: 21px; } table { font-size: 13px; } }
+</style>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Why Are Foreigners Confused About Key Money in Japan? What Is It Really?", "description": "Confused about key money (reikin) in Japan? Learn what it really is, why you never get it back, how it differs from a deposit, and how to cut or avoid it.", "datePublished": "2026-06-22", "dateModified": "2026-11-03", "author": {"@type": "Organization", "name": "GaijinHome"}, "publisher": {"@type": "Organization", "name": "GaijinHome"}, "mainEntityOfPage": "https://gaijinhome.com/articles/2026-06-22-key-money-foreigner-japan-what-is-it"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Is key money legal in Japan?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Key money is a long-standing market custom, and Japanese courts have generally accepted related upfront charges as valid when they are clearly stated in the contract and not excessive. What matters is that the amount is disclosed before you sign. If it was not shown in your estimate or contract, raise it with the agent before paying."}}, {"@type": "Question", "name": "Will I get my key money back if I move out early?", "acceptedAnswer": {"@type": "Answer", "text": "No. Key money is not refunded whether you stay one month or ten years. That is why it is worth calculating the cost per month of your expected stay before signing. If you might leave early, also check for a short-term cancellation penalty, which is a separate charge."}}, {"@type": "Question", "name": "Is a \"no key money\" apartment always cheaper?", "acceptedAnswer": {"@type": "Answer", "text": "Not always. Some landlords waive key money but set a higher monthly rent, add a mandatory cleaning fee, or require an early cancellation penalty. Compare the total cost over your planned stay, including deposit deductions and renewal fees, before deciding."}}, {"@type": "Question", "name": "Can I negotiate key money as a foreigner?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Negotiation is done through your real estate agent and is normal for Japanese tenants too. A polite request for a partial reduction, combined with a quick decision and solid documents, has a reasonable chance of success, especially outside the January–March peak season and on units that have been vacant for a while."}}, {"@type": "Question", "name": "What is the difference between key money and shikibiki?", "acceptedAnswer": {"@type": "Answer", "text": "Key money is paid upfront and never returned. Shikibiki, mostly found in the Kansai area, is a fixed amount deducted from your deposit or security payment when you move out. Both result in money you do not get back, but they appear in different places in the contract, so check both the initial cost estimate and the move-out terms."}}]}]</script>
 </head>
 <body>
-    <article itemscope itemtype="https://schema.org/Article">
-        <meta itemprop="headline" content="Why Are Foreigners Confused About Key Money in Japan? What Is It Really?">
-        <meta itemprop="description" content="Key money (礼金) traps foreigners. Learn what it actually is and how to avoid losing 100,000+ yen.">
-        <meta itemprop="datePublished" content="2026-01-15">
-        <meta itemprop="dateModified" content="2026-01-15">
-        <meta itemprop="author" content="Japan Rental Guide">
-        
-        <div class="container">
-            <header>
-                <h1>Why Are Foreigners Confused About Key Money in Japan? What Is It Really?</h1>
-                <div class="meta-info">
-                    <time datetime="2026-01-15">Published January 15, 2026</time> | Updated January 15, 2026
-                </div>
-            </header>
+<nav>
+  <a href="/" class="logo">Gaijin<span>Home</span></a>
+  <ul class="nav-links">
+    <li><a href="/full-guide">Full Guide</a></li>
+    <li><a href="/no-guarantor">No Guarantor</a></li>
+    <li><a href="/rejected">Got Rejected?</a></li>
+    <li><a href="/hidden-costs">Hidden Costs</a></li>
+    <li><a href="/osaka">Osaka &amp; Kansai</a></li>
+    <li><a href="/visa-guide">Visa Guide</a></li>
+    <li><a href="/articles">All Articles</a></li>
+  </ul>
+</nav>
+<main>
+<article>
+<h1>Why Are Foreigners Confused About Key Money in Japan? What Is It Really?</h1>
+<p class="meta">Updated November 2026 · GaijinHome</p>
 
-            <section id="what-happens">
-                <h2>1. What Actually Happens</h2>
-                <p>You find an apartment listing you like. The rent is ¥70,000/month. You check the contract details and see:</p>
-                <ul>
-                    <li><strong>Rent (家賃):</strong> ¥70,000</li>
-                    <li><strong>Security deposit (敷金):</strong> ¥140,000 (refundable)</li>
-                    <li><strong>Key money (礼金):</strong> ¥140,000 (non-refundable)</li>
-                </ul>
-                <p>Your initial confusion: "Wait, what is this ¥140,000 I'm losing forever?" <strong>This is key money — a fee you pay the landlord or real estate agency as gratitude for allowing you to rent. You never see it again.</strong></p>
-                
-                <p>The actual shock hits when you realize you're paying ¥350,000 upfront (first month's rent + security deposit + key money) before you even get the keys. And the ¥140,000 key money? <em>It's gone.</em> It's not a deposit. It's not applied to rent. It's a gift to the landlord.</p>
-                
-                <p>This is where foreigners get stuck. Many sign without fully understanding, thinking "all that money coming back eventually." But key money doesn't. You're confused because:</p>
-                <ul>
-                    <li>It's not a standard fee in most Western countries</li>
-                    <li>The distinction between "敷金" (security deposit, refundable) and "礼金" (key money, non-refundable) is linguistically subtle</li>
-                    <li>Real estate agents sometimes bundle these fees without clear explanation</li>
-                    <li>The amount varies wildly (sometimes 0, sometimes 3 months' rent)</li>
-                    <li>Japanese landlords expect this — it's normal to them, so they don't always explain it</li>
-                </ul>
-            </section>
+<p>You found an apartment you like, the agent sends over an estimate, and there it is: a line called <strong>礼金 (reikin)</strong>, often equal to one or two full months of rent. You ask what it is for, and the answer is something like "it is a thank-you to the landlord." You will not get it back. Nothing is provided in exchange. If that sounds strange, you are not alone — key money is one of the most confusing parts of renting in Japan for newcomers, and it is also one of the easiest costs to reduce once you understand how it works.</p>
 
-            <section id="why-happens">
-                <h2>2. Why It Happens</h2>
-                <p><strong>Key money is a completely Japanese invention.</strong> It originated in the 1960s-1970s during Japan's extreme housing shortage. Landlords could demand payment just for the <em>privilege</em> of renting their property. Even though housing is no longer scarce in most cities, the practice persists.</p>
-                
-                <p>Here's the structural reason foreigners get confused:</p>
-                
-                <p><strong>Linguistic confusion:</strong> In English, we say "deposit" for money that's held as security. In Japanese, there are TWO separate terms:</p>
-                <ul>
-                    <li><strong>敷金 (shikikin) = Security deposit = REFUNDABLE</strong> (minus damage repairs)</li>
-                    <li><strong>礼金 (reikin) = Key money = NON-REFUNDABLE</strong></li>
-                </ul>
-                
-                <p>Many foreigners lump these together mentally as "the money I put down," not realizing one comes back and one doesn't.</p>
-                
-                <p><strong>Regional normalization:</strong> In Tokyo and major cities, key money still exists but is declining (many properties now have 0 礼金). In smaller cities and rural areas, key money can still be 1-3 months' rent. Foreigners moving from one city to another encounter wildly different expectations.</p>
-                
-                <p><strong>Real estate agent behavior:</strong> Agents earn commission from both landlords AND this key money system. If an apartment has 0 礼金, they lose that income stream. Agents don't actively hide this (it's transparent in contracts), but they also don't aggressively highlight it when you're focused on the rent price.</p>
-                
-                <p><strong>Cultural expectation:</strong> In Japanese rental culture, 礼金 is seen as paying respect to the landlord. This concept doesn't exist in Western rental markets, so foreigners instinctively see it as exploitation rather than a cultural norm.</p>
-            </section>
+<h2>What Actually Happens: The Estimate That Doesn't Add Up</h2>
 
-            <section id="common-mistakes">
-                <h2>3. Common Mistakes Foreigners Make</h2>
-                
-                <div class="mistake-item">
-                    <strong>Mistake 1: Assuming All Upfront Fees Are Refundable</strong>
-                    <p>You see "deposit" and "initial fees" listed and think everything comes back after you move out. Key money never does. The contract clearly states 礼金 is non-refundable, but many foreigners don't read that carefully or understand the distinction.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <strong>Mistake 2: Not Comparing Apartments with ¥0 Key Money</strong>
-                    <p>In Tokyo, roughly 30-40% of rental listings now have ¥0 礼金. Many foreigners don't know to search specifically for these. They see a "nice building" and accept ¥200,000 in key money without realizing an identical building 2 blocks away has ¥0.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <strong>Mistake 3: Negotiating Only the Rent</strong>
-                    <p>You successfully negotiate ¥70,000/month down from ¥75,000, but you're still paying ¥140,000 in non-refundable key money. Some agents and landlords <em>will</em> reduce or waive key money if you ask directly — especially for long-term leases (2+ years) — but foreigners rarely think to negotiate this.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <strong>Mistake 4: Not Asking for a Breakdown Before Viewing</strong>
-                    <p>You arrange apartment viewings without asking the agent for a detailed cost breakdown first. You fall in love with a place, sign, and then realize the total move-in cost was ¥380,000, not the ¥150,000 you thought.</p>
-                </div>
-                
-                <div class="mistake-item">
-                    <strong>Mistake 5: Ignoring "礼金 0" or "礼金 なし" in Listings</strong>
-                    <p>When scanning listings, many foreigners skip over the keyword 礼金0 or overlook it in dense Japanese text. You miss 20% of available apartments because you're not specifically filtering for zero key money properties.</p>
-                </div>
-            </section>
+<p>Most foreigners first meet key money on the initial cost estimate (初期費用の見積もり). A typical estimate for a Tokyo apartment at ¥100,000 per month might look roughly like this:</p>
 
-            <section id="step-by-step">
-                <h2>4. Step-by-Step Fix: How to Avoid Wasting ¥100,000+ on Key Money</h2>
-                
-                <div class="steps-container">
-                    <div class="step">
-                        <h3>Before You Start Searching: Know Your Budget Breakdown</h3>
-                        <p>Create a spreadsheet with TWO budgets:</p>
-                        <ul>
-                            <li><strong>Move-in cost (初期費用):</strong> What you're paying upfront = Rent + Security deposit + Key money + Broker fee + Fire insurance</li>
-                            <li><strong>Monthly budget:</strong> What you're paying forever = Rent + Utilities + Phone</li>
-                        </ul>
-                        <p>Many foreigners only think about monthly cost. If your monthly rent is ¥70,000 but move-in cost is ¥350,000, that's a problem if you only have ¥200,000 saved.</p>
-                        <p class="highlight-box"><strong>Action:</strong> Decide your maximum move-in budget RIGHT NOW. Write it down.</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h3>Search Using Filters for "礼金 0" or "礼金 なし"</h3>
-                        <p>When using Suumo, Homes.co.jp, or Leopalace, add this filter:</p>
-                        <ul>
-                            <li>礼金: <strong>0円 または なし</strong></li>
-                        </ul>
-                        <p>This alone cuts your move-in costs by 1-2 months' rent immediately.</p>
-                        <p class="highlight-box"><strong>Action:</strong> Don't browse "all apartments" — filter for zero key money properties first. See if decent options exist in your budget.</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h3>Request a Full Cost Breakdown Before Viewing</h3>
-                        <p>Email or call the real estate agent BEFORE visiting:</p>
-                        <p><em>"I'm interested in [property address]. Can you send me a detailed breakdown of ALL move-in costs in English or with numbers clearly separated? I need to know: rent, 敷金, 礼金, 仲介手数料, 火災保険, and any other fees."</em></p>
-                        <p>A professional agent will send this immediately. If they resist or claim "we'll explain when you come," that's a red flag.</p>
-                        <p class="highlight-box"><strong>Action:</strong> Get the breakdown in writing before you view the apartment. This prevents emotional decisions.</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h3>Explicitly Ask: Can Key Money Be Reduced or Waived?</h3>
-                        <p>Once you've found an apartment you like, ask directly. The worst they say is "no." The response you might get:</p>
-                        <ul>
-                            <li><strong>Tokyo/major cities:</strong> "We can reduce it to half" or "We'll waive it for a 2-year lease"</li>
-                            <li><strong>Smaller cities/rural:</strong> "No, this is standard"</li>
-                            <li><strong>Desperate landlords (summer season):</strong> "Fine, zero key money"</li>
-                        </ul>
-                        <p>This works best for properties that have been listed 30+ days without moving. Use that leverage.</p>
-                        <p class="highlight-box"><strong>Action:</strong> Your script: "礼金を下げることができますか？ または、礼金がなしでもいいですか？" (Can you lower the key money, or would zero key money work?)</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h3>Use a Housing Service That Filters Out High Key Money Properties</h3>
-                        <p>If you're overwhelmed by options, specialized housing platforms make this easier:</p>
-                        <div class="recommended-box">
-                            <h3>Oakhouse [PR]</h3>
-                            <p><a href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DB9YR6+41A0+5Z6WX" rel="nofollow sponsored noopener">Oakhouse</a> specializes in furnished apartments and share houses with transparent, foreigner-friendly pricing. Most Oakhouse listings have minimal key money or none at all — they focus on fixed move-in costs you can understand upfront. Ideal if you want simplicity and don't want to negotiate.</p>
-                            <p class="affiliate-disclosure"><strong>[PR]</strong> This is an affiliate link. Commission earned at no extra cost to you.</p>
-                        </div>
-                        <p class="highlight-box"><strong>Action:</strong> If you want to skip the complexity entirely, use Oakhouse or similar foreigner-focused services where key money is already minimized.</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h3>Read the Contract — Specifically Look for These Lines</h3>
-                        <p>When you receive the rental agreement (契約書), search for:</p>
-                        <ul>
-                            <li><strong>礼金: ¥X (償却なし、返金なし)</strong> = Key money: ¥X (no depreciation, non-refundable)</li>
-                            <li><strong>敷金: ¥X (返金)</strong> = Security deposit: ¥X (refundable, minus damages)</li>
-                            <li><strong>償却: ¥X</strong> = Amortization (portion of deposit that doesn't come back)</li>
-                        </ul>
-                        <p><strong>Do not sign if</strong> the contract groups these together without clear separation. You need to see explicitly that礼金 is non-refundable.</p>
-                        <p class="highlight-box"><strong>Action:</strong> Have the agent highlight these lines. Ask in Japanese: "礼金はいくらですか？これは返金されませんか？" (How much is key money? This is not refundable, right?)</p>
-                    </div>
-                    
-                    <div class="step">
-                        <h3>Calculate Total Move-In Cost in Writing</h3>
-                        <p>Before signing, the agent should provide this itemized:</p>
-                        <table class="comparison-table">
-                            <tr>
-                                <th>Fee (日本語)</th>
-                                <th>Fee (English)</th>
-                                <th>Amount</th>
-                                <th>Refundable?</th>
-                            </tr>
-                            <tr>
-                                <td>家賃</td>
-                                <td>First month's rent</td>
-                                <td>¥70,000</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>敷金</td>
-                                <td>Security deposit</td>
-                                <td>¥140,000</td>
-                                <td>Partial (minus damages)</td>
-                            </tr>
-                            <tr>
-                                <td>礼金</td>
-                                <td>Key money</td>
-                                <td>¥140,000</td>
-                                <td>NO — this is the problem</td>
-                            </tr>
-                            <tr>
-                                <td>仲介手数料</td>
-                                <td>Broker fee</td>
-                                <td>¥70,000</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>火災保険</td>
-                                <td>Fire insurance</td>
-                                <td>¥15,000</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td>鍵交換費</td>
-                                <td>Key replacement</td>
-                                <td>¥10,000</td>
-                                <td>No</td>
-                            </tr>
-                            <tr>
-                                <td><strong>合計</strong></td>
-                                <td><strong>TOTAL MOVE-IN</strong></td>
-                                <td><strong>¥445,000</strong></td>
-                                <td>—</td>
-                            </tr>
-                        </table>
-                        <p><strong>That ¥140,000 key money?</strong> It's real money leaving your bank account. It will not return when you move out.</p>
-                        <p class="highlight-box"><strong>Action:</strong> Request this table from the agent in writing. Do not sign without it.</p>
-                    </div>
-                </div>
-            </section>
+<table>
+<thead>
+<tr><th>Item</th><th>Japanese</th><th>Typical amount</th><th>Refundable?</th></tr>
+</thead>
+<tbody>
+<tr><td>Security deposit</td><td>敷金 (shikikin)</td><td>0–2 months' rent</td><td>Partly, after cleaning/repair deductions</td></tr>
+<tr><td>Key money</td><td>礼金 (reikin)</td><td>0–2 months' rent</td><td>No</td></tr>
+<tr><td>Agency fee</td><td>仲介手数料</td><td>Up to 1 month + tax</td><td>No</td></tr>
+<tr><td>Guarantor company fee</td><td>保証会社 初回保証料</td><td>Often 50–100% of one month's rent</td><td>No</td></tr>
+<tr><td>First month's rent (and pro-rated days)</td><td>前家賃・日割り家賃</td><td>1–2 months</td><td>No</td></tr>
+<tr><td>Fire insurance, lock change, etc.</td><td>火災保険・鍵交換代</td><td>Roughly ¥15,000–¥50,000 combined</td><td>No</td></tr>
+</tbody>
+</table>
 
-            <section id="required-documents">
-                <h2>5. Required Documents Checklist</h2>
-                <div class="checklist">
-                    <div class="checklist-item">
-                        <input type="checkbox" id="doc1">
-                        <label for="doc1"><strong>Full cost breakdown (初期費用の明細)</strong> — Itemized list showing rent, security deposit, key money, broker fee, insurance, and ANY other charges, separated clearly</label>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="doc2">
-                        <label for="doc2"><strong>Rental agreement/contract (賃貸借契約書)</strong> — Showing 礼金額 (key money amount) explicitly labeled as non-refundable (償却、返金なし)</label>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="doc3">
-                        <label for="doc3"><strong>Key money explanation in writing</strong> — Ideally signed by agent stating: "¥[X] key money is a non-refundable gift to the landlord and will not be returned"</label>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="doc4">
-                        <label for="doc4"><strong>Security deposit terms (敷金の扱い)</strong> — How much is refundable, what damages deduct from it, timeline for return (usually 30 days after move-out)</label>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="doc5">
-                        <label for="doc5"><strong>Broker fee agreement (仲介手数料)</strong> — Who pays this (usually tenant pays agent half, landlord pays half). Should not exceed 1 month's rent total</label>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="doc6">
-                        <label for="doc6"><strong>Fire insurance policy details (火災保険)</strong> — Cost, coverage period, whether required or optional</label>
-                    </div>
-                    <div class="checklist-item">
-                        <input type="checkbox" id="doc7">
-                        <label for="doc7"><strong>Move-out condition checklist (退去チェックシート)</strong> — What constitutes "normal wear and tear" vs. damage that costs you money</label>
-                    </div>
-                </div>
-            </section>
+<p>Add it up and you can easily be asked for four to six months of rent before you get the keys. The key money line is the one that confuses people most, because unlike the deposit, there is no condition under which it comes back. It is simply gone the moment you sign. If you want to see how every line on the estimate works, our <a href="/hidden-costs">hidden costs breakdown</a> goes through each fee in detail.</p>
 
-            <section id="regional-differences">
-                <h2>6. City/Region Differences: Where Key Money Varies Wildly</h2>
-                
-                <div class="city-section">
-                    <h4>🏙️ Tokyo</h4>
-                    <p><strong>Key money range:</strong> ¥0 – ¥140,000 (1 month's rent)</p>
-                    <p><strong>Trend:</strong> 30-40% of apartments now have ¥0 礼金. Landlords compete for tenants in central areas, so key money is declining. In outer wards (Adachi, Katsushika), you'll see more key money. In Shibuya/Shinjuku, it's less common.</p>
-                    <p><strong>Foreigner note:</strong> Tokyo agents are experienced with foreign tenants and usually explain fees clearly. But you can still negotiate.</p>
-                </div>
-                
-                <div class="city-section">
-                    <h4>🏙️ Osaka / Kobe / Kansai Region</h4>
-                    <p><strong>Key money range:</strong> ¥0
-</p></div></div></article>
+<h2>Why It Happens: Where Key Money Comes From and Why It Survives</h2>
+
+<h3>A custom, not a legal requirement</h3>
+<p>Key money is not required by any law. It is a market custom that is commonly traced back to the post-war housing shortage, when tenants competed for scarce rooms and landlords could ask for an extra payment. Today it functions as one-off income for the landlord, collected at the start of the lease. Because it is a custom, the amount is set by the landlord and can be zero.</p>
+
+<h3>It is negotiable price, not a fixed fee</h3>
+<p>This is the part most guides skip. Landlords and management companies treat key money as a lever. A popular, newly built apartment near a station might ask for two months. The same landlord with a unit sitting empty for three months may quietly drop it to zero. Key money is one of the main tools landlords use to adjust demand without lowering the monthly rent, because a lower monthly rent affects the building's valuation and future tenants, while a one-time discount does not.</p>
+
+<h3>Why foreigners feel it more</h3>
+<ul>
+<li><strong>No equivalent back home.</strong> Most countries have a refundable deposit and maybe a holding fee. A non-refundable "gift" feels like a scam if no one explains it.</li>
+<li><strong>Fewer options means less leverage.</strong> If many landlords decline foreign applicants, you end up competing for a smaller pool of "foreigner-OK" (外国人可) listings, and those landlords know it.</li>
+<li><strong>Short visa periods.</strong> If you only expect to stay one or two years, paying a large non-refundable sum hurts much more per month of stay than it does for a local tenant staying a decade.</li>
+<li><strong>Language gaps in the estimate.</strong> Key money is often listed only as 礼金 with no explanation, next to other similar-looking fees, so it is hard to question line by line.</li>
+</ul>
+
+<h3>Key money vs. the deposit vs. renewal fee</h3>
+<p>Three different payments get mixed up all the time. The <strong>deposit (敷金)</strong> is security money held against unpaid rent and damage beyond normal wear; it is returned minus legitimate deductions. <strong>Key money (礼金)</strong> is never returned. The <strong>renewal fee (更新料)</strong> is a separate charge, common in the Tokyo area, often around one month's rent when a standard two-year lease is renewed. If your deposit was not returned, that is a different problem — see our guide on <a href="/articles/2026-06-15-apartment-deposit-non-refundable-japan-dispute">disputing a non-refunded deposit</a>.</p>
+
+<h2>Common Mistakes Foreigners Make With Key Money</h2>
+
+<ol>
+<li><strong>Assuming it is refundable.</strong> People pay it thinking it works like a deposit, then plan their move-out budget expecting money back. It will not come back under any circumstances.</li>
+<li><strong>Not asking for a reduction at all.</strong> Many renters accept the listed amount because they assume it is fixed. In practice, asking costs nothing and often works, especially in the off-season.</li>
+<li><strong>Negotiating the wrong way.</strong> Demanding that the landlord "remove illegal fees" or comparing Japan unfavorably with your home country tends to end the conversation. Polite, specific requests through the agent work far better.</li>
+<li><strong>Chasing zero key money without reading the rest.</strong> Some "no key money" listings make up for it with a higher rent, a mandatory cleaning fee, a short-term cancellation penalty (短期解約違約金), or an expensive required support package. Always compare the total cost over your planned stay.</li>
+<li><strong>Negotiating after applying.</strong> Once your application has passed screening and the contract is drafted, the landlord has little reason to change terms. Raise key money before or together with the application.</li>
+</ol>
+
+<h2>Step-by-Step Fix: How to Reduce or Avoid Key Money</h2>
+
+<ol>
+<li><strong>Calculate your real cost per month of stay.</strong> Take all non-refundable initial costs (key money, agency fee, guarantor fee, lock change) and divide by the number of months you realistically expect to live there. This tells you which listing is truly cheaper, and gives you a clear number to negotiate around.</li>
+<li><strong>Filter for 礼金なし or ゼロゼロ listings.</strong> On Japanese portals you can filter for no key money (礼金なし) and for "zero-zero" properties (敷金・礼金ゼロ), meaning no deposit and no key money. Ask your agent to search these specifically if you cannot read the sites.</li>
+<li><strong>Time your search.</strong> Demand peaks from roughly January to March, when students and new employees move. From late spring through autumn, landlords are more flexible. If your move date is flexible, use that.</li>
+<li><strong>Ask the agent, not the landlord, and ask specifically.</strong> A polite request works best: "I really like this apartment and would like to apply. Would the landlord consider reducing the key money from two months to one?" In Japanese: 「礼金を1ヶ月に下げていただくことは可能でしょうか？」 Asking for a partial reduction is more likely to succeed than asking for zero.</li>
+<li><strong>Offer something in return.</strong> Landlords respond to lower risk and less vacancy. You can offer to sign quickly, start the lease earlier (so they lose fewer empty days), or show strong documents such as a certificate of employment. Units that have been listed for a long time are the best targets.</li>
+<li><strong>Ask about free rent as an alternative.</strong> If the landlord will not touch key money, ask for free rent (フリーレント), typically a fraction of a month to one month. It achieves a similar saving and some landlords prefer it.</li>
+<li><strong>Consider housing types that do not charge key money.</strong> UR public rental apartments do not charge key money, agency fees or renewal fees, and do not require a guarantor — see our <a href="/articles/guide-ur-housing-foreigner-apply">UR housing application guide</a>. Share houses and monthly apartments usually skip key money too. [PR] For example, <a href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DB9YR6+41A0+5Z6WX" rel="nofollow sponsored noopener">Oakhouse share houses</a> are set up for foreign residents and do not require a guarantor.</li>
+<li><strong>Get the final figures in writing.</strong> Before you pay anything, ask for an updated estimate showing the agreed key money. Check that the same figure appears in the contract (賃貸借契約書) and the important matters explanation (重要事項説明書).</li>
+</ol>
+
+<div class="callout"><strong>Key tip:</strong> Negotiate one thing at a time. Asking for lower key money, lower rent and free rent all at once looks like you are not serious. Pick the item that saves you the most over your expected stay and ask for that first.</div>
+
+<h2>Required Documents</h2>
+
+<p>Key money is negotiated alongside your application, and a strong file makes landlords more willing to compromise. Have these ready:</p>
+
+<ul class="checklist">
+<li>Residence card (在留カード), front and back</li>
+<li>Passport (photo page and current visa/landing stamp)</li>
+<li>Certificate of employment (在職証明書) or offer letter, or a student certificate (在学証明書)</li>
+<li>Proof of income: recent pay slips (給与明細), or tax certificate (課税証明書) / withholding slip (源泉徴収票) if you have worked in Japan for a year or more</li>
+<li>Certificate of residence (住民票) if you are already registered at a Japanese address</li>
+<li>Emergency contact details — ideally someone in Japan who can communicate in Japanese</li>
+<li>Bank account or credit card for automatic rent payments, if the guarantor company requires one</li>
+<li>Personal seal (印鑑) if requested, though many contracts now accept a signature</li>
+</ul>
+
+<h2>City and Region Differences</h2>
+
+<h3>Tokyo and the Kanto area</h3>
+<p>Key money is most deeply rooted in the Tokyo area. One month is very common, two months appear on newer or in-demand buildings, and zero is common on older buildings, units far from stations, and properties that have been vacant a while. Renewal fees are also common in Tokyo, so budget for both. Central wards such as Minato, Shibuya and Meguro tend to see key money held firm on popular units, while outer wards and suburbs in Saitama, Chiba and Kanagawa offer more zero-key-money options.</p>
+
+<h3>Osaka and the Kansai area</h3>
+<p>Kansai has historically had a different system. Instead of a deposit plus key money, some contracts use a larger security payment (保証金) with a fixed portion deducted at move-out, known as 敷引き (shikibiki). The effect is similar to key money — part of what you pay does not come back — but it is labeled differently, so foreigners sometimes think there is "no key money" and then lose part of their deposit. Many Osaka listings now follow a Tokyo-style deposit and key money format, often with lower amounts. Read every line carefully. Our <a href="/osaka">Osaka renting guide</a> explains the local terms.</p>
+
+<h3>Other cities</h3>
+<p>In regional cities and smaller towns, key money is generally lower or absent, because supply is higher and competition among landlords is stronger. Nagoya, Fukuoka and Sapporo all have plenty of low or zero key money options. Customs vary by area and by management company, so always check the actual estimate rather than assuming a regional rule.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<h3>Is key money legal in Japan?</h3>
+<p>Yes. Key money is a long-standing market custom, and Japanese courts have generally accepted related upfront charges as valid when they are clearly stated in the contract and not excessive. What matters is that the amount is disclosed before you sign. If it was not shown in your estimate or contract, raise it with the agent before paying.</p>
+
+<h3>Will I get my key money back if I move out early?</h3>
+<p>No. Key money is not refunded whether you stay one month or ten years. That is why it is worth calculating the cost per month of your expected stay before signing. If you might leave early, also check for a short-term cancellation penalty, which is a separate charge.</p>
+
+<h3>Is a "no key money" apartment always cheaper?</h3>
+<p>Not always. Some landlords waive key money but set a higher monthly rent, add a mandatory cleaning fee, or require an early cancellation penalty. Compare the <strong>total cost over your planned stay</strong>, including deposit deductions and renewal fees, before deciding.</p>
+
+<h3>Can I negotiate key money as a foreigner?</h3>
+<p>Yes. Negotiation is done through your real estate agent and is normal for Japanese tenants too. A polite request for a partial reduction, combined with a quick decision and solid documents, has a reasonable chance of success, especially outside the January–March peak season and on units that have been vacant for a while.</p>
+
+<h3>What is the difference between key money and shikibiki?</h3>
+<p>Key money is paid upfront and never returned. Shikibiki, mostly found in the Kansai area, is a fixed amount deducted from your deposit or security payment when you move out. Both result in money you do not get back, but they appear in different places in the contract, so check both the initial cost estimate and the move-out terms.</p>
+</div>
+
+<section class="related-articles" style="max-width:800px;margin:40px auto;padding:24px;border-top:1px solid rgba(0,0,0,0.15);">
+  <h2>Related Articles</h2>
+  <ul style="margin-top:12px;padding-left:20px;">
+    <li style="margin-bottom:8px;"><a href="/articles/2026-07-13-eviction-notice-japan-foreigner-rights" style="color:inherit;">Eviction Notice Received in Japan? What to Do About Your Rights as a Foreigner</a> <span style="opacity:0.6;font-size:0.85em;">(Jul 13, 2026)</span></li>
+    <li style="margin-bottom:8px;"><a href="/articles/2026-07-06-apartment-lease-renewal-foreigner-japan-problems" style="color:inherit;">Why Is Your Apartment Lease Renewal Being Denied in Japan?</a> <span style="opacity:0.6;font-size:0.85em;">(Jul 06, 2026)</span></li>
+    <li style="margin-bottom:8px;"><a href="/articles/2026-06-29-share-house-foreigner-rejected-japan" style="color:inherit;">Why Foreigners Get Rejected from Share Houses in Japan (and What to Do)</a> <span style="opacity:0.6;font-size:0.85em;">(Jun 29, 2026)</span></li>
+  </ul>
+</section>
+</article>
+</main>
 <!-- gh-sponsor -->
 <aside class="gh-sponsor" style="max-width:760px;margin:40px auto;padding:20px;background:#FDFAF5;border-left:4px solid #E8372A;font-family:inherit;">
   <p style="margin:0 0 6px;font-size:0.8em;letter-spacing:.05em;color:#777;">[PR] Sponsored — we may earn a commission if you sign up</p>
@@ -631,5 +194,11 @@
     <a href="https://px.a8.net/svt/ejp?a8mat=4BGCF5+4KBNQQ+5NSE+5YRHE" rel="nofollow sponsored noopener" target="_blank" style="display:block;padding:14px 16px;margin:10px 0;border:1px solid #e5ddd0;border-radius:8px;background:#fff;color:#0F0E0C;text-decoration:none;"><strong style="color:#E8372A;">italki — Japanese lessons with native tutors →</strong><br><span style="font-size:0.92em;">Learn the phrases you need for viewings, contracts and calls with your landlord.</span></a>
 </aside>
 <!-- gh-sponsor -->
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2026 GaijinHome. Some links are affiliate links ([PR]).</span>
+    <span><a href="/">Home</a><a href="/articles">All Articles</a><a href="/affiliate">Affiliate Disclosure</a><a href="/privacy">Privacy Policy</a></span>
+  </div>
+</footer>
 </body>
 </html>

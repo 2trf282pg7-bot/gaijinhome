@@ -1,722 +1,180 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Confused about why your apartment application was rejected despite having permanent residency in Japan? Here are the exact reasons and step-by-step fixes.">
-    <meta name="keywords" content="renting apartment Japan permanent resident, PR visa Japan rental, permanent resident housing Japan, Japan apartment PR holder, foreigner rent Japan PR">
-    <meta name="author" content="GaijinHome">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://gaijinhome.com/articles/guide-renting-apartment-japan-permanent-resident">
-    
-    <title>Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do</title>
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do">
-    <meta property="og:description" content="Confused about why your apartment application was rejected despite having permanent residency in Japan? Here are the exact reasons and step-by-step fixes.">
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://gaijinhome.com/articles/guide-renting-apartment-japan-permanent-resident">
-    <meta property="og:image" content="https://gaijinhome.com/images/pr-rental-guide-2026.jpg">
-    
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do">
-    <meta name="twitter:description" content="Complete guide for permanent residents renting apartments in Japan.">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --red: #E8372A;
-            --dark-ink: #0F0E0C;
-            --cream: #FDFAF5;
-            --light-gray: #f5f5f5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Syne', sans-serif;
-            background-color: var(--cream);
-            color: var(--dark-ink);
-            line-height: 1.7;
-            font-size: 18px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: var(--dark-ink);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .logo {
-            color: var(--cream);
-            font-size: 28px;
-            font-weight: 800;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--red);
-        }
-        
-        .breadcrumb {
-            padding: 15px 0;
-            font-size: 14px;
-            color: #666;
-        }
-        
-        .breadcrumb a {
-            color: var(--red);
-            text-decoration: none;
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, var(--dark-ink) 0%, #2a2a2a 100%);
-            color: var(--cream);
-            padding: 60px 0;
-            margin-bottom: 40px;
-        }
-        
-        .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero-meta {
-            display: flex;
-            gap: 20px;
-            font-size: 14px;
-            opacity: 0.8;
-        }
-        
-        .content-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 40px;
-            padding: 40px 0;
-        }
-        
-        @media (max-width: 900px) {
-            .content-wrapper {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .main-content h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--dark-ink);
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--red);
-        }
-        
-        .main-content h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin: 30px 0 15px;
-            color: var(--dark-ink);
-        }
-        
-        .main-content p {
-            margin-bottom: 20px;
-        }
-        
-        .main-content ul, .main-content ol {
-            margin: 20px 0;
-            padding-left: 30px;
-        }
-        
-        .main-content li {
-            margin-bottom: 10px;
-        }
-        
-        .toc {
-            background: var(--light-gray);
-            border-left: 4px solid var(--red);
-            padding: 25px 30px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .toc h3 {
-            margin-top: 0;
-            font-size: 1.2rem;
-        }
-        
-        .toc ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .toc li {
-            margin-bottom: 8px;
-        }
-        
-        .toc a {
-            color: var(--dark-ink);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .toc a:hover {
-            color: var(--red);
-        }
-        
-        .highlight-box {
-            background: linear-gradient(135deg, var(--red) 0%, #c92d22 100%);
-            color: var(--cream);
-            padding: 25px 30px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-        
-        .highlight-box h4 {
-            font-size: 1.2rem;
-            margin-bottom: 10px;
-        }
-        
-        .info-box {
-            background: #e8f4f8;
-            border-left: 4px solid #0077b6;
-            padding: 20px 25px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .warning-box {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 20px 25px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            font-size: 16px;
-        }
-        
-        .comparison-table th {
-            background: var(--dark-ink);
-            color: var(--cream);
-            padding: 15px;
-            text-align: left;
-        }
-        
-        .comparison-table td {
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
-        
-        .comparison-table tr:nth-child(even) {
-            background: var(--light-gray);
-        }
-        
-        .checklist {
-            background: var(--cream);
-            border: 2px solid var(--dark-ink);
-            padding: 25px 30px;
-            border-radius: 8px;
-            margin: 25px 0;
-        }
-        
-        .checklist li {
-            list-style: none;
-            padding-left: 30px;
-            position: relative;
-            margin-bottom: 12px;
-        }
-        
-        .checklist li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: var(--red);
-            font-weight: bold;
-        }
-        
-        /* Sidebar Styles */
-        .sidebar {
-            position: sticky;
-            top: 100px;
-            height: fit-content;
-        }
-        
-        .sidebar-box {
-            background: white;
-            border: 2px solid var(--dark-ink);
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 4px 4px 0 var(--dark-ink);
-        }
-        
-        .sidebar-box h4 {
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            color: var(--dark-ink);
-        }
-        
-        .sidebar-box p {
-            font-size: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .cta-button {
-            display: block;
-            background: var(--red);
-            color: var(--cream);
-            text-align: center;
-            padding: 15px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(232, 55, 42, 0.4);
-        }
-        
-        .cta-button.secondary {
-            background: var(--dark-ink);
-        }
-        
-        .affiliate-badge {
-            font-size: 11px;
-            color: #666;
-            display: block;
-            margin-top: 10px;
-            text-align: center;
-        }
-        
-        .internal-links {
-            background: var(--light-gray);
-            padding: 20px;
-            border-radius: 8px;
-        }
-        
-        .internal-links h4 {
-            margin-bottom: 15px;
-        }
-        
-        .internal-links ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .internal-links li {
-            margin-bottom: 10px;
-        }
-        
-        .internal-links a {
-            color: var(--red);
-            text-decoration: none;
-            font-size: 14px;
-        }
-        
-        .internal-links a:hover {
-            text-decoration: underline;
-        }
-        
-        /* FAQ Styles */
-        .faq-section {
-            margin: 50px 0;
-        }
-        
-        .faq-item {
-            border-bottom: 1px solid #ddd;
-            padding: 20px 0;
-        }
-        
-        .faq-question {
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: var(--dark-ink);
-        }
-        
-        .faq-answer {
-            color: #444;
-        }
-        
-        footer {
-            background: var(--dark-ink);
-            color: var(--cream);
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-        
-        footer p {
-            text-align: center;
-            opacity: 0.8;
-        }
-        
-        a {
-            color: var(--red);
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-meta {
-                flex-direction: column;
-                gap: 10px;
-            }
-            
-            .main-content h2 {
-                font-size: 1.5rem;
-            }
-        }
-    </style>
-    
-    <!-- FAQ Schema Markup -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Is it easier to rent an apartment in Japan with permanent residency?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, significantly easier. Permanent residency (永住権) removes the visa expiration concern that landlords have with work or student visas. You'll have access to more properties, face fewer rejections, and may even qualify for better loan terms if buying becomes an option. Many landlords who typically reject foreigners will accept PR holders."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do I still need a guarantor as a permanent resident in Japan?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "In most cases, yes. While PR status improves your standing, the guarantor requirement is separate from visa status. However, guarantor companies (保証会社) are much more likely to approve PR holders, often with lower fees. Some premium properties may waive the guarantor requirement entirely for PR holders with stable employment."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What documents do I need to rent an apartment as a permanent resident in Japan?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "You'll need: Residence Card showing PR status, Jyuminhyo (住民票), Income certificate (課税証明書) or employment contract, Inkan (personal seal) or signature, Previous landlord reference (if applicable), and Bank statements (3-6 months). The key document is your residence card clearly showing '永住者' (permanent resident) status."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can I rent any apartment in Japan with permanent residency?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "While PR status opens many doors, a small percentage of landlords (estimated 5-10%) still maintain 'Japanese only' policies regardless of visa status. However, you'll have access to approximately 90-95% of the rental market, compared to 60-70% for work visa holders. High-end properties and those owned by corporate landlords are almost always available to PR holders."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How does renting with PR compare to renting with a spouse visa?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "PR status is generally viewed more favorably than spouse visas for rental purposes. While spouse visa holders also have good acceptance rates, PR status indicates long-term commitment to Japan and cannot be revoked due to divorce or relationship changes. This gives landlords additional peace of mind about long-term tenancy."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Should I mention my permanent resident status upfront when apartment hunting?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Absolutely yes. Lead with your PR status in all communications with real estate agents. It immediately distinguishes you from other foreign applicants and signals stability. Ask agents to specifically mention your PR status when contacting landlords or management companies. This simple step can significantly increase your approval chances."
-                }
-            }
-        ]
-    }
-    </script>
-    
-    <!-- Article Schema -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Renting an Apartment in Japan as a Permanent Resident (2026 Guide)",
-        "author": {
-            "@type": "Organization",
-            "name": "GaijinHome"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "GaijinHome",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://gaijinhome.com/logo.png"
-            }
-        },
-        "datePublished": "2026-01-15",
-        "dateModified": "2026-01-15",
-        "description": "Complete 2026 guide to renting an apartment in Japan as a permanent resident. Learn how PR status affects your rental application, required documents, and insider tips.",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://gaijinhome.com/articles/guide-renting-apartment-japan-permanent-resident"
-        }
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do | GaijinHome</title>
+<meta name="description" content="If your apartment application was rejected despite permanent residency in Japan, learn why it still happens and the concrete steps PR holders can take.">
+<link rel="canonical" href="https://gaijinhome.com/articles/guide-renting-apartment-japan-permanent-resident">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do">
+<meta property="og:description" content="If your apartment application was rejected despite permanent residency in Japan, learn why it still happens and the concrete steps PR holders can take.">
+<meta property="og:url" content="https://gaijinhome.com/articles/guide-renting-apartment-japan-permanent-resident">
+<meta property="article:published_time" content="2026-05-01">
+<meta property="article:modified_time" content="2026-11-03">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #FAFAF7; }
+  body { font-family: 'DM Sans', sans-serif; background: #FAFAF7; color: #1A1917; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  nav { background: #fff; border-bottom: 1px solid #E4E2DC; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+  .logo { font-weight: 600; font-size: 20px; color: #1A1917; letter-spacing: -0.5px; text-decoration: none; }
+  .logo span { color: #1B4D3E; }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a { text-decoration: none; color: #4A4845; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  article { max-width: 760px; margin: 0 auto; padding: 48px 24px 24px; }
+  .meta { font-size: 13px; color: #8A8783; margin-bottom: 28px; }
+  h1 { font-family: 'Literata', Georgia, serif; font-size: 34px; line-height: 1.25; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.3px; }
+  h2 { font-family: 'Literata', Georgia, serif; font-size: 24px; font-weight: 600; margin: 44px 0 14px; padding-top: 8px; border-top: 1px solid #E4E2DC; }
+  h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px 22px; }
+  li { margin-bottom: 6px; }
+  a { color: #1B4D3E; }
+  strong { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 14.5px; background: #fff; }
+  th, td { border: 1px solid #E4E2DC; padding: 9px 11px; text-align: left; vertical-align: top; }
+  th { background: #EBF3F0; font-weight: 600; }
+  .callout { background: #EBF3F0; border-left: 4px solid #1B4D3E; padding: 14px 18px; margin: 0 0 20px; border-radius: 4px; }
+  .checklist li { list-style: none; margin-left: -22px; padding-left: 26px; position: relative; }
+  .checklist li::before { content: "☐"; position: absolute; left: 0; color: #1B4D3E; }
+  .faq h3 { margin-top: 20px; }
+  footer { background: #fff; border-top: 1px solid #E4E2DC; padding: 32px 24px; margin-top: 48px; }
+  .footer-inner { max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 12.5px; color: #8A8783; }
+  .footer-inner a { color: #4A4845; text-decoration: none; margin-right: 16px; }
+  @media (max-width: 768px) { nav { padding: 0 16px; } .nav-links { display: none; } article { padding: 32px 16px 16px; } h1 { font-size: 27px; } h2 { font-size: 21px; } table { font-size: 13px; } }
+</style>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do", "description": "If your apartment application was rejected despite permanent residency in Japan, learn why it still happens and the concrete steps PR holders can take.", "datePublished": "2026-05-01", "dateModified": "2026-11-03", "author": {"@type": "Organization", "name": "GaijinHome"}, "publisher": {"@type": "Organization", "name": "GaijinHome"}, "mainEntityOfPage": "https://gaijinhome.com/articles/guide-renting-apartment-japan-permanent-resident"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can a landlord legally refuse me because I am a foreigner, even with PR?", "acceptedAnswer": {"@type": "Answer", "text": "Japan does not have a broad, specific law that clearly prohibits private landlords from refusing foreign tenants, so refusals still happen. Such refusals are widely discouraged, and in some cases courts have found discriminatory treatment unlawful, but outcomes depend on the facts. Consult a housing advice service or lawyer if you want to pursue it."}}, {"@type": "Question", "name": "Do permanent residents need a guarantor company?", "acceptedAnswer": {"@type": "Answer", "text": "Usually yes, in the same way Japanese tenants do. Guarantor companies are standard for most rentals. PR status helps you pass, but it does not remove the requirement. UR housing is a notable exception that does not use one."}}, {"@type": "Question", "name": "Does PR help with the credit check?", "acceptedAnswer": {"@type": "Answer", "text": "It helps with visa-related risk, because there is no stay period to worry about. But credit checks look at income and credit records too. A late payment in CIC or JICC can still cause a rejection even for a permanent resident."}}, {"@type": "Question", "name": "I recently retired. How can I rent as a permanent resident?", "acceptedAnswer": {"@type": "Answer", "text": "Prepare pension certificates and bank statements showing you can cover rent for a long period, and consider offering advance rent. UR housing has savings-based options for applicants without regular salary, and some guarantor companies specialize in older tenants."}}, {"@type": "Question", "name": "Should I mention PR when I first contact the agent?", "acceptedAnswer": {"@type": "Answer", "text": "Yes, always. Mention it in your first message along with how long you have lived in Japan and your job. This lets the agent present you correctly to owners from the start rather than as a generic foreign applicant."}}]}]</script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="/" class="logo">Gaijin<span>Home</span></a>
-        </div>
-    </header>
-    
-    <nav class="breadcrumb">
-        <div class="container">
-            <a href="/">Home</a> &rsaquo; <a href="/articles">Guides</a> &rsaquo; Renting with Permanent Residency
-        </div>
-    </nav>
-    
-    <section class="hero">
-        <div class="container">
-            <h1>Renting an Apartment in Japan as a Permanent Resident: Complete 2026 Guide</h1>
-            <div class="hero-meta">
-                <span>📅 Updated: January 2026</span>
-                <span>⏱️ 12 min read</span>
-                <span>✍️ By GaijinHome Editorial Team</span>
-            </div>
-        </div>
-    </section>
-    
-    <div class="container">
-        <div class="content-wrapper">
-            <main class="main-content">
-                <p>Congratulations on obtaining your permanent residency in Japan! After years of building your life here, you've earned one of the most coveted immigration statuses available. But here's something many new PR holders don't realize: <strong>your 永住権 (eijūken) dramatically changes your position in the Japanese rental market</strong>.</p>
-                
-                <p>While foreigners on work visas or student visas often face rejection rates of 30-40% when apartment hunting, permanent residents enjoy acceptance rates closer to Japanese nationals. This guide will show you exactly how to leverage your PR status to secure the apartment you actually want—not just the one that will accept you.</p>
-                
-                <div class="toc">
-                    <h3>📑 Table of Contents</h3>
-                    <ul>
-                        <li><a href="#pr-advantage">1. The PR Advantage: Why Landlords Prefer Permanent Residents</a></li>
-                        <li><a href="#documents">2. Required Documents for PR Holders</a></li>
-                        <li><a href="#guarantor">3. Guarantor Requirements: What Changes with PR?</a></li>
-                        <li><a href="#comparison">4. PR vs. Other Visa Types: Rental Market Comparison</a></li>
-                        <li><a href="#finding">5. Finding Apartments: Best Strategies for PR Holders</a></li>
-                        <li><a href="#negotiation">6. Negotiation Power: Using PR to Your Advantage</a></li>
-                        <li><a href="#premium">7. Accessing Premium Properties</a></li>
-                        <li><a href="#common-mistakes">8. Common Mistakes PR Holders Make</a></li>
-                        <li><a href="#timeline">9. Application Timeline and Process</a></li>
-                        <li><a href="#faq">10. Frequently Asked Questions</a></li>
-                    </ul>
-                </div>
-                
-                <h2 id="pr-advantage">1. The PR Advantage: Why Landlords Prefer Permanent Residents</h2>
-                
-                <p>To understand your advantage, you need to understand landlord psychology in Japan. When a property owner considers renting to a foreigner, their primary concerns are:</p>
-                
-                <ul>
-                    <li><strong>Visa expiration risk:</strong> Will this tenant suddenly have to leave Japan?</li>
-                    <li><strong>Communication barriers:</strong> Can we handle problems if they arise?</li>
-                    <li><strong>Cultural differences:</strong> Will they understand Japanese rental customs?</li>
-                    <li><strong>Long-term stability:</strong> Will they stay and pay rent consistently?</li>
-                </ul>
-                
-                <p>Your permanent residency status directly addresses the first and fourth concerns. With PR, you've demonstrated:</p>
-                
-                <ul>
-                    <li>A minimum of 10 years in Japan (or 1-3 years for spouse/highly-skilled professional routes)</li>
-                    <li>Stable employment and income history</li>
-                    <li>Clean legal record and tax compliance</li>
-                    <li>Commitment to remaining in Japan indefinitely</li>
-                </ul>
-                
-                <div class="highlight-box">
-                    <h4>💡 The Numbers Don't Lie</h4>
-                    <p>According to 2025 data from major guarantor companies, PR holders have an approval rate of 92-95%, compared to 65-75% for work visa holders and 55-65% for student visa holders. This translates directly into more options and less frustration during your apartment search.</p>
-                </div>
-                
-                <p>For a complete overview of the Japanese rental process regardless of visa type, see our <a href="/full-guide">complete guide to renting in Japan</a>.</p>
-                
-                <h2 id="documents">2. Required Documents for PR Holders</h2>
-                
-                <p>As a permanent resident, your documentation requirements are streamlined compared to other visa categories. Here's your complete checklist:</p>
-                
-                <div class="checklist">
-                    <h4>Essential Documents</h4>
-                    <ul>
-                        <li><strong>Residence Card (在留カード)</strong> - Must show 永住者 status</li>
-                        <li><strong>Jyuminhyo (住民票)</strong> - Residence certificate from your ward office (within 3 months)</li>
-                        <li><strong>Income Certificate (課税証明書)</strong> - From your ward office, showing annual income</li>
-                        <li><strong>Employment Certificate (在職証明書)</strong> - Letter from your employer</li>
-                        <li><strong>Inkan (印鑑)</strong> - Personal seal, or signature in some cases</li>
-                        <li><strong>Bank Statements</strong> - Last 3-6 months showing stable income deposits</li>
-                    </ul>
-                </div>
-                
-                <div class="checklist">
-                    <h4>Additional Documents (Sometimes Required)</h4>
-                    <ul>
-                        <li><strong>Inkan Certificate (印鑑証明書)</strong> - Registered seal certificate</li>
-                        <li><strong>Tax Payment Certificate (納税証明書)</strong> - Proves tax compliance</li>
-                        <li><strong>Previous Landlord Reference</strong> - Contact info for rental history verification</li>
-                        <li><strong>Copy of Employment Contract</strong> - Shows job stability and income details</li>
-                    </ul>
-                </div>
-                
-                <div class="info-box">
-                    <strong>Pro Tip:</strong> Get multiple copies of your jyuminhyo and income certificate—you may apply to several properties simultaneously. Each application typically requires original documents, and returning to the ward office repeatedly wastes valuable time.
-                </div>
-                
-                <h2 id="guarantor">3. Guarantor Requirements: What Changes with PR?</h2>
-                
-                <p>Here's where many PR holders get confused. <strong>Permanent residency does not eliminate the guarantor requirement</strong>—this is a separate system from visa status. However, your PR status significantly improves your guarantor options.</p>
-                
-                <h3>Option 1: Guarantor Company (保証会社)</h3>
-                
-                <p>The most common route for all renters in modern Japan. As a PR holder, you'll enjoy:</p>
-                
-                <ul>
-                    <li>Higher approval rates (92%+ vs. 65-75% for work visas)</li>
-                    <li>Potentially lower fees (some companies offer PR discounts)</li>
-                    <li>Faster processing times</li>
-                    <li>Access to premium guarantor companies that reject non-PR foreigners</li>
-                </ul>
-                
-                <p>Learn more about navigating the system without a personal guarantor in our <a href="/no-guarantor">guide to renting without a guarantor</a>.</p>
-                
-                <h3>Option 2: Personal Guarantor (連帯保証人)</h3>
-                
-                <p>If you have a Japanese friend, colleague, or family member willing to serve as guarantor, your PR status makes this arrangement more attractive to them. They're guaranteeing someone who legally cannot be forced to leave Japan—a much safer proposition.</p>
-                
-                <h3>Option 3: No Guarantor Properties</h3>
-                
-                <p>Some landlords, particularly corporate owners of newer buildings, waive guarantor requirements for PR holders with strong financial profiles. This is becoming more common in 2026, especially for:</p>
-                
-                <ul>
-                    <li>Properties owned by major real estate companies (Mitsui, Sumitomo, etc.)</li>
-                    <li>Newer constructions targeting international professionals</li>
-                    <li>Higher-end properties where tenants typically have stable finances</li>
-                </ul>
-                
-                <h2 id="comparison">4. PR vs. Other Visa Types: Rental Market Comparison</h2>
-                
-                <table class="comparison-table">
-                    <thead>
-                        <tr>
-                            <th>Factor</th>
-                            <th>Permanent Resident</th>
-                            <th>Work Visa</th>
-                            <th>Student Visa</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Property Access</td>
-                            <td>90-95% of market</td>
-                            <td>60-70% of market</td>
-                            <td>40-50% of market</td>
-                        </tr>
-                        <tr>
-                            <td>Guarantor Approval Rate</td>
-                            <td>92-95%</td>
-                            <td>65-75%</td>
-                            <td>55-65%</td>
-                        </tr>
-                        <tr>
-                            <td>Average Application Rejections</td>
-                            <td>0-1 before approval</td>
-                            <td>2-4 before approval</td>
-                            <td>3-6 before approval</td>
-                        </tr>
-                        <tr>
-                            <td>Negotiation Power</td>
-                            <td>Moderate to High</td>
-                            <td>Low to Moderate</td>
-                            <td>Low</td>
-                        </tr>
-                        <tr>
-                            <td>Premium Property Access</td>
-                            <td>Yes</td>
-                            <td>Limited</td>
-                            <td>Rarely</td>
-                        </tr>
-                        <tr>
-                            <td>Contract Length Flexibility</td>
-                            <td>High</td>
-                            <td>Moderate</td>
-                            <td>Low</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <p>If you've experienced rejection in the past with a work visa, understand that the landscape is completely different now. Check our <a href="/rejected">guide to handling rental rejection</a> to understand what's changed.</p>
-                
-                <h2 id="finding">5. Finding Apartments: Best Strategies for PR Holders</h2>
-                
-                <p>Your PR status opens doors, but you still need to know where to look and how to present yourself effectively.</p>
-                
-                <h3>Strategy 1: Lead with Your PR Status</h3>
-                
-                <p>When contacting real estate agents or viewing properties, mention your permanent residency immediately. Use phrases like:</p>
-                
-                <ul>
-                    <li>"永住権を持っています" (Eijūken wo motteimasu) - I have permanent residency</li>
-                    <li>"永住者ビザです" (Eijūsha biza desu) - I have a permanent resident visa</li>
-                </ul>
-                
-                <p>This immediately categorizes you differently from other foreign applicants and signals that visa expiration is not a concern.</p>
-                
-                <h3>Strategy 2: Use Foreigner-Friendly Platforms</h3>
-                
-                <p>While your PR status gives you access to mainstream Japanese real estate sites, foreigner-friendly platforms often provide better service and understand your specific situation:</p>
-                
-                <div class="highlight-box">
-                    <h4>🏠 Recommended: Best-Estate.jp</h4>
-                    <p>Specializing in foreigner-friendly rentals with English support, Best-Estate understands how to present PR holders to landlords effectively. Their agents can highlight your status during negotiations.</p>
-                    <a href="https://best-estate.jp" class="cta-button" style="margin-top: 15px; display: inline-block;">Search Properties on Best-Estate →</a>
-                    <span class="affiliate-badge">Affiliate partner</span>
-                </div>
-                
-                <h3>Strategy 3: Consider Corporate-Owned Properties</h3>
-                
-                <p>Large real estate companies are more systematic in their tenant evaluation and less likely to have personal biases. They evaluate based on financial criteria where PR holders typically excel:</p>
-                
-                <ul>
-                    <li>Stable income history (required for PR approval)</li>
-                    <li>Long-term residence in Japan (demonstrated commitment)</li>
-                    <li>Clean rental history (years of experience in Japanese housing)</li>
-                </ul>
-                
-                <h2 id="negotiation">6. Negotiation Power: Using PR to Your Advantage</h2>
-                
-                <p>Here's something most guides won't tell you: <strong>as a PR holder, you have genuine negotiating power</strong>. While Japanese rental culture traditionally discourages negotiation, the reality in 2026 is different, especially for desirable tenants.</p>
-                
-                <h3>What You Can Potentially Negotiate</h3>
-                
-                <ul>
-                    <li><strong>Key money (礼金):</strong> Request reduction from 2 months to 1, or elimination entirely</li>
-                    <li><strong>Renewal fees:</strong> Some landlords will waive or reduce for stable, long-term tenants</li>
-                    <li><strong>Rent reduction:</strong> For properties vacant 2+ months, 5-10% reduction is sometimes possible</li>
-                    <li>
-</p></div></div></article>
+<nav>
+  <a href="/" class="logo">Gaijin<span>Home</span></a>
+  <ul class="nav-links">
+    <li><a href="/full-guide">Full Guide</a></li>
+    <li><a href="/no-guarantor">No Guarantor</a></li>
+    <li><a href="/rejected">Got Rejected?</a></li>
+    <li><a href="/hidden-costs">Hidden Costs</a></li>
+    <li><a href="/osaka">Osaka &amp; Kansai</a></li>
+    <li><a href="/visa-guide">Visa Guide</a></li>
+    <li><a href="/articles">All Articles</a></li>
+  </ul>
+</nav>
+<main>
+<article>
+<h1>Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do</h1>
+<p class="meta">Updated November 2026 · GaijinHome</p>
+
+<p>You have lived in Japan for years. You earned permanent residency (永住者), you pay Japanese taxes, and maybe you speak the language well. Then an apartment application comes back with a rejection, or the agent quietly says the owner "prefers Japanese tenants." It is deeply frustrating, because permanent residency was supposed to remove exactly this kind of barrier. The good news is that PR status really is a strong card in the rental market. It just needs to be played the right way, and some barriers have nothing to do with visas at all.</p>
+
+<h2>What Actually Happens</h2>
+
+<p>Permanent residents typically run into one of these scenarios:</p>
+
+<ul>
+<li><strong>Blanket refusal at the listing stage.</strong> The agent checks with the owner and is told "no foreigners" (外国籍不可) before even looking at your status.</li>
+<li><strong>Guarantor company rejection.</strong> The screening fails, often with no explanation, despite your stable status.</li>
+<li><strong>A request for a Japanese guarantor.</strong> Even with a guarantor company, the landlord asks for a Japanese joint guarantor (連帯保証人) as well.</li>
+<li><strong>Problems at a life change.</strong> Applying after retiring, changing jobs, becoming self-employed or divorcing — moments when income documents look weaker.</li>
+<li><strong>Applying for a family home.</strong> Larger apartments and houses are often owned by individual landlords who are more cautious than corporate owners.</li>
+</ul>
+
+<h2>Why It Still Happens</h2>
+
+<h3>Some owners filter by nationality, not status</h3>
+<p>Some landlords decide "no foreign nationals" as a blanket rule and never look at the residence status. Your residence card says 永住者, but the owner only hears "foreign tenant." Japan does not have a specific nationwide law that clearly bans this kind of refusal in private rentals, so it still occurs. Many agents and local governments discourage it, and the situation has improved, but it has not disappeared.</p>
+
+<h3>Guarantor companies care about credit and income, not visas</h3>
+<p>PR solves the "visa period shorter than lease" problem, but guarantor companies also look at other things. Card-affiliated companies can check credit bureaus such as CIC and JICC. Long-term residents are more likely than newcomers to have a credit history — which means more chance of an old late payment on a phone, card or loan showing up. Read our <a href="/articles/guide-how-to-pass-credit-check-japan-foreigner">credit check guide</a> if you suspect this.</p>
+
+<h3>Income documents at a transition point</h3>
+<p>If you recently left a company, started freelancing or retired, your most recent tax certificate may not reflect your current situation. Screening is based on documents, and documents lag behind life.</p>
+
+<h3>Joint guarantor demands are a custom</h3>
+<p>Some landlords still want a personal joint guarantor, usually a relative with income in Japan. Many permanent residents have no relatives in Japan who can sign, so this requirement blocks them even when everything else is in order. See our guide on <a href="/articles/2026-06-01-guarantor-refused-japan-foreigner-alternative">what to do when a guarantor is refused</a>.</p>
+
+<h3>Older landlords and age-related screening</h3>
+<p>Older permanent residents may also face the same age-related caution Japanese seniors experience, especially for single-person households. This is a separate issue from nationality, but the two can combine.</p>
+
+<h2>Common Mistakes Permanent Residents Make</h2>
+
+<ol>
+<li><strong>Not stating PR status upfront.</strong> If the agent just tells the owner "a foreign applicant," your strongest advantage is lost. Your status should be mentioned at the first inquiry.</li>
+<li><strong>Assuming PR guarantees approval.</strong> It removes one risk but not credit, income or guarantor issues. Prepare the full file anyway.</li>
+<li><strong>Using an agent who gives up easily.</strong> Some agents stop at the first "no foreigners" answer. You need one who will search owners who welcome long-term residents.</li>
+<li><strong>Applying right after a job change.</strong> If you can, apply before leaving your old job, or wait until you have your new employment certificate and a few pay slips.</li>
+<li><strong>Taking refusals personally and arguing with the agent.</strong> The agent usually is not the decision-maker. Use them as an ally to find a better owner.</li>
+</ol>
+
+<h2>Step-by-Step Fix</h2>
+
+<ol>
+<li><strong>Lead with your status in Japanese.</strong> When you contact an agent, say clearly: 「永住権を持っています。在日〇年で、日本語でのやり取りも可能です。」 ("I have permanent residency, have lived in Japan for X years and can communicate in Japanese.") Ask them to pass this exact information to the owner before the owner decides.</li>
+<li><strong>Ask the agent to pre-check the owner's policy.</strong> Before you view, ask: 「オーナー様は永住者の入居は問題ないでしょうか？」 This avoids wasting a viewing on an owner with a blanket rule.</li>
+<li><strong>Prepare "Japanese-resident equivalent" documents.</strong> Provide what a Japanese applicant would: certificate of residence (住民票) — which for foreign residents shows your status — tax certificate, certificate of employment and a Japanese emergency contact. Presenting a familiar, complete file reassures cautious owners.</li>
+<li><strong>Replace the joint guarantor.</strong> If a joint guarantor is demanded, ask whether the guarantor company alone can be accepted, or offer a higher guarantor plan, an extra month of deposit, or rent paid in advance. Many landlords accept a guarantor company in place of a person when asked directly.</li>
+<li><strong>Fix any credit issue.</strong> If you were rejected without explanation, request your records from CIC and JICC. If there is a negative entry, ask the agent for properties using non-card guarantor companies.</li>
+<li><strong>Target corporate owners and foreigner-friendly properties.</strong> Large management companies, newer buildings owned by funds, and UR public housing tend to apply standard rules rather than personal preferences. UR does not require a guarantor and permanent residents are eligible — see our <a href="/articles/guide-ur-housing-foreigner-apply">UR application guide</a>.</li>
+<li><strong>Use a temporary base if you are under time pressure.</strong> If you must move quickly — after a sale, a divorce or a job relocation — a furnished apartment or share house can bridge the gap while you search properly. [PR] <a href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DCGTYQ+4EZ2+BYLJL" rel="nofollow sponsored noopener">CrossOneRoom furnished Tokyo apartments</a> are aimed at foreign residents.</li>
+<li><strong>If you believe you faced discrimination, ask for help.</strong> Local governments and international associations (国際交流協会) in many cities offer housing consultation for foreign residents. The Ministry of Justice human rights counseling service also accepts consultations. They cannot force a landlord to rent to you, but they can advise and sometimes mediate.</li>
+</ol>
+
+<div class="callout"><strong>Key tip:</strong> Ask your agent to write "永住者" and your years in Japan directly in the application memo sent to the owner. Many owners who refuse "foreigners" in general will accept a permanent resident once they see it in writing.</div>
+
+<h2>Required Documents</h2>
+
+<ul class="checklist">
+<li>Residence card (在留カード) showing status 永住者, with valid card dates</li>
+<li>Certificate of residence (住民票), recently issued</li>
+<li>Tax certificate (課税証明書) or income certificate (所得証明書) for the latest year</li>
+<li>Withholding slip (源泉徴収票) if employed</li>
+<li>Certificate of employment (在職証明書) or, if self-employed, your tax return copy (確定申告書の控え)</li>
+<li>Pension or savings documentation if retired (年金証書, bank statements)</li>
+<li>Emergency contact (緊急連絡先) in Japan — spouse, friend or colleague who has agreed</li>
+<li>Personal seal (印鑑) and seal registration certificate (印鑑証明書) if a joint guarantor is involved</li>
+</ul>
+
+<h2>City and Region Differences</h2>
+
+<h3>Tokyo</h3>
+<p>Tokyo has the largest number of foreign residents and the most agents used to working with them, so permanent residents generally have more options here. Corporate-owned buildings in areas such as Shinagawa, Koto and Chuo often follow standardized screening where PR status helps clearly. Older, individually owned buildings in quiet residential wards are where blanket refusals are more common. Family-sized units are competitive, so be ready to apply quickly.</p>
+
+<h3>Osaka and Kansai</h3>
+<p>Osaka has long-established communities of foreign residents, including many permanent and special permanent residents, and many local agents are experienced with them. Contract terms such as security payments and shikibiki differ from Tokyo; see our <a href="/osaka">Osaka guide</a>.</p>
+
+<h3>Regional areas</h3>
+<p>In rural and smaller regional areas, foreign residents are fewer and owners may be less familiar with residence statuses. On the other hand, vacancy rates are often higher, so owners have stronger incentives to accept a stable long-term tenant. Personal introductions through your employer or local community can be very effective. Some municipalities also run support programs for people who struggle to find housing, sometimes called 居住支援 services.</p>
+
+<p>For the bigger picture of residence statuses and how they affect renting, see our <a href="/visa-guide">visa guide</a>.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<h3>Can a landlord legally refuse me because I am a foreigner, even with PR?</h3>
+<p>Japan does not have a broad, specific law that clearly prohibits private landlords from refusing foreign tenants, so refusals still happen. Such refusals are widely discouraged, and in some cases courts have found discriminatory treatment unlawful, but outcomes depend on the facts. Consult a housing advice service or lawyer if you want to pursue it.</p>
+
+<h3>Do permanent residents need a guarantor company?</h3>
+<p>Usually yes, in the same way Japanese tenants do. Guarantor companies are standard for most rentals. PR status helps you pass, but it does not remove the requirement. UR housing is a notable exception that does not use one.</p>
+
+<h3>Does PR help with the credit check?</h3>
+<p>It helps with visa-related risk, because there is no stay period to worry about. But credit checks look at income and credit records too. A late payment in CIC or JICC can still cause a rejection even for a permanent resident.</p>
+
+<h3>I recently retired. How can I rent as a permanent resident?</h3>
+<p>Prepare pension certificates and bank statements showing you can cover rent for a long period, and consider offering advance rent. UR housing has savings-based options for applicants without regular salary, and some guarantor companies specialize in older tenants.</p>
+
+<h3>Should I mention PR when I first contact the agent?</h3>
+<p>Yes, always. Mention it in your first message along with how long you have lived in Japan and your job. This lets the agent present you correctly to owners from the start rather than as a generic foreign applicant.</p>
+</div>
+
+<section class="related-articles" style="max-width:800px;margin:40px auto;padding:24px;border-top:1px solid rgba(0,0,0,0.15);">
+  <h2>Related Articles</h2>
+  <ul style="margin-top:12px;padding-left:20px;">
+    <li style="margin-bottom:8px;"><a href="/articles/guide-ur-housing-foreigner-apply" style="color:inherit;">UR Housing Application Denied for Foreigners in Japan? Exact Reasons and Fixes</a> <span style="opacity:0.6;font-size:0.85em;">(Nov 03, 2026)</span></li>
+    <li style="margin-bottom:8px;"><a href="/articles/guide-share-house-tokyo-foreigner-english" style="color:inherit;">Share House Application Rejected in Tokyo as a Foreigner? What Actually Gets You In</a> <span style="opacity:0.6;font-size:0.85em;">(Nov 03, 2026)</span></li>
+    <li style="margin-bottom:8px;"><a href="/articles/guide-osaka-foreigner-apartment-no-guarantor" style="color:inherit;">Apartment Denied in Osaka Because You Have No Guarantor? Exact Fixes for Foreigners</a> <span style="opacity:0.6;font-size:0.85em;">(Nov 03, 2026)</span></li>
+  </ul>
+</section>
+</article>
+</main>
 <!-- gh-sponsor -->
 <aside class="gh-sponsor" style="max-width:760px;margin:40px auto;padding:20px;background:#FDFAF5;border-left:4px solid #E8372A;font-family:inherit;">
   <p style="margin:0 0 6px;font-size:0.8em;letter-spacing:.05em;color:#777;">[PR] Sponsored — we may earn a commission if you sign up</p>
@@ -726,5 +184,11 @@
     <a href="https://px.a8.net/svt/ejp?a8mat=4BGCF5+4KBNQQ+5NSE+5YRHE" rel="nofollow sponsored noopener" target="_blank" style="display:block;padding:14px 16px;margin:10px 0;border:1px solid #e5ddd0;border-radius:8px;background:#fff;color:#0F0E0C;text-decoration:none;"><strong style="color:#E8372A;">italki — Japanese lessons with native tutors →</strong><br><span style="font-size:0.92em;">Learn the phrases you need for viewings, contracts and calls with your landlord.</span></a>
 </aside>
 <!-- gh-sponsor -->
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2026 GaijinHome. Some links are affiliate links ([PR]).</span>
+    <span><a href="/">Home</a><a href="/articles">All Articles</a><a href="/affiliate">Affiliate Disclosure</a><a href="/privacy">Privacy Policy</a></span>
+  </div>
+</footer>
 </body>
 </html>

@@ -1,750 +1,183 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="If your apartment application was rejected despite having a work visa in Japan, here are the exact missing documents and agencies that approve foreigners.">
-    <meta name="keywords" content="rent apartment Japan work visa, Japan apartment foreigner, work visa housing Japan, find apartment Japan expat">
-    <meta name="author" content="GaijinHome">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://gaijinhome.com/articles/guide-how-to-rent-apartment-japan-work-visa">
-    <title>Apartment Rejected in Japan on a Work Visa? What You're Missing and What to Do</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --red: #E8372A;
-            --dark-ink: #0F0E0C;
-            --cream: #FDFAF5;
-            --light-gray: #f5f5f5;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Syne', sans-serif;
-            background-color: var(--cream);
-            color: var(--dark-ink);
-            line-height: 1.8;
-            font-size: 18px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        header {
-            background-color: var(--dark-ink);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .logo {
-            color: var(--cream);
-            font-size: 28px;
-            font-weight: 800;
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--red);
-        }
-        
-        .hero {
-            background: linear-gradient(135deg, var(--dark-ink) 0%, #2a2a2a 100%);
-            color: var(--cream);
-            padding: 80px 0;
-            text-align: center;
-        }
-        
-        .hero h1 {
-            font-size: 48px;
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-        
-        .hero h1 span {
-            color: var(--red);
-        }
-        
-        .hero-meta {
-            font-size: 16px;
-            opacity: 0.8;
-        }
-        
-        .main-content {
-            display: grid;
-            grid-template-columns: 1fr 320px;
-            gap: 40px;
-            padding: 60px 0;
-        }
-        
-        @media (max-width: 900px) {
-            .main-content {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        article h2 {
-            font-size: 32px;
-            font-weight: 700;
-            color: var(--dark-ink);
-            margin: 40px 0 20px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid var(--red);
-        }
-        
-        article h3 {
-            font-size: 24px;
-            font-weight: 600;
-            color: var(--dark-ink);
-            margin: 30px 0 15px;
-        }
-        
-        article p {
-            margin-bottom: 20px;
-        }
-        
-        article ul, article ol {
-            margin: 20px 0 20px 30px;
-        }
-        
-        article li {
-            margin-bottom: 10px;
-        }
-        
-        .toc {
-            background-color: var(--light-gray);
-            border-left: 4px solid var(--red);
-            padding: 25px 30px;
-            margin: 30px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .toc h3 {
-            margin: 0 0 15px;
-            font-size: 20px;
-        }
-        
-        .toc ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .toc li {
-            margin-bottom: 8px;
-        }
-        
-        .toc a {
-            color: var(--dark-ink);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .toc a:hover {
-            color: var(--red);
-        }
-        
-        .highlight-box {
-            background-color: var(--red);
-            color: var(--cream);
-            padding: 25px;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-        
-        .highlight-box h4 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .warning-box {
-            background-color: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 20px 25px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .tip-box {
-            background-color: #d4edda;
-            border-left: 4px solid #28a745;
-            padding: 20px 25px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        
-        .sidebar {
-            position: sticky;
-            top: 100px;
-            height: fit-content;
-        }
-        
-        .sidebar-widget {
-            background-color: white;
-            border: 2px solid var(--dark-ink);
-            border-radius: 12px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 4px 4px 0 var(--dark-ink);
-        }
-        
-        .sidebar-widget h4 {
-            font-size: 18px;
-            font-weight: 700;
-            margin-bottom: 15px;
-            color: var(--dark-ink);
-        }
-        
-        .affiliate-card {
-            background: linear-gradient(135deg, var(--red) 0%, #c42d22 100%);
-            color: var(--cream);
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            text-align: center;
-        }
-        
-        .affiliate-card h5 {
-            font-size: 16px;
-            margin-bottom: 8px;
-        }
-        
-        .affiliate-card p {
-            font-size: 14px;
-            margin-bottom: 12px;
-            opacity: 0.9;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background-color: var(--cream);
-            color: var(--red);
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-        }
-        
-        .inline-cta {
-            background-color: var(--dark-ink);
-            color: var(--cream);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px 0;
-            text-align: center;
-        }
-        
-        .inline-cta h4 {
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        
-        .inline-cta p {
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-        
-        .inline-cta .cta-button {
-            background-color: var(--red);
-            color: var(--cream);
-        }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            background: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        th, td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-        
-        th {
-            background-color: var(--dark-ink);
-            color: var(--cream);
-            font-weight: 600;
-        }
-        
-        tr:hover {
-            background-color: var(--light-gray);
-        }
-        
-        .faq-section {
-            margin: 50px 0;
-        }
-        
-        .faq-item {
-            background: white;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            overflow: hidden;
-        }
-        
-        .faq-question {
-            font-weight: 600;
-            padding: 20px;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .faq-question:hover {
-            background-color: var(--light-gray);
-        }
-        
-        .faq-answer {
-            padding: 0 20px 20px;
-            border-top: 1px solid #eee;
-        }
-        
-        .internal-links {
-            background-color: var(--light-gray);
-            padding: 30px;
-            border-radius: 12px;
-            margin: 40px 0;
-        }
-        
-        .internal-links h4 {
-            margin-bottom: 15px;
-        }
-        
-        .internal-links ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-        }
-        
-        .internal-links a {
-            color: var(--red);
-            text-decoration: none;
-            font-weight: 500;
-        }
-        
-        .internal-links a:hover {
-            text-decoration: underline;
-        }
-        
-        footer {
-            background-color: var(--dark-ink);
-            color: var(--cream);
-            padding: 40px 0;
-            text-align: center;
-        }
-        
-        footer a {
-            color: var(--red);
-        }
-        
-        .breadcrumb {
-            padding: 15px 0;
-            font-size: 14px;
-        }
-        
-        .breadcrumb a {
-            color: var(--red);
-            text-decoration: none;
-        }
-        
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-            margin: 30px 0;
-        }
-        
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 8px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background-color: var(--red);
-        }
-        
-        .timeline-item {
-            position: relative;
-            margin-bottom: 25px;
-            padding-left: 20px;
-        }
-        
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -26px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            background-color: var(--red);
-            border-radius: 50%;
-            border: 3px solid var(--cream);
-        }
-        
-        .timeline-item h4 {
-            font-size: 18px;
-            margin-bottom: 5px;
-        }
-    </style>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "How to Rent an Apartment in Japan with a Work Visa (2026 Guide)",
-        "description": "Complete guide for foreign professionals on renting apartments in Japan with a work visa. Covers requirements, documents, timeline, and expert tips.",
-        "author": {
-            "@type": "Organization",
-            "name": "GaijinHome"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "GaijinHome",
-            "url": "https://gaijinhome.com"
-        },
-        "datePublished": "2026-01-15",
-        "dateModified": "2026-01-15"
-    }
-    </script>
-    
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Can I rent an apartment in Japan with just a work visa?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, you can rent an apartment in Japan with a work visa, but you'll typically need additional requirements such as a Japanese guarantor (hoshounin), proof of employment, and several months' worth of upfront costs. Having a valid work visa actually makes you a more attractive tenant than tourists or those on short-term visas."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How much money do I need upfront to rent in Japan?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "For a typical apartment rental in Japan, expect to pay 4-6 months' worth of rent upfront. This includes first month's rent, security deposit (shikikin: 1-2 months), key money (reikin: 0-2 months), agency fees (1 month), and guarantor company fees (0.5-1 month). For a ¥80,000/month apartment, budget ¥320,000-480,000 initially."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Do I need a Japanese guarantor to rent an apartment?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Traditionally yes, but in 2026, about 70% of landlords accept guarantor companies (hoshougaisha) instead of personal guarantors. These companies charge 50-100% of one month's rent and guarantee your lease. Some foreigner-friendly agencies like Best-Estate.jp specialize in properties that accept guarantor companies or don't require guarantors at all."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What documents do I need to rent an apartment with a work visa?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Essential documents include: residence card (zairyu card), passport, work visa, certificate of employment (zaishoku shomeisho), income certificate or recent pay stubs (3 months), certificate of tax payment (nozei shomeisho), inkan (personal seal) or signature, and emergency contact in Japan. Some landlords may also request a copy of your rental history."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "How long does the apartment rental process take in Japan?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "The typical timeline is 2-4 weeks from viewing to move-in. Property search takes 1-2 weeks, application and screening 3-7 days, contract signing 1-2 days, and move-in preparation 3-7 days. However, if you face rejections or need to find a guarantor company, it may take 4-6 weeks."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Can my employer help me rent an apartment in Japan?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Yes, many employers in Japan assist with housing. Some provide company housing (shataku), act as your guarantor, offer housing allowances, or connect you with relocation services. When negotiating your job offer, ask about housing support – it's common practice, especially for larger companies hiring foreign workers."
-                }
-            }
-        ]
-    }
-    </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apartment Rejected in Japan on a Work Visa? What You&#x27;re Missing and What to Do | GaijinHome</title>
+<meta name="description" content="Confused about why your apartment was rejected in Japan on a work visa? See what landlords check, what you are missing, and the exact steps to get approved.">
+<link rel="canonical" href="https://gaijinhome.com/articles/guide-how-to-rent-apartment-japan-work-visa">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apartment Rejected in Japan on a Work Visa? What You&#x27;re Missing and What to Do">
+<meta property="og:description" content="Confused about why your apartment was rejected in Japan on a work visa? See what landlords check, what you are missing, and the exact steps to get approved.">
+<meta property="og:url" content="https://gaijinhome.com/articles/guide-how-to-rent-apartment-japan-work-visa">
+<meta property="article:published_time" content="2026-05-01">
+<meta property="article:modified_time" content="2026-11-03">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Literata:wght@600&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { background: #FAFAF7; }
+  body { font-family: 'DM Sans', sans-serif; background: #FAFAF7; color: #1A1917; font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+  nav { background: #fff; border-bottom: 1px solid #E4E2DC; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 60px; position: sticky; top: 0; z-index: 100; }
+  .logo { font-weight: 600; font-size: 20px; color: #1A1917; letter-spacing: -0.5px; text-decoration: none; }
+  .logo span { color: #1B4D3E; }
+  .nav-links { display: flex; gap: 20px; list-style: none; }
+  .nav-links a { text-decoration: none; color: #4A4845; font-size: 13px; font-weight: 500; white-space: nowrap; }
+  article { max-width: 760px; margin: 0 auto; padding: 48px 24px 24px; }
+  .meta { font-size: 13px; color: #8A8783; margin-bottom: 28px; }
+  h1 { font-family: 'Literata', Georgia, serif; font-size: 34px; line-height: 1.25; font-weight: 600; margin-bottom: 12px; letter-spacing: -0.3px; }
+  h2 { font-family: 'Literata', Georgia, serif; font-size: 24px; font-weight: 600; margin: 44px 0 14px; padding-top: 8px; border-top: 1px solid #E4E2DC; }
+  h3 { font-size: 17px; font-weight: 600; margin: 24px 0 8px; }
+  p { margin: 0 0 16px; }
+  ul, ol { margin: 0 0 18px 22px; }
+  li { margin-bottom: 6px; }
+  a { color: #1B4D3E; }
+  strong { font-weight: 600; }
+  table { width: 100%; border-collapse: collapse; margin: 0 0 20px; font-size: 14.5px; background: #fff; }
+  th, td { border: 1px solid #E4E2DC; padding: 9px 11px; text-align: left; vertical-align: top; }
+  th { background: #EBF3F0; font-weight: 600; }
+  .callout { background: #EBF3F0; border-left: 4px solid #1B4D3E; padding: 14px 18px; margin: 0 0 20px; border-radius: 4px; }
+  .checklist li { list-style: none; margin-left: -22px; padding-left: 26px; position: relative; }
+  .checklist li::before { content: "☐"; position: absolute; left: 0; color: #1B4D3E; }
+  .faq h3 { margin-top: 20px; }
+  footer { background: #fff; border-top: 1px solid #E4E2DC; padding: 32px 24px; margin-top: 48px; }
+  .footer-inner { max-width: 760px; margin: 0 auto; display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; font-size: 12.5px; color: #8A8783; }
+  .footer-inner a { color: #4A4845; text-decoration: none; margin-right: 16px; }
+  @media (max-width: 768px) { nav { padding: 0 16px; } .nav-links { display: none; } article { padding: 32px 16px 16px; } h1 { font-size: 27px; } h2 { font-size: 21px; } table { font-size: 13px; } }
+</style>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Article", "headline": "Apartment Rejected in Japan on a Work Visa? What You're Missing and What to Do", "description": "Confused about why your apartment was rejected in Japan on a work visa? See what landlords check, what you are missing, and the exact steps to get approved.", "datePublished": "2026-05-01", "dateModified": "2026-11-03", "author": {"@type": "Organization", "name": "GaijinHome"}, "publisher": {"@type": "Organization", "name": "GaijinHome"}, "mainEntityOfPage": "https://gaijinhome.com/articles/guide-how-to-rent-apartment-japan-work-visa"}, {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Can I rent an apartment in Japan before receiving my first salary?", "acceptedAnswer": {"@type": "Answer", "text": "Often yes, but you need to replace payslips with other proof. A certificate of employment or employment contract stating your salary, plus savings or a willingness to prepay or pay a higher deposit, can be enough for many guarantor companies. A corporate lease removes the problem entirely."}}, {"@type": "Question", "name": "Does the type of work visa matter for renting?", "acceptedAnswer": {"@type": "Answer", "text": "Screeners care less about the exact category than about your period of stay, employer and income. A longer remaining period of stay and a stable, verifiable employer usually help more than any particular visa name."}}, {"@type": "Question", "name": "My visa expires in eight months. Can I still sign a two-year lease?", "acceptedAnswer": {"@type": "Answer", "text": "Many landlords will accept it, since a standard lease can be renewed or ended with notice. Others will not. Showing that your employment continues and that you will renew, or choosing a fixed-term lease that ends before your period of stay, are the usual ways to get past this. Our visa guide covers renewal basics."}}, {"@type": "Question", "name": "Is a dispatch or contract job a problem for screening?", "acceptedAnswer": {"@type": "Answer", "text": "It can make screeners more cautious, especially with a short contract. Showing a longer track record, a contract renewal history, or a letter from the dispatch company can help. Lower rent and a larger deposit also offset the perceived risk."}}, {"@type": "Question", "name": "What should I do right after a rejection?", "acceptedAnswer": {"@type": "Answer", "text": "Ask the agent which part failed, fix that one thing, and reapply with a different property or guarantor company rather than the same combination. Our guide to apartment rejection reasons lists the most common causes in more detail."}}]}]</script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="/" class="logo">Gaijin<span>Home</span></a>
-        </div>
-    </header>
-    
-    <section class="hero">
-        <div class="container">
-            <h1>How to Rent an Apartment in Japan<br>with a <span>Work Visa</span> (2026 Guide)</h1>
-            <p class="hero-meta">Updated January 2026 · 12 min read · By GaijinHome Team</p>
-        </div>
-    </section>
-    
-    <div class="container">
-        <nav class="breadcrumb">
-            <a href="/">Home</a> → <a href="/articles">Guides</a> → Work Visa Apartment Guide
-        </nav>
-    </div>
-    
-    <div class="container">
-        <div class="main-content">
-            <article>
-                <p>Congratulations on securing your work visa for Japan! Now comes the next challenge: finding a place to live. While renting an apartment in Japan as a foreigner has historically been difficult, 2026 brings more options than ever for work visa holders. This comprehensive guide walks you through everything you need to know, from document preparation to signing your lease.</p>
-                
-                <nav class="toc">
-                    <h3>📋 Table of Contents</h3>
-                    <ul>
-                        <li><a href="#work-visa-advantage">1. The Work Visa Advantage</a></li>
-                        <li><a href="#documents-needed">2. Documents You'll Need</a></li>
-                        <li><a href="#upfront-costs">3. Understanding Upfront Costs</a></li>
-                        <li><a href="#guarantor-options">4. Guarantor Options for Foreigners</a></li>
-                        <li><a href="#search-process">5. The Apartment Search Process</a></li>
-                        <li><a href="#timeline">6. Realistic Timeline</a></li>
-                        <li><a href="#rejection-tips">7. Dealing with Rejections</a></li>
-                        <li><a href="#employer-help">8. Getting Help from Your Employer</a></li>
-                        <li><a href="#best-cities">9. Best Cities for Foreign Workers</a></li>
-                        <li><a href="#faq">10. Frequently Asked Questions</a></li>
-                    </ul>
-                </nav>
-                
-                <h2 id="work-visa-advantage">1. The Work Visa Advantage</h2>
-                
-                <p>Here's the good news: having a work visa puts you in a significantly better position than tourists, students, or working holiday visa holders. Japanese landlords prioritize stability, and a work visa signals that you:</p>
-                
-                <ul>
-                    <li>Have a stable income source</li>
-                    <li>Plan to stay in Japan long-term</li>
-                    <li>Have been vetted by the Japanese immigration system</li>
-                    <li>Are likely employed by a legitimate company</li>
-                </ul>
-                
-                <p>That said, you'll still face more scrutiny than Japanese nationals. The key is preparation and knowing which properties are foreigner-friendly. According to our 2026 data, work visa holders have approximately a 75% success rate on their first or second application when using foreigner-specialized agencies, compared to just 45% when applying through general agencies.</p>
-                
-                <div class="highlight-box">
-                    <h4>💡 Pro Tip</h4>
-                    <p>Your work visa status matters less than your employment stability. A foreigner with a permanent employer at a well-known company will be preferred over a Japanese national working irregular jobs. Highlight your company name and employment type in applications.</p>
-                </div>
-                
-                <h2 id="documents-needed">2. Documents You'll Need</h2>
-                
-                <p>Japanese rental applications are document-heavy. Start gathering these before you even begin your search:</p>
-                
-                <h3>Essential Documents</h3>
-                
-                <table>
-                    <tr>
-                        <th>Document</th>
-                        <th>Japanese Name</th>
-                        <th>Where to Get It</th>
-                    </tr>
-                    <tr>
-                        <td>Residence Card</td>
-                        <td>在留カード (Zairyū Card)</td>
-                        <td>Immigration Bureau</td>
-                    </tr>
-                    <tr>
-                        <td>Passport</td>
-                        <td>パスポート</td>
-                        <td>Your country's embassy</td>
-                    </tr>
-                    <tr>
-                        <td>Certificate of Employment</td>
-                        <td>在職証明書 (Zaishoku Shomeisho)</td>
-                        <td>Your HR department</td>
-                    </tr>
-                    <tr>
-                        <td>Income Certificate</td>
-                        <td>収入証明書 (Shūnyū Shomeisho)</td>
-                        <td>Your employer or tax office</td>
-                    </tr>
-                    <tr>
-                        <td>Tax Payment Certificate</td>
-                        <td>納税証明書 (Nōzei Shomeisho)</td>
-                        <td>Local tax office</td>
-                    </tr>
-                    <tr>
-                        <td>Personal Seal (or signature)</td>
-                        <td>印鑑 (Inkan)</td>
-                        <td>Any seal shop (¥500-3000)</td>
-                    </tr>
-                </table>
-                
-                <h3>For New Arrivals</h3>
-                
-                <p>If you've just arrived in Japan and don't have pay stubs or tax certificates yet, you can substitute:</p>
-                
-                <ul>
-                    <li>Employment contract showing your salary</li>
-                    <li>Offer letter from your company</li>
-                    <li>Bank statements showing savings (typically 6+ months rent)</li>
-                    <li>Letter from your employer confirming your start date and salary</li>
-                </ul>
-                
-                <div class="tip-box">
-                    <strong>✓ New in 2026:</strong> Many guarantor companies now accept digital document submission. Services like Best-Estate.jp allow you to upload documents directly to their app, speeding up the process significantly.
-                </div>
-                
-                <h2 id="upfront-costs">3. Understanding Upfront Costs</h2>
-                
-                <p>The infamous Japanese upfront costs catch many foreigners off guard. Unlike many Western countries where you might pay first and last month's rent plus a deposit, Japan has a unique fee structure:</p>
-                
-                <table>
-                    <tr>
-                        <th>Cost Type</th>
-                        <th>Japanese Name</th>
-                        <th>Typical Amount</th>
-                        <th>Refundable?</th>
-                    </tr>
-                    <tr>
-                        <td>First Month's Rent</td>
-                        <td>前家賃</td>
-                        <td>1 month</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Security Deposit</td>
-                        <td>敷金 (Shikikin)</td>
-                        <td>1-2 months</td>
-                        <td>Partially</td>
-                    </tr>
-                    <tr>
-                        <td>Key Money</td>
-                        <td>礼金 (Reikin)</td>
-                        <td>0-2 months</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Agency Fee</td>
-                        <td>仲介手数料</td>
-                        <td>1 month</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Guarantor Company</td>
-                        <td>保証会社</td>
-                        <td>0.5-1 month</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Fire Insurance</td>
-                        <td>火災保険</td>
-                        <td>¥15,000-20,000/year</td>
-                        <td>No</td>
-                    </tr>
-                    <tr>
-                        <td>Lock Change</td>
-                        <td>鍵交換</td>
-                        <td>¥15,000-25,000</td>
-                        <td>No</td>
-                    </tr>
-                </table>
-                
-                <p><strong>Real Example:</strong> For an apartment with ¥80,000/month rent in Tokyo with 1 month shikikin, 1 month reikin, and standard fees, expect to pay approximately:</p>
-                
-                <ul>
-                    <li>First month: ¥80,000</li>
-                    <li>Shikikin: ¥80,000</li>
-                    <li>Reikin: ¥80,000</li>
-                    <li>Agency fee: ¥88,000 (includes tax)</li>
-                    <li>Guarantor: ¥40,000-80,000</li>
-                    <li>Insurance + keys: ¥35,000</li>
-                    <li><strong>Total: ¥403,000-443,000 (~$2,700-3,000 USD)</strong></li>
-                </ul>
-                
-                <p>For a detailed breakdown of all fees and how to minimize them, check our <a href="/hidden-costs">complete guide to hidden rental costs in Japan</a>.</p>
-                
-                <div class="inline-cta">
-                    <h4>💰 Find Zero Key Money Apartments</h4>
-                    <p>Best-Estate.jp specializes in foreigner-friendly properties with reduced upfront costs. Many listings have 0 reikin!</p>
-                    <a href="https://best-estate.jp" target="_blank" rel="nofollow sponsored" class="cta-button">Search Properties →</a>
-                </div>
-                
-                <h2 id="guarantor-options">4. Guarantor Options for Foreigners</h2>
-                
-                <p>The guarantor (保証人, hoshounin) requirement is often the biggest hurdle for foreigners. Traditionally, you needed a Japanese citizen with stable income to guarantee your lease. In 2026, you have several options:</p>
-                
-                <h3>Option 1: Guarantor Companies (Most Common)</h3>
-                
-                <p>About 70% of landlords now accept guarantor companies (保証会社, hoshougaisha). These companies guarantee your rent payments for a fee, typically 50-100% of one month's rent, with annual renewals of ¥10,000-20,000.</p>
-                
-                <p>Popular guarantor companies that accept foreigners:</p>
-                <ul>
-                    <li>GTN (Global Trust Networks) - Most foreigner-friendly</li>
-                    <li>Casa</li>
-                    <li>Orico Forrent</li>
-                    <li>JID</li>
-                </ul>
-                
-                <h3>Option 2: Your Employer as Guarantor</h3>
-                
-                <p>Many Japanese companies, especially larger ones, will act as your guarantor. This is often the smoothest path. Ask your HR department – even if they don't typically do this, they may make exceptions for foreign hires.</p>
-                
-                <h3>Option 3: No-Guarantor Properties</h3>
-                
-                <p>Some properties, particularly in share houses and newer apartment buildings, don't require any guarantor. These tend to be slightly more expensive or located in less central areas, but they dramatically simplify the process.</p>
-                
-                <p>For comprehensive strategies on renting without a guarantor, see our <a href="/no-guarantor">complete no-guarantor rental guide</a>.</p>
-                
-                <h2 id="search-process">5. The Apartment Search Process</h2>
-                
-                <p>Here's a step-by-step breakdown of how to search effectively:</p>
-                
-                <h3>Step 1: Determine Your Budget</h3>
-                
-                <p>The standard rule in Japan is that your rent should be no more than 1/3 of your monthly income. If you earn ¥300,000/month, aim for apartments under ¥100,000. Going above this ratio may cause rejection during screening.</p>
-                
-                <h3>Step 2: Choose Your Preferred Areas</h3>
-                
-                <p>Consider commute time to work (most Tokyo workers commute 45-60 minutes), proximity to train stations (within 10 minutes walk is ideal), and neighborhood vibe. For detailed area guides, check our <a href="/osaka">Osaka and Kansai region guide</a> if you're heading outside Tokyo.</p>
-                
-                <h3>Step 3: Use Foreigner-Friendly Agencies</h3>
-                
-                <p>This is critical. General real estate agencies may waste your time showing properties that won't accept foreigners. Foreigner-specialized agencies pre-screen properties and know which landlords are open-minded.</p>
-                
-                <div class="warning-box">
-                    <strong>⚠️ Warning:</strong> Some agencies charge extra "foreigner fees" or try to limit your options to certain properties. Legitimate agencies like Best-Estate.jp don't charge extra for foreign clients and show you the same listings Japanese customers see.
-                </div>
-                
-                <h3>Step 4: View Properties</h3>
-                
-                <p>Most agencies require in-person viewings. Prepare these questions:</p>
-                <ul>
-                    <li>Does the landlord accept foreign tenants?</li>
-                    <li>Which guarantor companies are accepted?</li>
-                    <li>What documents are required?</li>
-                    <li>Are there any specific rules (no parties, no guests overnight, etc.)?</li>
-                    <li>What's included in the rent vs. additional costs?</li>
-                </ul>
-                
-                <h3>Step 5: Submit Application</h3>
-                
-                <p>Once you find a property, submit your application immediately – good apartments go fast. You'll fill out an application form (
-</p></div></div></article>
+<nav>
+  <a href="/" class="logo">Gaijin<span>Home</span></a>
+  <ul class="nav-links">
+    <li><a href="/full-guide">Full Guide</a></li>
+    <li><a href="/no-guarantor">No Guarantor</a></li>
+    <li><a href="/rejected">Got Rejected?</a></li>
+    <li><a href="/hidden-costs">Hidden Costs</a></li>
+    <li><a href="/osaka">Osaka &amp; Kansai</a></li>
+    <li><a href="/visa-guide">Visa Guide</a></li>
+    <li><a href="/articles">All Articles</a></li>
+  </ul>
+</nav>
+<main>
+<article>
+<h1>Apartment Rejected in Japan on a Work Visa? What You're Missing and What to Do</h1>
+<p class="meta">Updated November 2026 · GaijinHome</p>
+
+<p>You have a job, a salary and a valid work visa. On paper you are exactly the kind of tenant landlords want. So a rejection feels illogical, and maybe insulting. You did everything right, and the answer was still no.</p>
+
+<p>Here is the uncomfortable truth: in Japan, having a work visa is the starting point, not the deciding factor. Screening looks at how your visa, job and paperwork fit together over the length of a lease. Most work visa holders who get rejected are missing one specific piece of that picture. This article is about finding that piece.</p>
+
+<h2>What Actually Happens</h2>
+
+<p>Typical stories from work visa holders look like this:</p>
+
+<ul>
+<li>You started your job a month ago, applied for an apartment, and the guarantor company declined you because you have no payslips yet.</li>
+<li>Your residence card shows one year remaining, and the landlord would not accept a two-year lease.</li>
+<li>You transferred to Japan from an overseas branch, your salary is paid partly abroad, and the screening company could not verify your income.</li>
+<li>You are on a contract or dispatch (派遣, haken) role, and screening treated it as unstable employment.</li>
+<li>You recently changed jobs and your current employer does not yet match the one on your residence card records.</li>
+</ul>
+
+<p>In almost every case, nobody tells you which of these was the problem. You just hear "the screening did not pass" (審査が通りませんでした).</p>
+
+<h2>Why It Happens</h2>
+
+<h3>Screening checks the next two years, not today</h3>
+<p>A standard Japanese lease runs two years. The guarantor company (保証会社) and landlord want confidence that rent will be paid for that whole period. Your visa type matters less than three questions: how long you can legally stay, how stable your income is, and how easy it would be to recover money if you left.</p>
+
+<h3>Period of stay is read literally</h3>
+<p>Work visas are granted for periods such as one, three or five years. If yours ends six months into a two-year lease, some screeners will treat the gap as a risk even though renewal is routine for people with ongoing employment. A newly arrived worker with a one-year first period of stay is particularly exposed to this.</p>
+
+<h3>Income has to be provable in Japan</h3>
+<p>Guarantor companies typically want Japanese-format proof: payslips, a certificate of employment, and for people who have been here over a year, a resident tax certificate (課税証明書). If you are new, have no Japanese tax history, or are paid from overseas, the screener may have nothing they recognize. A strong salary that cannot be documented in the expected format can still be rejected.</p>
+
+<h3>Employer recognition</h3>
+<p>Screening often considers the employer itself: its size, how long it has existed, and whether it is easy to verify. Large, well-known companies can make approval easier. A small start-up, a foreign company without a strong Japan presence, or a dispatch arrangement can make the screener cautious, even if your job is secure.</p>
+
+<h3>Credit history in Japan</h3>
+<p>Some guarantor companies are linked to credit card companies and check credit records. As a newcomer you usually have no Japanese credit history, which is neutral rather than negative, but late phone or card payments in Japan can count against you. Our guide on <a href="/articles/guide-how-to-pass-credit-check-japan-foreigner">passing a credit check as a foreigner</a> explains this in detail.</p>
+
+<h2>Common Mistakes</h2>
+
+<ol>
+<li><strong>Applying before your first payslip without compensating.</strong> If you have no payslips yet, you need an offer letter or certificate of employment stating your salary, and ideally a higher deposit or prepayment to balance it.</li>
+<li><strong>Choosing rent that is too high for your salary.</strong> Many screeners expect rent to stay around a third of monthly income or lower, though thresholds vary. Stretching your budget is one of the most common causes of rejection.</li>
+<li><strong>Forgetting that your employer will be called.</strong> Screeners may phone your workplace to confirm employment. If reception does not recognize your name or HR is not expecting the call, verification can fail.</li>
+<li><strong>Applying right after a job change.</strong> If you changed employers, you must notify immigration within the required period. Mismatched information between your application and your records looks bad, and screeners often prefer some tenure at the new job.</li>
+<li><strong>Not asking about a corporate lease.</strong> Many work visa holders could have their company sign the lease and never ask.</li>
+</ol>
+
+<h2>Step-by-Step Fix</h2>
+
+<ol>
+<li><strong>Diagnose the weak point.</strong> Ask the agent whether the issue was income, employment length, visa period, credit, or the landlord's preference: 「どの点が審査で引っかかったか、分かる範囲で教えていただけますか？」. Even a hint narrows your fix.</li>
+<li><strong>Ask HR about a corporate contract or housing support.</strong> Approach HR with a specific request: "Could the company sign as the lessee (法人契約), or provide a letter confirming my employment and expected visa renewal?" A corporate lease often bypasses individual screening altogether.</li>
+<li><strong>Brief your workplace for the verification call.</strong> Tell your manager or HR that a guarantor company may call to confirm your employment, and give them your name in both English and katakana so reception can find you.</li>
+<li><strong>Close the visa gap on paper.</strong> If your remaining period of stay is short, apply for renewal as early as allowed and show the application receipt. Alternatively, ask whether the landlord accepts a fixed-term lease (定期借家契約, teiki shakuya keiyaku) that ends before your period of stay does.</li>
+<li><strong>Lower the rent or raise the guarantee.</strong> Drop your target rent until it fits the screener's comfort zone, or offer a larger deposit or several months' prepayment. Both directly reduce the risk the guarantor is assessing.</li>
+<li><strong>Change the guarantor company or the route.</strong> Ask the agent to try a guarantor company that is more experienced with foreign applicants. If standard screening keeps failing, look at options that skip it: UR public housing, which has no guarantor requirement and income-based eligibility (see our <a href="/articles/guide-ur-housing-foreigner-apply">UR housing guide</a>), or guarantor-free apartments covered in our <a href="/no-guarantor">no-guarantor guide</a>.</li>
+<li><strong>Use a furnished bridge while you build history.</strong> Three months of payslips can change your screening outcome. A furnished apartment for that period is often cheaper than repeated failed applications. [PR] <a href="https://px.a8.net/svt/ejp?a8mat=4B1JDQ+DCGTYQ+4EZ2+BYLJL" rel="nofollow sponsored noopener">CrossOneRoom furnished Tokyo apartments</a> is one option aimed at foreign residents.</li>
+</ol>
+
+<div class="callout"><strong>Key tip:</strong> If you are newly arrived, the single most powerful document is a certificate of employment (在職証明書) on company letterhead that states your salary, start date and employment type. Ask HR for it in Japanese before you start apartment hunting.</div>
+
+<h2>Required Documents</h2>
+
+<ul class="checklist">
+<li>Residence card (在留カード), front and back, showing status of residence and period of stay</li>
+<li>Passport (パスポート)</li>
+<li>Certificate of employment (在職証明書), stating salary, start date and contract type</li>
+<li>Employment contract (雇用契約書) or offer letter, if you have not yet received payslips</li>
+<li>Recent payslips (給与明細), usually two or three months</li>
+<li>Resident tax certificate (住民税課税証明書) or withholding slip (源泉徴収票, gensen chōshūhyō), if you have Japanese tax history</li>
+<li>Immigration renewal application receipt, if your period of stay ends soon</li>
+<li>Certificate of residence (住民票) from your city office</li>
+<li>Emergency contact (緊急連絡先) in Japan</li>
+<li>Japanese bank account, and a credit card if the guarantor company requires one</li>
+</ul>
+
+<h2>City and Region Differences</h2>
+
+<h3>Tokyo</h3>
+<p>Tokyo screening is the most standardized: almost every property uses a guarantor company, and agents are used to work visa holders at large companies. High rents mean the income-to-rent ratio is the most common failure point. Looking a few stations out on the same line, or in neighboring Kawasaki or Saitama, is often the easiest fix. Agents in central wards are also more likely to know which guarantor companies are flexible with foreign workers.</p>
+
+<h3>Osaka</h3>
+<p>Osaka has lower rents, so the income ratio is easier to satisfy, but traditional Kansai practices such as non-refundable deposit deductions (敷引き, shikibiki) can still appear in some contracts. Read the deposit terms carefully; our article on <a href="/articles/2026-06-15-apartment-deposit-non-refundable-japan-dispute">non-refundable deposits</a> explains what to look for. Our <a href="/osaka">Osaka guide</a> covers the local market.</p>
+
+<h3>Nagoya, Fukuoka and industrial regions</h3>
+<p>In regions with many manufacturers or technical intern and skilled worker programs, employers frequently provide company housing or sign leases on behalf of staff. If you are in one of these areas, ask your employer first; going through the company is often far simpler than applying as an individual.</p>
+
+<h2>Frequently Asked Questions</h2>
+<div class="faq">
+<h3>Can I rent an apartment in Japan before receiving my first salary?</h3>
+<p>Often yes, but you need to replace payslips with other proof. A certificate of employment or employment contract stating your salary, plus savings or a willingness to prepay or pay a higher deposit, can be enough for many guarantor companies. A corporate lease removes the problem entirely.</p>
+
+<h3>Does the type of work visa matter for renting?</h3>
+<p>Screeners care less about the exact category than about your period of stay, employer and income. A longer remaining period of stay and a stable, verifiable employer usually help more than any particular visa name.</p>
+
+<h3>My visa expires in eight months. Can I still sign a two-year lease?</h3>
+<p>Many landlords will accept it, since a standard lease can be renewed or ended with notice. Others will not. Showing that your employment continues and that you will renew, or choosing a fixed-term lease that ends before your period of stay, are the usual ways to get past this. Our <a href="/visa-guide">visa guide</a> covers renewal basics.</p>
+
+<h3>Is a dispatch or contract job a problem for screening?</h3>
+<p>It can make screeners more cautious, especially with a short contract. Showing a longer track record, a contract renewal history, or a letter from the dispatch company can help. Lower rent and a larger deposit also offset the perceived risk.</p>
+
+<h3>What should I do right after a rejection?</h3>
+<p>Ask the agent which part failed, fix that one thing, and reapply with a different property or guarantor company rather than the same combination. Our <a href="/articles/2026-05-25-apartment-application-rejected-foreigner-japan-reason">guide to apartment rejection reasons</a> lists the most common causes in more detail.</p>
+</div>
+
+<section class="related-articles" style="max-width:800px;margin:40px auto;padding:24px;border-top:1px solid rgba(0,0,0,0.15);">
+  <h2>Related Articles</h2>
+  <ul style="margin-top:12px;padding-left:20px;">
+    <li style="margin-bottom:8px;"><a href="/articles/guide-ur-housing-foreigner-apply" style="color:inherit;">UR Housing Application Denied for Foreigners in Japan? Exact Reasons and Fixes</a> <span style="opacity:0.6;font-size:0.85em;">(Nov 03, 2026)</span></li>
+    <li style="margin-bottom:8px;"><a href="/articles/guide-share-house-tokyo-foreigner-english" style="color:inherit;">Share House Application Rejected in Tokyo as a Foreigner? What Actually Gets You In</a> <span style="opacity:0.6;font-size:0.85em;">(Nov 03, 2026)</span></li>
+    <li style="margin-bottom:8px;"><a href="/articles/guide-renting-apartment-japan-permanent-resident" style="color:inherit;">Permanent Resident Rejected for Apartment in Japan? Why It Still Happens and What to Do</a> <span style="opacity:0.6;font-size:0.85em;">(Nov 03, 2026)</span></li>
+  </ul>
+</section>
+</article>
+</main>
 <!-- gh-sponsor -->
 <aside class="gh-sponsor" style="max-width:760px;margin:40px auto;padding:20px;background:#FDFAF5;border-left:4px solid #E8372A;font-family:inherit;">
   <p style="margin:0 0 6px;font-size:0.8em;letter-spacing:.05em;color:#777;">[PR] Sponsored — we may earn a commission if you sign up</p>
@@ -754,5 +187,11 @@
     <a href="https://px.a8.net/svt/ejp?a8mat=4BGCF5+4KBNQQ+5NSE+5YRHE" rel="nofollow sponsored noopener" target="_blank" style="display:block;padding:14px 16px;margin:10px 0;border:1px solid #e5ddd0;border-radius:8px;background:#fff;color:#0F0E0C;text-decoration:none;"><strong style="color:#E8372A;">italki — Japanese lessons with native tutors →</strong><br><span style="font-size:0.92em;">Learn the phrases you need for viewings, contracts and calls with your landlord.</span></a>
 </aside>
 <!-- gh-sponsor -->
+<footer>
+  <div class="footer-inner">
+    <span>&copy; 2026 GaijinHome. Some links are affiliate links ([PR]).</span>
+    <span><a href="/">Home</a><a href="/articles">All Articles</a><a href="/affiliate">Affiliate Disclosure</a><a href="/privacy">Privacy Policy</a></span>
+  </div>
+</footer>
 </body>
 </html>
