@@ -41,6 +41,16 @@
       "permanent": true
     },
     {
+      "source": "/drafts/:slug.html",
+      "destination": "/articles/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/drafts/:slug",
+      "destination": "/articles/:slug",
+      "permanent": true
+    },
+    {
       "source": "/guide-complete",
       "destination": "/full-guide",
       "permanent": true

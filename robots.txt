@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+Disallow: /drafts/
 Sitemap: https://gaijinhome.com/sitemap.xml
