@@ -11,6 +11,7 @@ import update_links
 import update_sitemap
 import seo_fix
 import affiliate_fix
+import build_article
 
 client = anthropic.Anthropic(api_key=os.environ["ANTHROPIC_API_KEY"])
 
@@ -36,29 +37,27 @@ NEVER write:
 Tone: Direct, practical, empathetic to someone who is
 frustrated and needs help right now.
 
-Article structure (follow exactly):
-H1: [Specific problem statement with "rejected" / "denied" /
-     "problem" / "confusion" / "what to do"]
+OUTPUT FORMAT (strict) — an HTML body fragment, nothing else:
+- Line 1: <!-- description: ONE sentence, 140-160 chars, starting with "If your", "Confused about" or "Struggling with" -->
+- Then exactly one <h1> with the given title, then the body.
+- No <html>, <head>, <body>, <style>, <script>, no markdown, no code fences.
+- Allowed tags: h1 h2 h3 p ul ol li table thead tbody tr th td strong em a,
+  <div class="callout"> for one key tip, <ul class="checklist"> for documents.
 
-1. What actually happens
-   (Describe the exact situation the reader is stuck in)
-2. Why it happens
-   (Structural reasons — not obvious, not generic)
-3. Common mistakes
-   (3-5 specific mistakes foreigners make)
-4. Step-by-step fix
-   (Exact steps, exact documents, exact alternatives)
-5. Required documents
-   (Checklist format)
-6. City / region differences
-   (Tokyo vs Osaka vs other cities where relevant)
-7. Recommended services
-   (Affiliate links placed naturally with [PR] disclosure)
+Sections as h2, in this order:
+1. What actually happens (the exact situation the reader is stuck in)
+2. Why it happens (structural reasons — not obvious, not generic)
+3. Common mistakes (3-5 specific mistakes foreigners make)
+4. Step-by-step fix (numbered <ol>: exact steps, documents, alternatives)
+5. Required documents (<ul class="checklist">, Japanese terms in parentheses)
+6. City / region differences (Tokyo vs Osaka vs other cities where relevant)
+7. <h2>Frequently Asked Questions</h2> then <div class="faq"> with 4-5 pairs of
+   <h3>Question?</h3><p>Answer</p>, then </div>. The fragment ends with that </div>.
 
-Use red (#E8372A), dark ink (#0F0E0C), cream (#FDFAF5), Syne font.
-Include internal links to /full-guide, /no-guarantor, /rejected,
-/hidden-costs, /osaka, /visa-guide (absolute paths, no .html).
-1500-2500 words. Output ONLY valid HTML."""
+1500-2200 words. Use rough ranges instead of invented statistics; never invent
+studies, quotes, law article numbers or company facts.
+Include 3-5 internal links to /full-guide, /no-guarantor, /rejected,
+/hidden-costs, /osaka, /visa-guide (absolute paths, no .html)."""
 
 AFFILIATE_BY_CATEGORY = {
     "category_a_housing": ["Oakhouse (A8.net)", "CrossOneRoom (A8.net)"],
@@ -187,9 +186,9 @@ def generate_article(keyword, category, title):
     affiliates = AFFILIATE_BY_CATEGORY.get(category, ["JAPAN&GLOBAL eSIM (A8.net)"])
     urls = {k: v for k, v in affiliate_fix.LINKS.items()}
     affiliate_note = (
-        f"For the Recommended Services section, feature these affiliates naturally with [PR] disclosure: "
-        f"{', '.join(affiliates)}. Place one affiliate mention inside the Step-by-step fix section "
-        f"and up to 3 in the Recommended Services section. Use ONLY these exact tracked URLs "
+        f"Optionally mention ONE of these affiliates inside the Step-by-step fix, with \"[PR]\" right before "
+        f"the link and rel=\"nofollow sponsored noopener\": {', '.join(affiliates)}. "
+        f"(A sponsor box is added automatically — do not add a Recommended Services section.) Use ONLY these exact tracked URLs "
         f"(never the advertiser's own domain, never invent URLs): Oakhouse {urls['oakhouse']} ; "
         f"CrossOneRoom {urls['crossoneroom']} ; JAPAN&GLOBAL eSIM {urls['esim']} ; "
         f"WiFi rental {urls['wifi']} ; italki (Japanese lessons) {urls['italki']}. "
@@ -199,16 +198,14 @@ def generate_article(keyword, category, title):
     print(f"Generating article for: {keyword} (category: {category})")
     message = client.messages.create(
         model="claude-haiku-4-5-20251001",
-        max_tokens=16000,
+        max_tokens=8000,
         system=ARTICLE_SYSTEM_PROMPT,
         messages=[{
             "role": "user",
             "content": (
-                f'Write a complete HTML article. Title: "{title}". '
+                f'Write the article fragment. Title (use as the h1): "{title}". '
                 f'Target keyword: "{keyword}". '
                 f'{affiliate_note} '
-                f'Include proper head with meta description starting with "If your" or '
-                f'"Confused about" or "Struggling with", meta tags, and FAQ with schema markup. '
                 f'Year: 2026.'
             )
         }]
@@ -217,31 +214,40 @@ def generate_article(keyword, category, title):
 
 
 def strip_code_fences(content):
-    """Remove markdown code fences and any preamble text before the doctype."""
-    text = content.strip()
-    idx = text.lower().find("<!doctype html>")
-    if idx > 0:
-        # Drop fences and any prose the model emitted before the document
-        text = text[idx:]
-    elif idx == -1:
-        text = re.sub(r"^```[a-zA-Z]*[ \t]*\n?", "", text)
+    """Remove markdown code fences and any preamble before the fragment."""
+    text = re.sub(r"^```[a-zA-Z]*[ \t]*\n?", "", content.strip())
     text = re.sub(r"\n?```\s*$", "", text)
+    idx = text.find("<!-- description")
+    if idx > 0:
+        text = text[idx:]
     return text.strip()
 
 
 def validate_article(content):
     """Return a list of problems (empty list = valid)."""
     problems = []
-    if not content.rstrip().endswith("</html>"):
-        problems.append("does not end with </html> (likely truncated)")
+    if not content.startswith("<!-- description:"):
+        problems.append("missing description comment")
+    if len(re.findall(r"<h1[\s>]", content)) != 1:
+        problems.append("needs exactly one <h1>")
+    if '<div class="faq">' not in content or not content.rstrip().endswith("</div>"):
+        problems.append("missing or unterminated FAQ (likely truncated)")
+    if re.search(r"<(html|head|body|style|script)[\s>]", content, re.I):
+        problems.append("contains page-level tags")
+    words = len(re.sub(r"<[^>]+>", " ", content).split())
+    if words < 1000:
+        problems.append(f"too short ({words} words)")
     return problems
 
 
 def save_article(filename, content):
+    """Save the fragment to drafts/ and render the full page into articles/."""
+    os.makedirs("drafts", exist_ok=True)
     os.makedirs("articles", exist_ok=True)
-    filepath = f"articles/{filename}"
-    with open(filepath, "w", encoding="utf-8") as f:
+    draft = f"drafts/{filename}"
+    with open(draft, "w", encoding="utf-8") as f:
         f.write(content)
+    filepath = build_article.render(draft)
     print(f"Saved: {filepath}")
     return filepath
 

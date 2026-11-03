@@ -80,6 +80,9 @@ def fix_file(filepath):
     with open(filepath, encoding="utf-8") as f:
         html = f.read()
     original = html
+    # stray markdown fences left by the generator
+    html = re.sub(r"\A\s*```[a-zA-Z]*\s*\n", "", html)
+    html = re.sub(r"\n```\s*\Z", "\n", html)
     current_dir = os.path.dirname(filepath)
     canonical = BASE + clean_path_for_file(filepath)
     if canonical.endswith("/") and canonical != BASE + "/":
