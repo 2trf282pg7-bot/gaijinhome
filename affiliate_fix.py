@@ -22,6 +22,7 @@ LINKS = {
     "wifi": A8 + "4B1JDQ+DOYXO2+42XQ+614CX",
     "esim": A8 + "4B1JDQ+DQ5SVM+5HZI+5YJRM",
     "italki": A8 + "4BGCF5+4KBNQQ+5NSE+5YRHE",
+    "leopalace": A8 + "4BGCF5+4784FM+4YI4+5YJRM",
 }
 
 # href pattern -> partner key
@@ -38,6 +39,8 @@ HOUSING_BOX = [
      "No Japanese guarantor needed, English support, short stays OK. Good fallback when a regular apartment rejects you."),
     ("crossoneroom", "CrossOneRoom — Furnished Tokyo apartments from ¥38,000",
      "Zero key money, zero agency fee, foreign residents welcome."),
+    ("leopalace", "Leopalace21 — Furnished apartments, no agency fee",
+     "One-room apartments with furniture and Wi-Fi nationwide; contracts from 30 days, paperwork can be done online."),
     ("italki", "italki — Japanese lessons with native tutors",
      "Learn the phrases you need for viewings, contracts and calls with your landlord."),
 ]

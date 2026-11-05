@@ -191,7 +191,8 @@ def generate_article(keyword, category, title):
         f"(A sponsor box is added automatically — do not add a Recommended Services section.) Use ONLY these exact tracked URLs "
         f"(never the advertiser's own domain, never invent URLs): Oakhouse {urls['oakhouse']} ; "
         f"CrossOneRoom {urls['crossoneroom']} ; JAPAN&GLOBAL eSIM {urls['esim']} ; "
-        f"WiFi rental {urls['wifi']} ; italki (Japanese lessons) {urls['italki']}. "
+        f"WiFi rental {urls['wifi']} ; italki (Japanese lessons) {urls['italki']} ; "
+        f"Leopalace21 furnished apartments nationwide {urls['leopalace']}. "
         f"Wise/Revolut have no tracked link: mention them without a link."
     )
 
