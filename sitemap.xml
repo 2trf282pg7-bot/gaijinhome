@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gaijinhome.com/</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://gaijinhome.com/articles</loc>
-    <lastmod>2026-11-05</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -96,6 +96,11 @@
   <url>
     <loc>https://gaijinhome.com/articles/2026-11-05-subletting-rules-japan-foreigner-violation</loc>
     <lastmod>2026-11-05</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/2026-11-06-bank-account-japan-foreigner-rejected-reason</loc>
+    <lastmod>2026-11-06</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
