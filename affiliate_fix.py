@@ -53,6 +53,33 @@ CONNECT_HINTS = ("bank", "credit", "card", "phone", "sim", "mobile", "internet",
                  "wifi", "visa", "residence", "tax", "pension", "insurance", "hospital")
 
 MARK = "<!-- gh-sponsor -->"
+QMARK = "<!-- gh-quickpick -->"
+
+# Top-of-page picks for high-intent landing pages (page -> ordered partner keys)
+QUICKPICK_PAGES = {"full-guide.html": ["crossoneroom", "oakhouse", "leopalace"]}
+QUICKPICK_TEXT = {
+    "oakhouse": ("Oakhouse", "Share houses &amp; furnished rooms across Japan. No Japanese guarantor, English support, short stays OK."),
+    "crossoneroom": ("CrossOneRoom", "Furnished Tokyo apartments from about ¥38,000. Zero key money, zero agency fee, foreigners welcome."),
+    "leopalace": ("Leopalace21", "Furnished one-room apartments nationwide, contracts from 30 days, no agency fee."),
+}
+
+
+def quickpick_for(filepath):
+    keys = [k for k in QUICKPICK_PAGES.get(os.path.basename(filepath), []) if k in LINKS]
+    if not keys:
+        return None
+    cards = "\n".join(
+        f'    <a href="{LINKS[k]}" rel="nofollow sponsored noopener" target="_blank" '
+        f'style="flex:1 1 200px;display:block;padding:12px 14px;border:1px solid #E4E2DC;border-radius:8px;'
+        f'background:#fff;color:#1A1917;text-decoration:none;">'
+        f'<strong style="color:#1B4D3E;">{QUICKPICK_TEXT[k][0]} →</strong><br>'
+        f'<span style="font-size:0.88em;">{QUICKPICK_TEXT[k][1]}</span></a>'
+        for k in keys)
+    return (f"{QMARK}\n<div class=\"gh-quickpick\" style=\"margin:0 0 28px;padding:16px;background:#EBF3F0;"
+            f"border-radius:10px;\">\n"
+            f"  <p style=\"margin:0 0 4px;font-size:0.78em;color:#4A4845;\">[PR] Sponsored — we may earn a commission</p>\n"
+            f"  <p style=\"margin:0 0 10px;font-weight:600;\">Need a gaijin-friendly apartment now? Start here:</p>\n"
+            f"  <div style=\"display:flex;flex-wrap:wrap;gap:10px;\">\n{cards}\n  </div>\n</div>\n{QMARK}")
 
 
 def page_paths():
@@ -109,6 +136,17 @@ def fix_file(filepath):
         else:
             # truncated page (no closing tags): close it so the box renders
             html = html.rstrip() + "\n</p></div></div></article>\n" + box + "\n</body>\n</html>\n"
+
+    # quick picks at the top of selected landing pages
+    qp = quickpick_for(filepath)
+    if qp:
+        if QMARK in html:
+            html = re.sub(re.escape(QMARK) + r".*?" + re.escape(QMARK), lambda _: qp, html, flags=re.S)
+        else:
+            idx = html.find('<div class="article-body">')
+            if idx != -1:
+                idx += len('<div class="article-body">')
+                html = html[:idx] + "\n" + qp + "\n" + html[idx:]
 
     if html != original:
         with open(filepath, "w", encoding="utf-8") as f:
