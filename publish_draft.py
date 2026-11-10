@@ -42,17 +42,26 @@ def slugify(keyword):
     return re.sub(r"[^a-z0-9]+", "-", keyword.lower()).strip("-")
 
 
+# Housing drives search traffic and the high-value affiliates: ~60% housing.
+CATEGORY_CYCLE = [
+    "category_a_housing", "category_b_banking", "category_a_housing", "category_c_phone",
+    "category_a_housing", "category_d_visa", "category_a_housing", "category_e_daily",
+    "category_a_housing", "category_a_housing",
+]
+
+
 def cmd_next():
     keywords = load("keywords.json", {})
     done = load("done_keywords.json", [])
-    for category, items in keywords.items():
-        for kw in items:
-            if kw not in done:
-                date = datetime.now(JST).strftime("%Y-%m-%d")
-                print(json.dumps({"keyword": kw, "category": category,
-                                  "filename": f"{date}-{slugify(kw)}.html"}))
-                return
-    print(json.dumps({"keyword": None, "existing_topics": done}))
+    date = datetime.now(JST).strftime("%Y-%m-%d")
+    category = CATEGORY_CYCLE[len(done) % len(CATEGORY_CYCLE)]
+    for kw in keywords.get(category, []):
+        if kw not in done:
+            print(json.dumps({"keyword": kw, "category": category,
+                              "filename": f"{date}-{slugify(kw)}.html"}))
+            return
+    # Category exhausted: the caller must invent a new keyword in this category
+    print(json.dumps({"keyword": None, "category": category, "existing_topics": done}))
 
 
 def cmd_add_keyword(keyword, category):
