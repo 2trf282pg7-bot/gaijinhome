@@ -192,7 +192,8 @@ def generate_article(keyword, category, title):
         f"(never the advertiser's own domain, never invent URLs): Oakhouse {urls['oakhouse']} ; "
         f"CrossOneRoom {urls['crossoneroom']} ; JAPAN&GLOBAL eSIM {urls['esim']} ; "
         f"WiFi rental {urls['wifi']} ; italki (Japanese lessons) {urls['italki']} ; "
-        f"Leopalace21 furnished apartments nationwide {urls['leopalace']}. "
+        f"Leopalace21 furnished apartments nationwide {urls['leopalace']} ; "
+        f"Village House zero-deposit apartments (residents of Japan only) {urls['villagehouse']}. "
         f"Wise/Revolut have no tracked link: mention them without a link."
     )
 
