@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gaijinhome.com/</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://gaijinhome.com/articles</loc>
-    <lastmod>2026-11-15</lastmod>
+    <lastmod>2026-11-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -146,6 +146,11 @@
   <url>
     <loc>https://gaijinhome.com/articles/2026-11-15-late-rent-payment-penalty-japan-foreigner-tokyo</loc>
     <lastmod>2026-11-15</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/2026-11-16-residence-card-renewal-japan-wrong-documents</loc>
+    <lastmod>2026-11-16</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
