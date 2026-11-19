@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://gaijinhome.com/</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -44,7 +44,7 @@
   </url>
   <url>
     <loc>https://gaijinhome.com/articles</loc>
-    <lastmod>2026-11-19</lastmod>
+    <lastmod>2026-11-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
@@ -166,6 +166,11 @@
   <url>
     <loc>https://gaijinhome.com/articles/2026-11-19-apartment-rejected-visa-expiring-soon-japan-fukuoka</loc>
     <lastmod>2026-11-19</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://gaijinhome.com/articles/2026-11-20-apartment-rejected-part-time-job-income-japan-yokohama</loc>
+    <lastmod>2026-11-20</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
